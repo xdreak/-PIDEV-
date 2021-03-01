@@ -1,30 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>SOFT Team - Bootstrap Agency Template</title>
+    <title>{% block title %}SOFT Team - Bootstrap Agency Template{% endblock %}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Bootstrap Agency Template" name="keywords">
     <meta content="Bootstrap Agency Template" name="description">
+
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -104,10 +85,10 @@
         <div class="container-fluid">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h2>Creative & Responsive</h2>
-                    <h2><span>HTML5</span> Template</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare</p>
-                    <a class="btn" href="https://htmlcodex.com/bootstrap-agency-template">Download Now</a>
+                    <h2>Des solutions</h2>
+                    <h2><span>D'emploi</span> efficace</h2>
+                    <p>Rejoignez nous maintenant</p>
+                    <a class="btn" href="https://htmlcodex.com/bootstrap-agency-template">Get E-Mployni</a>
                 </div>
                 <div class="col-md-6">
                     <img src="img/hero.png" alt="Image">
@@ -165,8 +146,7 @@
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
                     </p>
-                    <a class="btn" href="">Learn More</a>
-                </div>
+                    <a class="btn" href="">Learn More</a</div>
             </div>
         </div>
     </div>
@@ -177,7 +157,7 @@
     <div class="service">
         <div class="container-fluid">
             <div class="section-header">
-                <h2>Our Services</h2>
+                <h2>Offres D'emploi Recentes</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium ornare velit non</p>
             </div>
             <div class="row">
@@ -483,14 +463,19 @@
 </div>
 
 <!-- JavaScript Libraries -->
+{% block js %}
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <script src="lib/slick/slick.min.js"></script>
 <script src="lib/isotope/isotope.pkgd.min.js"></script>
 <script src="lib/lightbox/js/lightbox.min.js"></script>
-
 <!-- Template Javascript -->
-<script src="js/main.js"></script>
+<script src="js/main.js">
+    {% endblock %}
+</script>
+
 </body>
+
 </html>
 
