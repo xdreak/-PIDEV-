@@ -1,0 +1,32 @@
+ {% extends 'base.html.twig' %}
+   {% block form %}
+{% block title %}Classrooms{% endblock %}
+{% block body %}
+{% if formations %}
+<h1>Liste des classes</h1>
+<table class="table table-hover">
+<thead>
+<tr>
+<th>ID</th>
+<th>Nom</th>
+<th>Editer</th>
+</tr>
+</thead>
+<tbody>
+{% for formation in formations %}
+<tr>
+<td>{{formation.id}}</td>
+<td>{{formation.Titre}}</td>
+<td>
+<a href="/classroom/{{ formation.id }}" class="btn btn-dark">Afficher</a>
+<a href="/classroom/delete/{{ formation.id }}" class="btn btn-danger delete-article" data-id="{{ formation.id }}">Supprimer</a>
+  <a href="/classroom/modifier/{{ formation.id }}"  class="btn btn-primary">Modifier</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p>No classrooms to display</p>    
+{% endif %}
+{% endblock %}
+{% endblock %}
