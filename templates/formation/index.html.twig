@@ -1,14 +1,15 @@
  {% extends 'base.html.twig' %}
    {% block form %}
-{% block title %}Classrooms{% endblock %}
+{% block title %}Formations{% endblock %}
 {% block body %}
 {% if formations %}
-<h1>Liste des classes</h1>
+<h1>Liste des formations</h1>
 <table class="table table-hover">
 <thead>
 <tr>
 <th>ID</th>
-<th>Nom</th>
+<th>Titre</th>
+<th>Date</th>
 <th>Editer</th>
 </tr>
 </thead>
@@ -17,16 +18,20 @@
 <tr>
 <td>{{formation.id}}</td>
 <td>{{formation.Titre}}</td>
+<td>{{formation.Date |date('Y-m-d')   }}</td>
 <td>
-<a href="/classroom/{{ formation.id }}" class="btn btn-dark">Afficher</a>
-<a href="/classroom/delete/{{ formation.id }}" class="btn btn-danger delete-article" data-id="{{ formation.id }}">Supprimer</a>
-  <a href="/classroom/modifier/{{ formation.id }}"  class="btn btn-primary">Modifier</a></td>
+<a href="/formation/{{ formation.id }}" class="btn btn-dark">Afficher</a>
+<a href="/formation/delete/{{ formation.id }}" class="btn btn-danger delete-article" data-id="{{ formation.id }}">Supprimer</a>
+  <a href="/formation/modifier/{{ formation.id }}"  class="btn btn-primary">Modifier</a></td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
 {% else %}
-<p>No classrooms to display</p>    
+<p>No formations to display</p>    
 {% endif %}
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock %}
+ 
+
 {% endblock %}
