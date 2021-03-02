@@ -20,11 +20,11 @@ use App\Repository\OffreStageRepository;
 class Blog1Controller extends AbstractController
 {
     /**
-     * @Route("/blog1", name="blog1")
+     * @Route("/candidaturestage", name="candidaturestage")
      */
     public function index(): Response
     {
-        return $this->render('blog1/index.html.twig', [
+        return $this->render('candidaturestage/index.html.twig', [
             'controller_name' => 'Blog1Controller',
         ]);
 
@@ -38,7 +38,7 @@ class Blog1Controller extends AbstractController
     public function list(CandidatureStageRepository $Repository)
     {
         $CandidatureStage = $Repository->findall();
-        return $this->render('blog1/list.html.twig', [
+        return $this->render('candidaturestage/list.html.twig', [
             'CandidatureStage' => $CandidatureStage]);
     }
 
@@ -61,7 +61,7 @@ class Blog1Controller extends AbstractController
             $em->flush();
             return $this->redirectToRoute('list');
         }
-        return $this->render('blog1/add.html.twig',
+        return $this->render('candidaturestage/add.html.twig',
             ['form' => $form->createView()]);
     }
 
@@ -85,7 +85,7 @@ class Blog1Controller extends AbstractController
             $em->flush();
             return $this->redirectToRoute('list');
         }
-        return $this->render('blog1/update.html.twig',
+        return $this->render('candidaturestage/update.html.twig',
             ['form' => $form->createView()]);
 
     }
@@ -114,7 +114,7 @@ class Blog1Controller extends AbstractController
     public function listoffre(OffreStageRepository $Repository)
     {
         $OffreStage = $Repository->findall();
-        return $this->render('blog1/listoffre.html.twig', [
+        return $this->render('offrestage/listoffre.html.twig', [
             'OffreStage' => $OffreStage]);
     }
 
@@ -135,7 +135,7 @@ class Blog1Controller extends AbstractController
             $em->flush();
             return $this->redirectToRoute('listoffre');
         }
-        return $this->render('blog1/addoffre.html.twig',
+        return $this->render('offrestage/addoffre.html.twig',
             ['form' => $form->createView()]);
     }
 
@@ -158,7 +158,7 @@ class Blog1Controller extends AbstractController
             $em->flush();
             return $this->redirectToRoute('listoffre');
         }
-        return $this->render('blog1/updateoffre.html.twig',
+        return $this->render('offrestage/updateoffre.html.twig',
             ['form' => $form->createView()]);
 
     }
