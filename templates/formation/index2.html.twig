@@ -1,0 +1,39 @@
+ {% extends 'front.html.twig' %}
+   {% block form %}
+{% block title %}Formations{% endblock %}
+{% block body %}
+{% if formations %}
+{% for formation in formations %}
+<h1>Formations:</h1>
+<table class="table table-hover">
+<thead>
+<tr>
+<th>ID</th>
+<th>Titre</th>
+<th>Date</th>
+<th>Editer</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>{{formation.id}}</td>
+<td>{{formation.Titre}}</td>
+<td>{{formation.Date |date('Y-m-d')   }}</td>
+<td>
+<a href="/formation/{{ formation.id }}" class="btn btn-dark">Afficher</a>
+<a href="/formation/delete/{{ formation.id }}" class="btn btn-danger delete-article" data-id="{{ formation.id }}">Supprimer</a>
+  <a href="/formation/modifier/{{ formation.id }}"  class="btn btn-primary">Modifier</a></td>
+</tr>
+
+</tbody>
+</table>
+{% endfor %}
+{% else %}
+<p>No formations to display</p>    
+{% endif %}
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
+ 
+
+{% endblock %}

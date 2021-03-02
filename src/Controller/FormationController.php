@@ -32,6 +32,16 @@ class FormationController extends AbstractController
      return $this->render('formation/index.html.twig',array ('formations'=>$formations));
 
     }
+      /**
+     * @Route("/formationFront",name="formationFront")
+     * @Method({"GET"})
+     */
+    public function index2(): Response
+    {
+     $formations=$this->getDoctrine()->getRepository(Formation::class)->findAll();
+     return $this->render('formation/index2.html.twig',array ('formations'=>$formations));
+
+    }
     
 
      /**
@@ -49,8 +59,8 @@ class FormationController extends AbstractController
         ))
              ->add('Date', DateType::class, array(
                 'label' => 'Date',
-                  'required' => true,
-                  'attr' => array('class' => 'form-control')
+                  'required' => true
+                 
          ))
          ->add('Lieu', TextareaType::class, array(
             'label' => 'Lieu',
@@ -103,7 +113,7 @@ class FormationController extends AbstractController
              ->add('Date', DateType::class, array(
                 'label' => 'Date',
                   'required' => true,
-                  'attr' => array('class' => 'form-control')
+                  
          ))
          ->add('Lieu', TextareaType::class, array(
             'label' => 'Lieu',
@@ -124,6 +134,7 @@ class FormationController extends AbstractController
           'label' => 'Modifier',
           'attr' => array('class' => 'btn btn-primary mt-3')
         ))
+        
         ->getForm();
 
       $form->handleRequest($request);
