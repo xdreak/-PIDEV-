@@ -20,11 +20,11 @@ use App\Repository\OffreStageRepository;
 class Blog1Controller extends AbstractController
 {
     /**
-     * @Route("/candidaturestage", name="candidaturestage")
+     * @Route("/Blog1", name="Blog1")
      */
     public function index(): Response
     {
-        return $this->render('candidaturestage/index.html.twig', [
+        return $this->render('base.html.twig', [
             'controller_name' => 'Blog1Controller',
         ]);
 
