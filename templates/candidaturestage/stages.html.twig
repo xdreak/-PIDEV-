@@ -1,0 +1,30 @@
+{% extends 'front.html.twig' %}
+{% block href %}href="inscription"{% endblock %}
+{% block body %}
+    <br>
+    <body>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Nom Entreprise</th>
+            <th>Nom Stage</th>
+            <th>Description</th>
+            <th>Postuler</th>
+
+        </tr>
+        {% for c in OffreStage %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.NomEntreprise }}</td>
+                <td>{{ c.NomStage }}</td>
+                <td>{{ c.DescriptionStage }}</td>
+                <td><a href="{{ path('add')}}">Postuler</a></td>
+
+
+
+            </tr>
+        {% endfor %}
+    </table>
+    </body>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
