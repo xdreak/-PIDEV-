@@ -19,13 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="03/03/2021&#10;3:56">
+    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="03/03/2021&#10;20:25">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/quiz.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/quiz.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/offrestage/addoffre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offrestage/addoffre.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +191,7 @@
       <workItem from="1614762621620" duration="3023000" />
       <workItem from="1614765750435" duration="693000" />
       <workItem from="1614766478454" duration="16951000" />
-      <workItem from="1614796422588" duration="3085000" />
+      <workItem from="1614796422588" duration="3123000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1614634438857</created>
@@ -261,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614783414327</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="03/03/2021&#10;20:25">
+      <created>1614799564501</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1614799564501</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +290,8 @@
     <MESSAGE value="03/03/2021&#10;11:14" />
     <MESSAGE value="03/03/2021&#10;3:17" />
     <MESSAGE value="03/03/2021&#10;3:56" />
-    <option name="LAST_COMMIT_MESSAGE" value="03/03/2021&#10;3:56" />
+    <MESSAGE value="03/03/2021&#10;20:25" />
+    <option name="LAST_COMMIT_MESSAGE" value="03/03/2021&#10;20:25" />
   </component>
   <component name="WindowStateProjectService">
     <state x="646" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614766994865">
@@ -311,10 +314,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1614765568268" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1614783443276">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1614799567443">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614783443276" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614799567443" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1614344781974">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
