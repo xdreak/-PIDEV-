@@ -19,16 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="03/03/2021&#10;11:11">
+    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="03/03/2021&#10;3:17">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210302150859.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CandidatureStage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CandidatureStage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/OffreStage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OffreStage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/OffreStageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OffreStageType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/add.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/stages.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/stages.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/list.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -199,7 +192,7 @@
       <workItem from="1614707709383" duration="5758000" />
       <workItem from="1614762621620" duration="3023000" />
       <workItem from="1614765750435" duration="693000" />
-      <workItem from="1614766478454" duration="14527000" />
+      <workItem from="1614766478454" duration="16875000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1614634438857</created>
@@ -243,7 +236,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614766662544</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="03/03/2021&#10;3:17">
+      <created>1614781108668</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1614781108668</updated>
+    </task>
+    <task id="LOCAL-00008" summary="03/03/2021&#10;3:17">
+      <created>1614781323524</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1614781323524</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +275,8 @@
     <MESSAGE value="03/03/2021&#10;11:10" />
     <MESSAGE value="03/03/2021&#10;11:11" />
     <MESSAGE value="03/03/2021&#10;11:14" />
-    <option name="LAST_COMMIT_MESSAGE" value="03/03/2021&#10;11:14" />
+    <MESSAGE value="03/03/2021&#10;3:17" />
+    <option name="LAST_COMMIT_MESSAGE" value="03/03/2021&#10;3:17" />
   </component>
   <component name="WindowStateProjectService">
     <state x="646" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614766994865">
@@ -291,10 +299,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1614765568268" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1614766739415">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1614781331774">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614766739415" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614781331774" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1614344781974">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
