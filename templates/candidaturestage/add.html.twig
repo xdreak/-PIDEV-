@@ -2,6 +2,28 @@
 {% block href %}href="inscription"{% endblock %}
 {% block body %}
     <br>
-    {{ form(form) }}
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Nom Entreprise</th>
+            <th>Nom Stage</th>
+            <th>Description</th>
+
+
+        </tr>
+        {% for c in OffreStage %}
+            <tr>
+                <td>{{ c.StageId }}</td>
+                <td>{{ c.NomEntreprise }}</td>
+                <td>{{ c.NomStage }}</td>
+                <td>{{ c.Description }}</td>
+
+
+
+
+            </tr>
+        {% endfor %}
+    </table>
+    <br>{{ form(form) }}
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock %}

@@ -30,6 +30,7 @@ class Blog1Controller extends AbstractController
 
     }
 
+
     /**
      * @param CandidatureStageRepository $Repository
      * @return Response
@@ -43,14 +44,29 @@ class Blog1Controller extends AbstractController
     }
 
     /**
+     * @param CandidatureStageRepository $Repository
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route ("/liststages/" , name="liststages")
+     */
+    public function liststages(OffreStageRepository $Repository)
+    {
+        $OffreStage = $Repository->findall();
+        return $this->render('candidaturestage/stages.html.twig', [
+            'OffreStage' => $OffreStage]);
+    }
+
+    /**
+     * @param CandidatureStage $Repository
      * @param Request $Request
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      * @Route ("/add", name="add")
      */
 
 
-    public function add(Request $Request)
+    public function add(Request $Request,OffreStageRepository $Repository)
     {
+
+        $OffreStage = $Repository->findall();
         $CandidatureStage = new CandidatureStage();
         $form = $this->createForm(CandidatureStageType::class, $CandidatureStage);
         $form->add('Ajouter', SubmitType::class);
@@ -60,9 +76,13 @@ class Blog1Controller extends AbstractController
             $em->persist($CandidatureStage);
             $em->flush();
             return $this->redirectToRoute('list');
+
         }
         return $this->render('candidaturestage/add.html.twig',
-            ['form' => $form->createView()]);
+            [
+                'form' => $form->createView(),
+
+            'OffreStage' => $OffreStage]);
     }
 
 

@@ -4,6 +4,9 @@ namespace App\Entity;
 
 use App\Repository\CandidatureStageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 
 /**
  * @ORM\Entity(repositoryClass=CandidatureStageRepository::class)
@@ -30,12 +33,17 @@ class CandidatureStage
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $email;
+    private $Email;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $age;
+    private $Age;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=OffreStage::class, inversedBy="relation")
+     */
+    private $id_stage;
 
     public function getId(): ?int
     {
@@ -68,25 +76,45 @@ class CandidatureStage
 
     public function getEmail(): ?string
     {
-        return $this->email;
+        return $this->Email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(string $Email): self
     {
-        $this->email = $email;
+        $this->Email = $Email;
 
         return $this;
     }
 
     public function getAge(): ?int
     {
-        return $this->age;
+        return $this->Age;
     }
 
-    public function setAge(int $age): self
+    public function setAge(int $Age): self
     {
-        $this->age = $age;
+        $this->Age = $Age;
 
         return $this;
     }
+
+    public function getIdStage(): ?OffreStage
+    {
+        return $this->id_stage;
+    }
+
+    public function setIdStage(?OffreStage $id_stage): self
+    {
+        $this->id_stage = $id_stage;
+
+        return $this;
+    }
+    public function __toString()
+    {
+        return (string) $this->id_stage;
+    }
+
+
+
+
 }
