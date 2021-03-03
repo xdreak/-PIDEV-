@@ -54,6 +54,15 @@ class Blog1Controller extends AbstractController
         return $this->render('candidaturestage/stages.html.twig', [
             'OffreStage' => $OffreStage]);
     }
+    /**
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route ("/Quiz/" , name="Quiz")
+     */
+    public function Quiz()
+    {
+        return $this->render('candidaturestage/Quiz.html.twig');
+
+    }
 
     /**
      * @param CandidatureStage $Repository
@@ -65,13 +74,22 @@ class Blog1Controller extends AbstractController
 
     public function add(Request $Request,OffreStageRepository $Repository)
     {
-
         $OffreStage = $Repository->findall();
         $CandidatureStage = new CandidatureStage();
+
+
+
+
+
         $form = $this->createForm(CandidatureStageType::class, $CandidatureStage);
         $form->add('Ajouter', SubmitType::class);
         $form->handleRequest($Request);
+
+
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($CandidatureStage);
             $em->flush();

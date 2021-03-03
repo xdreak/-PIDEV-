@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use App\Repository\CandidatureStageRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
@@ -32,11 +33,13 @@ class CandidatureStage
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email
      */
     private $Email;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Positive
      */
     private $Age;
 

@@ -28,15 +28,10 @@ class OffreStage
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $NomStage;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $Description;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
      */
     private $stage_id;
 
@@ -67,17 +62,7 @@ class OffreStage
         return $this;
     }
 
-    public function getNomStage(): ?string
-    {
-        return $this->NomStage;
-    }
 
-    public function setNomStage(string $NomStage): self
-    {
-        $this->NomStage = $NomStage;
-
-        return $this;
-    }
 
     public function getDescription(): ?string
     {
@@ -91,12 +76,12 @@ class OffreStage
         return $this;
     }
 
-    public function getStageId(): ?int
+    public function getStageId(): ?string
     {
         return $this->stage_id;
     }
 
-    public function setStageId(int $stage_id): self
+    public function setStageId(string $stage_id): self
     {
         $this->stage_id = $stage_id;
 

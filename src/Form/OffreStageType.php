@@ -13,7 +13,6 @@ class OffreStageType extends AbstractType
     {
         $builder
             ->add('NomEntreprise')
-            ->add('NomStage')
             ->add('Description')
             ->add('stage_id')
         ;

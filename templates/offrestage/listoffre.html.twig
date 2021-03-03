@@ -23,7 +23,6 @@
             <tr>
                 <th>Id</th>
                 <th>Nom Entreprise</th>
-                <th>Nom Stage</th>
                 <th>Description</th>
                 <th>ID</th>
                 <th>Modifier</th>
@@ -33,7 +32,6 @@
                 <tr>
                     <td>{{ c.id }}</td>
                     <td>{{ c.NomEntreprise }}</td>
-                    <td>{{ c.NomStage }}</td>
                     <td>{{ c.Description }}</td>
                     <td>{{ c.StageId }}</td>
                     <td><a href="{{ path('updateoffre',{'id':c.id}) }}">Modifier</a></td>
