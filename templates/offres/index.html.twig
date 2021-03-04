@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello OffresController!{% endblock %}
+
+    {% block css %}
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/slick/slick.css" rel="stylesheet">
+        <link href="libs/slick/slick-theme.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    {% endblock %}
+
+{% block body %}
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Offres</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Portfolio Start -->
+    <div class="portfolio">
+        <div class="container">
+            <!--<div class="row">
+                <div class="col-12">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">All</li>
+                        <li data-filter=".web-des">Design</li>
+                        <li data-filter=".web-dev">Development</li>
+                        <li data-filter=".dig-mar">Digital Marketing</li>
+                    </ul>
+                </div>
+            </div>-->
+            <div class="row portfolio-container">
+                {% for O in offres %}
+                <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-des">
+                    <div class="portfolio-wrap">
+                        <figure>
+                            <img src="../../WebProject/public/img/portfolio-1.jpg" alt="Portfolio Image">
+                            <a href="../../WebProject/public/img/portfolio-1.jpg" class="link-preview" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a href="{{ path('Ajouter') }}" class="link-details"><i class="fa fa-link"></i></a>
+                            <a class="portfolio-title" href="#">{{ O.Title }}</a>
+                        </figure>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+            <div class="row">
+                <div class="col-12 load-more">
+                    <a class="btn" href="#">Load More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Start -->
+
+{% endblock %}
+
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/slick/slick.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+{% endblock %}
