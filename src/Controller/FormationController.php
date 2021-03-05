@@ -57,10 +57,11 @@ class FormationController extends AbstractController
           'required' => true,
           'attr' => array('class' => 'form-control')
         ))
-             ->add('Date', DateType::class, array(
+         ->add('Date', DateType::class, array(
                 'label' => 'Date',
-                  'required' => true
-                 
+                  'required' => true,
+                  'attr' => array('class' => 'form-control')
+
          ))
          ->add('Lieu', TextareaType::class, array(
             'label' => 'Lieu',
