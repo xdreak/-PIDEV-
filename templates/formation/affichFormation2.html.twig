@@ -1,0 +1,15 @@
+{% extends 'front.html.twig' %}
+
+
+{% block body %}
+ <center><h1>{{ formation.Titre }}</h1>
+  <h3>à {{ formation.Lieu }}</h3>
+  <h3>Le {{formation.Date |date('Y-m-d')   }}</h3>
+  <h3>Objectif :{{ formation.Description }}</h3>
+  <a href="/formation1/{{ formation.Titre }}" class="btn btn-dark">S'inscrire</a>
+  
+  </center>
+ <hr>
+ <a href="/formationFront/">Go Back</a>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -4,7 +4,7 @@ namespace App\Entity;
 
 use App\Repository\FormationRepository;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=FormationRepository::class)
  */
@@ -19,16 +19,19 @@ class Formation
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ASSERT\NotBlank(message="Titre is required")
      */
     private $Titre;
 
     /**
      * @ORM\Column(type="date")
+     * @ASSERT\NotBlank(message="Date is required")
      */
     private $Date;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ASSERT\NotBlank(message="Lieu is required")
      */
     private $Lieu;
 
@@ -39,6 +42,7 @@ class Formation
 
     /**
      * @ORM\Column(type="integer")
+     * @ASSERT\NotBlank(message="Prix is required")
      */
     private $Prix;
 

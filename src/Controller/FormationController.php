@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Formation;
+use App\Entity\Abonnment;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -174,6 +175,35 @@ class FormationController extends AbstractController
       $Formation = $this->getDoctrine()->getRepository(Formation::class)->find($id);
 
       return $this->render('formation/affichFormation.html.twig', array('formation' => $Formation));
+    }
+
+/**
+     * @Route("/formation1/{titre}")
+     */
+    public function inscrire($titre) {
+      $entityManager = $this->getDoctrine()->getManager();
+
+      $abonnement = new Abonnment();
+      $abonnement->setNomUser('Jihen');
+      $abonnement->setTitreFormation($titre);
+      $abonnement->setStatue('paiment en cour');
+
+     
+      $entityManager->persist($abonnement);
+
+      
+      $entityManager->flush();
+
+      return $this->redirectToRoute('formationFront');
+    }
+
+    /**
+     * @Route("Frontend/formation/{id}", name="formation_show")
+     */
+    public function show2($id) {
+      $Formation = $this->getDoctrine()->getRepository(Formation::class)->find($id);
+
+      return $this->render('formation/affichFormation2.html.twig', array('formation' => $Formation));
     }
 
 
