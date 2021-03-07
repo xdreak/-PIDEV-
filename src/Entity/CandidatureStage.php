@@ -9,6 +9,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 
 
+
 /**
  * @ORM\Entity(repositoryClass=CandidatureStageRepository::class)
  */
@@ -18,33 +19,40 @@ class CandidatureStage
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     *
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $Nom;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
      */
     private $Prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\Email
+     * @Assert\NotBlank
      */
     private $Email;
 
     /**
      * @ORM\Column(type="integer")
      * @Assert\Positive
+     * @Assert\NotBlank
+     *
      */
     private $Age;
 
     /**
      * @ORM\ManyToOne(targetEntity=OffreStage::class, inversedBy="relation")
+     * @Assert\NotBlank
      */
     private $id_stage;
 

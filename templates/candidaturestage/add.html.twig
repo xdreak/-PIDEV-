@@ -22,6 +22,32 @@
             </tr>
         {% endfor %}
     </table>
-    <br>{{ form(form) }}
+    <br>
+    <table>
+
+        {{ form_start(form,{attr : {'novalidate' : 'novalidate'}}) }}
+        <tr>
+        <td>{{ form_label(form.Nom,"Nom") }}</td>
+            <td> {{ form_widget(form.Nom) }}</td>
+        </tr>
+        <tr>
+            <td> {{ form_label(form.Prenom,"Prenom") }}</td>
+            <td>{{ form_widget(form.Prenom) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.Email,"Email") }}</td>
+            <td>{{ form_widget(form.Email) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.Age,"Age") }}</td>
+            <td> {{ form_widget(form.Age) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.id_stage,"idStage") }}</td>
+            <td>{{ form_widget(form.id_stage) }}</td>
+        </tr>
+    </table>
+    {{ form_end(form) }}
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock %}

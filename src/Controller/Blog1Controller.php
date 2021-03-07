@@ -144,6 +144,7 @@ class Blog1Controller extends AbstractController
 
     }
 
+
     /**
      * @param OffreStageRepository $Repository
      * @return Response
@@ -163,6 +164,8 @@ class Blog1Controller extends AbstractController
      */
     public function addoffre(Request $Request)
     {
+
+
         $OffreStage = new OffreStage();
         $form = $this->createForm(OffreStageType::class, $OffreStage);
         $form->add('Ajouter', SubmitType::class);

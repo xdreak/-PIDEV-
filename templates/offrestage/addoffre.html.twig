@@ -9,7 +9,25 @@
     </style>
     <div class="panel-title">Nouveau Stage :</div>
     <div class="form-panel">
-       {{ form(form) }}
+        <table>
+
+            {{ form_start(form,{'attr':{'no validate': 'novalidate'}}) }}
+            <tr>
+                <td>{{ form_label(form.NomEntreprise,"NomEntreprise") }}</td>
+                <td> {{ form_widget(form.NomEntreprise) }}</td>
+            </tr>
+            <tr>
+                <td> {{ form_label(form.Description,"Description") }}</td>
+                <td>{{ form_widget(form.Description) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.stage_id,"stage_id") }}</td>
+                <td>{{ form_widget(form.stage_id) }}</td>
+            </tr>
+
+
+        </table>
+        {{ form_end(form) }}
     </div>
     <br>
 
