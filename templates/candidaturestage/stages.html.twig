@@ -8,6 +8,7 @@
             <th>Id</th>
             <th>Nom Entreprise</th>
             <th>Description</th>
+            <th>Stage</th>
             <th>Postuler</th>
 
         </tr>
@@ -15,8 +16,10 @@
             <tr>
                 <td>{{ c.id }}</td>
                 <td>{{ c.NomEntreprise }}</td>
-                <td>{{ c.DescriptionStage }}</td>
-                <td><a href="{{ path('add')}}">Postuler</a></td>
+                <td>{{ c.Description }}</td>
+                <td>{{ c.StageId }}</td>
+                <td><a href="{{ path('add',{'id':c.id})}}">Postuler</a></td>
+
 
 
 

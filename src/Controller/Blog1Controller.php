@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\CandidatureStageRepository;
+use App\Repository\QuizRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,6 +15,7 @@ use App\Entity\CandidatureStage;
 use App\Entity\OffreStage;
 use App\Form\OffreStageType;
 use App\Repository\OffreStageRepository;
+use App\Controller\QuizController;
 
 
 
@@ -54,6 +56,8 @@ class Blog1Controller extends AbstractController
         return $this->render('candidaturestage/stages.html.twig', [
             'OffreStage' => $OffreStage]);
     }
+
+
     /**
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Route ("/Quiz/" , name="Quiz")
@@ -65,18 +69,16 @@ class Blog1Controller extends AbstractController
     }
 
     /**
-     * @param CandidatureStage $Repository
-     * @param Request $Request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
-     * @Route ("/add", name="add")
+     * @Route ("/add/{id}", name="add")
      */
 
 
-    public function add(Request $Request,OffreStageRepository $Repository)
+    public function add(Request $Request, OffreStageRepository $Repository, $id)
     {
-        $OffreStage = $Repository->findall();
+        //$OffreStage = $Repository->findall();
         $CandidatureStage = new CandidatureStage();
-
+        $OffreStage = $Repository->find($id);
+        $CandidatureStage->setIdStage($OffreStage);
 
 
 
@@ -156,6 +158,20 @@ class Blog1Controller extends AbstractController
         return $this->render('offrestage/listoffre.html.twig', [
             'OffreStage' => $OffreStage]);
     }
+
+    /*
+    /**
+     * @return Response
+     * @route ("/add/part",name="candidature_form")
+     */
+    /*
+    public function candidature():Response
+    {
+        return $this->render('candidaturestage/add.html.twig',[
+            'controller_name' => 'blog1controller',
+    ]);
+    }
+    */
 
     /**
      * @param Request $Request

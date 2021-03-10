@@ -11,18 +11,22 @@
     <div class="form-panel">
         <table>
 
-            {{ form_start(form,{'attr':{'no validate': 'novalidate'}}) }}
+            {{ form_start(form,{attr : {'novalidate' : 'novalidate'}}) }}
             <tr>
                 <td>{{ form_label(form.NomEntreprise,"NomEntreprise") }}</td>
                 <td> {{ form_widget(form.NomEntreprise) }}</td>
+            <tr><td> {{ form_errors(form.NomEntreprise) }}</td></tr>
+
             </tr>
             <tr>
                 <td> {{ form_label(form.Description,"Description") }}</td>
                 <td>{{ form_widget(form.Description) }}</td>
+            <tr><td> {{ form_errors(form.Description) }}</td></tr>
             </tr>
             <tr>
                 <td>{{ form_label(form.stage_id,"stage_id") }}</td>
                 <td>{{ form_widget(form.stage_id) }}</td>
+            <tr><td> {{ form_errors(form.stage_id) }}</td></tr>
             </tr>
 
 

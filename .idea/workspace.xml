@@ -16,18 +16,27 @@
         <item name="GROUP_NODE:PIDEV" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:PIDEV1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="03/03/2021&#10;20:26">
+    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="07/03/2021&#10;19:02">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210303102709.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210303103555.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CandidatureStage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CandidatureStage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/OffreStage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/OffreStage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/CandidatureStageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/CandidatureStageType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/candidaturestage/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/add.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/list.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/quiz.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/quiz.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/stages.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/stages.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/update.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/update.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/offrestage/addoffre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offrestage/addoffre.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +217,12 @@
       <workItem from="1615132478435" duration="53000" />
       <workItem from="1615133424301" duration="51000" />
       <workItem from="1615136183688" duration="955000" />
-      <workItem from="1615137877766" duration="1934000" />
+      <workItem from="1615137877766" duration="2303000" />
+      <workItem from="1615206253390" duration="4742000" />
+      <workItem from="1615283441577" duration="1891000" />
+      <workItem from="1615289846451" duration="3193000" />
+      <workItem from="1615296254873" duration="17245000" />
+      <workItem from="1615366183881" duration="1590000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1614634438857</created>
@@ -287,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614799626028</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="07/03/2021&#10;19:01">
+      <created>1615140145112</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1615140145112</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +337,8 @@
     <MESSAGE value="03/03/2021&#10;3:56" />
     <MESSAGE value="03/03/2021&#10;20:25" />
     <MESSAGE value="03/03/2021&#10;20:26" />
-    <option name="LAST_COMMIT_MESSAGE" value="03/03/2021&#10;20:26" />
+    <MESSAGE value="07/03/2021&#10;19:01" />
+    <option name="LAST_COMMIT_MESSAGE" value="07/03/2021&#10;19:01" />
   </component>
   <component name="WindowStateProjectService">
     <state x="646" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614766994865">
@@ -327,10 +349,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1614767658460" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614447674177">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615318840379">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1614447674177" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1615318840379" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1614675846898">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -339,28 +361,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1614765568268" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1614799692410">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1615140170374">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614799692410" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1614937833738">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1615140170374" />
+    <state x="550" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1615140217178">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1614937833738" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1614695075312">
+    <state x="550" y="125" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1615140217178" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1615315231784">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1614695075312" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/templates/offrestage/addoffre.html.twig</url>
-          <line>34</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1615315231784" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1615206585278">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1615206585278" />
   </component>
 </project>
