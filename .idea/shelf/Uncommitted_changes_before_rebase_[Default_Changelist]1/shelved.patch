@@ -1,0 +1,410 @@
+Index: src/Entity/CandidatureStage.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Entity;\r\n\r\nuse Symfony\\Component\\Validator\\Constraints as Assert;\r\nuse App\\Repository\\CandidatureStageRepository;\r\nuse Doctrine\\ORM\\Mapping as ORM;\r\nuse Doctrine\\Common\\Collections\\ArrayCollection;\r\nuse Doctrine\\Common\\Collections\\Collection;\r\n\r\n\r\n/**\r\n * @ORM\\Entity(repositoryClass=CandidatureStageRepository::class)\r\n */\r\nclass CandidatureStage\r\n{\r\n    /**\r\n     * @ORM\\Id\r\n     * @ORM\\GeneratedValue\r\n     * @ORM\\Column(type=\"integer\")\r\n     */\r\n    private $id;\r\n\r\n    /**\r\n     * @ORM\\Column(type=\"string\", length=255)\r\n     */\r\n    private $Nom;\r\n\r\n    /**\r\n     * @ORM\\Column(type=\"string\", length=255)\r\n     */\r\n    private $Prenom;\r\n\r\n    /**\r\n     * @ORM\\Column(type=\"string\", length=255)\r\n     * @Assert\\Email\r\n     */\r\n    private $Email;\r\n\r\n    /**\r\n     * @ORM\\Column(type=\"integer\")\r\n     * @Assert\\Positive\r\n     */\r\n    private $Age;\r\n\r\n    /**\r\n     * @ORM\\ManyToOne(targetEntity=OffreStage::class, inversedBy=\"relation\")\r\n     */\r\n    private $id_stage;\r\n\r\n    public function getId(): ?int\r\n    {\r\n        return $this->id;\r\n    }\r\n\r\n    public function getNom(): ?string\r\n    {\r\n        return $this->Nom;\r\n    }\r\n\r\n    public function setNom(string $Nom): self\r\n    {\r\n        $this->Nom = $Nom;\r\n\r\n        return $this;\r\n    }\r\n\r\n    public function getPrenom(): ?string\r\n    {\r\n        return $this->Prenom;\r\n    }\r\n\r\n    public function setPrenom(string $Prenom): self\r\n    {\r\n        $this->Prenom = $Prenom;\r\n\r\n        return $this;\r\n    }\r\n\r\n    public function getEmail(): ?string\r\n    {\r\n        return $this->Email;\r\n    }\r\n\r\n    public function setEmail(string $Email): self\r\n    {\r\n        $this->Email = $Email;\r\n\r\n        return $this;\r\n    }\r\n\r\n    public function getAge(): ?int\r\n    {\r\n        return $this->Age;\r\n    }\r\n\r\n    public function setAge(int $Age): self\r\n    {\r\n        $this->Age = $Age;\r\n\r\n        return $this;\r\n    }\r\n\r\n    public function getIdStage(): ?OffreStage\r\n    {\r\n        return $this->id_stage;\r\n    }\r\n\r\n    public function setIdStage(?OffreStage $id_stage): self\r\n    {\r\n        $this->id_stage = $id_stage;\r\n\r\n        return $this;\r\n    }\r\n    public function __toString()\r\n    {\r\n        return (string) $this->id_stage;\r\n    }\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Entity/CandidatureStage.php	(revision babaf78abbdc2700aae14cab73659ca78103820b)
++++ src/Entity/CandidatureStage.php	(date 1615140067147)
+@@ -9,6 +9,7 @@
+ use Doctrine\Common\Collections\Collection;
+ 
+ 
++
+ /**
+  * @ORM\Entity(repositoryClass=CandidatureStageRepository::class)
+  */
+@@ -18,33 +19,40 @@
+      * @ORM\Id
+      * @ORM\GeneratedValue
+      * @ORM\Column(type="integer")
++     *
+      */
+     private $id;
+ 
+     /**
+      * @ORM\Column(type="string", length=255)
++     * @Assert\NotBlank
+      */
+     private $Nom;
+ 
+     /**
+      * @ORM\Column(type="string", length=255)
++     * @Assert\NotBlank
+      */
+     private $Prenom;
+ 
+     /**
+      * @ORM\Column(type="string", length=255)
+      * @Assert\Email
++     * @Assert\NotBlank
+      */
+     private $Email;
+ 
+     /**
+      * @ORM\Column(type="integer")
+      * @Assert\Positive
++     * @Assert\NotBlank
++     *
+      */
+     private $Age;
+ 
+     /**
+      * @ORM\ManyToOne(targetEntity=OffreStage::class, inversedBy="relation")
++     * @Assert\NotBlank
+      */
+     private $id_stage;
+ 
+Index: templates/offrestage/listoffre.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\r\n\r\n{% block title %}Hello ProfileController!{% endblock %}\r\n\r\n{% block body %}\r\n    <style>\r\n        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }\r\n        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }\r\n    </style>\r\n\r\n    <div class=\"example-wrapper\">\r\n        <!doctype html>\r\n        <html lang=\"en\">\r\n        <head>\r\n            <meta charset=\"UTF-8\">\r\n            <meta name=\"viewport\"\r\n                  content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n            <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n            <title>Document</title>\r\n        </head>\r\n        <body>\r\n        <div class=h2>Offres de Stages :</div>\r\n        <br>\r\n        <table class=\"table-condensed\" border=\"1\">\r\n            <tr>\r\n                <th>Id</th>\r\n                <th>Nom Entreprise</th>\r\n                <th>Description</th>\r\n                <th>ID</th>\r\n                <th>Modifier</th>\r\n                <th>Supprimer</th>\r\n            </tr>\r\n            {% for c in OffreStage %}\r\n                <tr>\r\n                    <td>{{ c.id }}</td>\r\n                    <td>{{ c.NomEntreprise }}</td>\r\n                    <td>{{ c.Description }}</td>\r\n                    <td>{{ c.StageId }}</td>\r\n                    <td><a href=\"{{ path('updateoffre',{'id':c.id}) }}\">Modifier</a></td>\r\n                    <td><a href=\"{{ path('deleteoffre',{'id':c.id}) }}\">Supprimer</a></td>\r\n\r\n\r\n                </tr>\r\n            {% endfor %}\r\n        </table>\r\n        </body>\r\n        </html>\r\n    </div>\r\n    <br>\r\n    <a href=\"addoffre\" class=\"btn-danger\"><i></i>Retour</a>\r\n    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\r\n{% endblock %}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/offrestage/listoffre.html.twig	(revision babaf78abbdc2700aae14cab73659ca78103820b)
++++ templates/offrestage/listoffre.html.twig	(date 1615140067167)
+@@ -21,6 +21,7 @@
+         <body>
+         <div class=h2>Offres de Stages :</div>
+         <br>
++        <div class="form-panel">
+         <table class="table-condensed" border="1">
+             <tr>
+                 <th>Id</th>
+@@ -43,9 +44,9 @@
+                 </tr>
+             {% endfor %}
+         </table>
+-        </body>
+-        </html>
+-    </div>
++        </div>
++        </body>
++
+     <br>
+     <a href="addoffre" class="btn-danger"><i></i>Retour</a>
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+Index: src/Controller/Blog1Controller.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?php\r\n\r\nnamespace App\\Controller;\r\n\r\nuse App\\Repository\\CandidatureStageRepository;\r\nuse Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController;\r\nuse Symfony\\Component\\HttpFoundation\\Response;\r\nuse Symfony\\Component\\Routing\\Annotation\\Route;\r\nuse Symfony\\Component\\HttpFoundation\\Request;\r\nuse App\\Form\\CandidatureStageType;\r\nuse Symfony\\Component\\Form\\Extension\\Core\\Type\\SubmitType;\r\nuse phpDocumentor\\Reflection\\Type;\r\nuse App\\Entity\\CandidatureStage;\r\nuse App\\Entity\\OffreStage;\r\nuse App\\Form\\OffreStageType;\r\nuse App\\Repository\\OffreStageRepository;\r\n\r\n\r\n\r\nclass Blog1Controller extends AbstractController\r\n{\r\n    /**\r\n     * @Route(\"/Blog1\", name=\"Blog1\")\r\n     */\r\n    public function index(): Response\r\n    {\r\n        return $this->render('base.html.twig', [\r\n            'controller_name' => 'Blog1Controller',\r\n        ]);\r\n\r\n    }\r\n\r\n\r\n    /**\r\n     * @param CandidatureStageRepository $Repository\r\n     * @return Response\r\n     * @Route (\"/list\", name=\"list\")\r\n     */\r\n    public function list(CandidatureStageRepository $Repository)\r\n    {\r\n        $CandidatureStage = $Repository->findall();\r\n        return $this->render('candidaturestage/list.html.twig', [\r\n            'CandidatureStage' => $CandidatureStage]);\r\n    }\r\n\r\n    /**\r\n     * @param CandidatureStageRepository $Repository\r\n     * @return \\Symfony\\Component\\HttpFoundation\\RedirectResponse\r\n     * @Route (\"/liststages/\" , name=\"liststages\")\r\n     */\r\n    public function liststages(OffreStageRepository $Repository)\r\n    {\r\n        $OffreStage = $Repository->findall();\r\n        return $this->render('candidaturestage/stages.html.twig', [\r\n            'OffreStage' => $OffreStage]);\r\n    }\r\n    /**\r\n     * @return \\Symfony\\Component\\HttpFoundation\\RedirectResponse\r\n     * @Route (\"/Quiz/\" , name=\"Quiz\")\r\n     */\r\n    public function Quiz()\r\n    {\r\n        return $this->render('candidaturestage/Quiz.html.twig');\r\n\r\n    }\r\n\r\n    /**\r\n     * @param CandidatureStage $Repository\r\n     * @param Request $Request\r\n     * @return \\Symfony\\Component\\HttpFoundation\\RedirectResponse|Response\r\n     * @Route (\"/add\", name=\"add\")\r\n     */\r\n\r\n\r\n    public function add(Request $Request,OffreStageRepository $Repository)\r\n    {\r\n        $OffreStage = $Repository->findall();\r\n        $CandidatureStage = new CandidatureStage();\r\n\r\n\r\n\r\n\r\n\r\n        $form = $this->createForm(CandidatureStageType::class, $CandidatureStage);\r\n        $form->add('Ajouter', SubmitType::class);\r\n        $form->handleRequest($Request);\r\n\r\n\r\n\r\n        if ($form->isSubmitted() && $form->isValid()) {\r\n\r\n\r\n            $em = $this->getDoctrine()->getManager();\r\n            $em->persist($CandidatureStage);\r\n            $em->flush();\r\n            return $this->redirectToRoute('list');\r\n\r\n        }\r\n        return $this->render('candidaturestage/add.html.twig',\r\n            [\r\n                'form' => $form->createView(),\r\n\r\n            'OffreStage' => $OffreStage]);\r\n    }\r\n\r\n\r\n    /**\r\n     * @param CandidatureStageRepository $Repository\r\n     * @param CandidatureStageRepository $em\r\n     * @param $id\r\n     * @param Request $Request\r\n     * @return \\Symfony\\Component\\HttpFoundation\\RedirectResponse|Response\r\n     * @Route (\"/update/{id}\", name=\"update\")\r\n     */\r\n    public function update(CandidatureStageRepository $Repository, CandidatureStageRepository $em, $id, Request $Request)\r\n    {\r\n        $CandidatureStage = $em->find($id);\r\n        $form = $this->createForm(CandidatureStageType::class, $CandidatureStage);\r\n        $form->add('update', SubmitType::class);\r\n        $form->handleRequest($Request);\r\n        if ($form->isSubmitted() && $form->isValid()) {\r\n            $em = $this->getDoctrine()->getManager();\r\n            $em->flush();\r\n            return $this->redirectToRoute('list');\r\n        }\r\n        return $this->render('candidaturestage/update.html.twig',\r\n            ['form' => $form->createView()]);\r\n\r\n    }\r\n    /**\r\n     * @param CandidatureStageRepository $Repository\r\n     * @param $id\r\n     * @return \\Symfony\\Component\\HttpFoundation\\RedirectResponse\r\n     * @Route (\"/delete/{id}\" , name=\"delete\")\r\n     */\r\n    public function delete(CandidatureStageRepository $Repository, $id)\r\n    {\r\n        $CandidatureStage = $Repository->find($id);\r\n        $em = $this->getDoctrine()->getManager();\r\n        $em->remove($CandidatureStage);\r\n        $em->flush();\r\n        return $this->redirectToRoute('list');\r\n\r\n\r\n    }\r\n\r\n    /**\r\n     * @param OffreStageRepository $Repository\r\n     * @return Response\r\n     * @Route (\"/listoffre\", name=\"listoffre\")\r\n     */\r\n    public function listoffre(OffreStageRepository $Repository)\r\n    {\r\n        $OffreStage = $Repository->findall();\r\n        return $this->render('offrestage/listoffre.html.twig', [\r\n            'OffreStage' => $OffreStage]);\r\n    }\r\n\r\n    /**\r\n     * @param Request $Request\r\n     * @return \\Symfony\\Component\\HttpFoundation\\RedirectResponse|Response\r\n     * @Route (\"/addoffre\", name=\"addoffre\")\r\n     */\r\n    public function addoffre(Request $Request)\r\n    {\r\n        $OffreStage = new OffreStage();\r\n        $form = $this->createForm(OffreStageType::class, $OffreStage);\r\n        $form->add('Ajouter', SubmitType::class);\r\n        $form->handleRequest($Request);\r\n        if ($form->isSubmitted() && $form->isValid()) {\r\n            $em = $this->getDoctrine()->getManager();\r\n            $em->persist($OffreStage);\r\n            $em->flush();\r\n            return $this->redirectToRoute('listoffre');\r\n        }\r\n        return $this->render('offrestage/addoffre.html.twig',\r\n            ['form' => $form->createView()]);\r\n    }\r\n\r\n    /**\r\n     * @param OffreStageRepository $Repository\r\n     * @param OffreStageRepository $em\r\n     * @param $id\r\n     * @param Request $Request\r\n     * @return \\Symfony\\Component\\HttpFoundation\\RedirectResponse|Response\r\n     * @Route (\"/updateoffre/{id}\", name=\"updateoffre\")\r\n     */\r\n    public function updateoffre(OffreStageRepository $Repository,OffreStageRepository $em, $id,Request $Request)\r\n    {\r\n        $OffreStage = $em->find($id);\r\n        $form = $this->createForm(OffreStageType::class, $OffreStage);\r\n        $form->add('Modifier', SubmitType::class);\r\n        $form->handleRequest($Request);\r\n        if ($form->isSubmitted() && $form->isValid()) {\r\n            $em = $this->getDoctrine()->getManager();\r\n            $em->flush();\r\n            return $this->redirectToRoute('listoffre');\r\n        }\r\n        return $this->render('offrestage/updateoffre.html.twig',\r\n            ['form' => $form->createView()]);\r\n\r\n    }\r\n\r\n    /**\r\n     * @param OffreStageRepository $Repository\r\n     * @param $id\r\n     * @return \\Symfony\\Component\\HttpFoundation\\RedirectResponse\r\n     * @Route (\"/deleteoffre/{id}\" , name=\"deleteoffre\")\r\n     */\r\n    public function deleteoffre(OffreStageRepository $Repository, $id)\r\n    {\r\n        $OffreStage = $Repository->find($id);\r\n        $em = $this->getDoctrine()->getManager();\r\n        $em->remove($OffreStage);\r\n        $em->flush();\r\n        return $this->redirectToRoute('listoffre');\r\n\r\n\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Controller/Blog1Controller.php	(revision babaf78abbdc2700aae14cab73659ca78103820b)
++++ src/Controller/Blog1Controller.php	(date 1615140067176)
+@@ -144,6 +144,7 @@
+ 
+     }
+ 
++
+     /**
+      * @param OffreStageRepository $Repository
+      * @return Response
+@@ -163,6 +164,8 @@
+      */
+     public function addoffre(Request $Request)
+     {
++
++
+         $OffreStage = new OffreStage();
+         $form = $this->createForm(OffreStageType::class, $OffreStage);
+         $form->add('Ajouter', SubmitType::class);
+Index: templates/candidaturestage/list.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'front.html.twig' %}\r\n{% block href %}href=\"inscription\"{% endblock %}\r\n{% block body %}\r\n    <br>\r\n    <!doctype html>\r\n    <html lang=\"en\">\r\n    <head>\r\n        <meta charset=\"UTF-8\">\r\n        <meta name=\"viewport\"\r\n              content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n        <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n        <title>Document</title>\r\n    </head>\r\n    <body>\r\n    <table border=\"1\">\r\n        <tr>\r\n            <th>Id</th>\r\n            <th>Nom</th>\r\n            <th>Prénom</th>\r\n            <th>Email</th>\r\n            <th>Age</th>\r\n            <th>IdStage</th>\r\n            <th>Modifier</th>\r\n            <th>Annuler</th>\r\n        </tr>\r\n        {% for c in CandidatureStage %}\r\n            <tr>\r\n                <td>{{ c.id }}</td>\r\n                <td>{{ c.nom }}</td>\r\n                <td>{{ c.prenom }}</td>\r\n                <td>{{ c.email }}</td>\r\n                <td>{{ c.age }}</td>\r\n                <td>{{ c.IdStage }}</td>\r\n\r\n\r\n                <td><a href=\"{{ path('update',{'id':c.id}) }}\">Modifier</a></td>\r\n                <td><a href=\"{{ path('delete',{'id':c.id}) }}\">Annuler</a></td>\r\n\r\n\r\n            </tr>\r\n        {% endfor %}\r\n    </table>\r\n    </body>\r\n    </html>\r\n    <br>\r\n    <a href=\"add\" class=\"btn-danger\"><i ></i>Retour</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\r\n{% endblock %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/candidaturestage/list.html.twig	(revision babaf78abbdc2700aae14cab73659ca78103820b)
++++ templates/candidaturestage/list.html.twig	(date 1615140067200)
+@@ -12,6 +12,7 @@
+         <title>Document</title>
+     </head>
+     <body>
++    <div class="table-striped">
+     <table border="1">
+         <tr>
+             <th>Id</th>
+@@ -40,6 +41,7 @@
+             </tr>
+         {% endfor %}
+     </table>
++    </div>
+     </body>
+     </html>
+     <br>
+Index: templates/candidaturestage/quiz.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'front.html.twig' %}\r\n{% block href %}href=\"inscription\"{% endblock %}\r\n{% block body %}\r\n    <body>\r\n    <h2 class=\"quizHeader\">Veuillez repondre a ces questions:</h2>\r\n\r\n    <table style=\"width:583px\">\r\n        <tr>\r\n            <td>\r\n                <div>\r\n                    <p class=\"question\">1. Question 1</p>\r\n\r\n                    <ul>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q1\" value=\"1\">\r\n                        <label id=\"correctString1\">Proposition Correcte 1</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q1\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q1\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q1\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                    </ul>\r\n                </div>\r\n            </td>\r\n            <td>\r\n                <div>\r\n                    <p class=\"question\">2. Question 2</p>\r\n\r\n                    <ul>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q2\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q2\" value=\"1\">\r\n                        <label id=\"correctString2\">Proposition Correcte 2</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q2\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q2\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                    </ul>\r\n                </div>\r\n            </td>\r\n        </tr>\r\n        <tr>\r\n            <td>\r\n                <div>\r\n                    <p class=\"question\">3. Question 3</p>\r\n\r\n                    <ul>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q3\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q3\" value=\"1\">\r\n                        <label id=\"correctString3\">Proposition Correcte 3</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q3\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q3\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                    </ul>\r\n                </div>\r\n            </td>\r\n            <td>\r\n                <div>\r\n                    <p class=\"question\">4. Question 4</p>\r\n\r\n                    <ul>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q4\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q4\" value=\"1\">\r\n                        <label id=\"correctString4\">Proposition Correcte 4</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q4\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                        <br>\r\n                        <input class=\"answer\" type=\"radio\" name=\"q4\" value=\"0\">\r\n                        <label>Proposition Fausse</label>\r\n                    </ul>\r\n                </div>\r\n            </td>\r\n        </tr>\r\n    </table>\r\n    <br/>\r\n    <div class=\"submitter\">\r\n        <input class=\"quizSubmit\" id=\"submitButton\" onClick=\"submitQuiz()\"\r\n               type=\"submit\" value=\"Submit\" />\r\n    </div>\r\n\r\n    <!--show only Proposition Fausses on submit-->\r\n    <div class=\"quizAnswers\" id=\"correctAnswer1\"></div>\r\n    <div class=\"quizAnswers\" id=\"correctAnswer2\"></div>\r\n    <div class=\"quizAnswers\" id=\"correctAnswer3\"></div>\r\n    <div class=\"quizAnswers\" id=\"correctAnswer4\"></div>\r\n\r\n    <!--show score upon submit-->\r\n    <div>\r\n        <h2 class=\"quizScore\" id=\"userScore\"></h2>\r\n    </div>\r\n    </div>\r\n    </body>\r\n    <script>\r\n        // scripts here:\r\n\r\n        function submitQuiz() {\r\n            console.log('submitted');\r\n\r\n            // get each answer score\r\n            function answerScore (qName) {\r\n                var radiosNo = document.getElementsByName(qName);\r\n\r\n                for (var i = 0, length = radiosNo.length; i < length; i++) {\r\n                    if (radiosNo[i].checked) {\r\n                        // do something with radiosNo\r\n                        var answerValue = Number(radiosNo[i].value);\r\n                    }\r\n                }\r\n                // change NaNs to zero\r\n                if (isNaN(answerValue)) {\r\n                    answerValue = 0;\r\n                }\r\n                return answerValue;\r\n            }\r\n\r\n            // calc score with answerScore function\r\n            var calcScore = (answerScore('q1') + answerScore('q2') + answerScore('q3') + answerScore('q4'));\r\n            console.log(\"CalcScore: \" + calcScore); // it works!\r\n\r\n            // function to return Proposition Correcte string\r\n            function correctAnswer (correctStringNo, qNumber) {\r\n                console.log(\"qNumber: \" + qNumber);  // logs 1,2,3,4 after called below\r\n                return (\"The Proposition Correcte for question #\" + qNumber + \": &nbsp;<strong>\" +\r\n                    (document.getElementById(correctStringNo).innerHTML) + \"</strong>\");\r\n            }\r\n            /*\r\n\r\n            // print Proposition Correctes only if wrong (calls correctAnswer function)\r\n            if (answerScore('q1') === 0) {\r\n                document.getElementById('correctAnswer1').innerHTML = correctAnswer('correctString1', 1);\r\n            }\r\n            if (answerScore('q2') === 0) {\r\n                document.getElementById('correctAnswer2').innerHTML = correctAnswer('correctString2', 2);\r\n            }\r\n            if (answerScore('q3') === 0) {\r\n                document.getElementById('correctAnswer3').innerHTML = correctAnswer('correctString3', 3);\r\n            }\r\n            if (answerScore('q4') === 0) {\r\n                document.getElementById('correctAnswer4').innerHTML = correctAnswer('correctString4', 4);\r\n            }\r\n\r\n             */\r\n\r\n            // calculate \"possible score\" integer\r\n            var questionCountArray = document.getElementsByClassName('question');\r\n\r\n            var questionCounter = 0;\r\n            for (var i = 0, length = questionCountArray.length; i < length; i++) {\r\n                questionCounter++;\r\n            }\r\n\r\n            // show score as \"score/possible score\"\r\n           // var showScore = \"Your Score: \" + calcScore +\"/\" + questionCounter;\r\n            var showScore = \"Success!\";\r\n\r\n            // if 4/4, \"perfect score!\"\r\n            if (calcScore >= questionCounter/2) {\r\n                window.location.href = \"http://127.0.0.1:8000/add/\";\r\n            }\r\n            else{\r\n                var showScore = \"Score < 50% Veuillez Réessayez\";\r\n            };\r\n\r\n            document.getElementById('userScore').innerHTML = showScore;\r\n        }\r\n\r\n        $(document).ready(function() {\r\n\r\n            $('#submitButton').click(function() {\r\n                $(this).addClass('hide');\r\n            });\r\n\r\n        });\r\n    </script>\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\r\n{% endblock %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/candidaturestage/quiz.html.twig	(revision babaf78abbdc2700aae14cab73659ca78103820b)
++++ templates/candidaturestage/quiz.html.twig	(date 1615140067231)
+@@ -8,39 +8,39 @@
+         <tr>
+             <td>
+                 <div>
+-                    <p class="question">1. Question 1</p>
++                    <p class="Question">1. Que'est-ce que Symfony?</p>
+ 
+                     <ul>
+                         <input class="answer" type="radio" name="q1" value="1">
+-                        <label id="correctString1">Proposition Correcte 1</label>
++                        <label id="correctString1">Un Framework</label>
+                         <br>
+                         <input class="answer" type="radio" name="q1" value="0">
+-                        <label>Proposition Fausse</label>
++                        <label>Un IDE</label>
+                         <br>
+                         <input class="answer" type="radio" name="q1" value="0">
+-                        <label>Proposition Fausse</label>
++                        <label>Un langage de programation</label>
+                         <br>
+                         <input class="answer" type="radio" name="q1" value="0">
+-                        <label>Proposition Fausse</label>
++                        <label>Un Logiciel</label>
+                     </ul>
+                 </div>
+             </td>
+             <td>
+                 <div>
+-                    <p class="question">2. Question 2</p>
++                    <p class="question">2. Que'est ce que le Composer?</p>
+ 
+                     <ul>
+                         <input class="answer" type="radio" name="q2" value="0">
+-                        <label>Proposition Fausse</label>
++                        <label>Un langage de programation</label>
+                         <br>
+                         <input class="answer" type="radio" name="q2" value="1">
+-                        <label id="correctString2">Proposition Correcte 2</label>
++                        <label id="correctString2">Un Logiciel</label>
+                         <br>
+                         <input class="answer" type="radio" name="q2" value="0">
+-                        <label>Proposition Fausse</label>
++                        <label>Un IDE</label>
+                         <br>
+                         <input class="answer" type="radio" name="q2" value="0">
+-                        <label>Proposition Fausse</label>
++                        <label>Un Framework</label>
+                     </ul>
+                 </div>
+             </td>
+@@ -48,7 +48,7 @@
+         <tr>
+             <td>
+                 <div>
+-                    <p class="question">3. Question 3</p>
++                    <p class="question">3. Qu'est-ce que</p>
+ 
+                     <ul>
+                         <input class="answer" type="radio" name="q3" value="0">
+@@ -67,7 +67,7 @@
+             </td>
+             <td>
+                 <div>
+-                    <p class="question">4. Question 4</p>
++                    <p class="question">4. Que'est-ce que?</p>
+ 
+                     <ul>
+                         <input class="answer" type="radio" name="q4" value="0">
+@@ -208,5 +208,7 @@
+ 
+ 
+ 
++
++
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ {% endblock %}
+\ No newline at end of file
+Index: templates/candidaturestage/add.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'front.html.twig' %}\r\n{% block href %}href=\"inscription\"{% endblock %}\r\n{% block body %}\r\n    <br>\r\n    <table border=\"1\">\r\n        <tr>\r\n            <th>Id</th>\r\n            <th>Nom Entreprise</th>\r\n            <th>Description</th>\r\n\r\n\r\n        </tr>\r\n        {% for c in OffreStage %}\r\n            <tr>\r\n                <td>{{ c.StageId }}</td>\r\n                <td>{{ c.NomEntreprise }}</td>\r\n                <td>{{ c.Description }}</td>\r\n\r\n\r\n\r\n\r\n            </tr>\r\n        {% endfor %}\r\n    </table>\r\n    <br>{{ form(form) }}\r\n    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\r\n{% endblock %}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/candidaturestage/add.html.twig	(revision babaf78abbdc2700aae14cab73659ca78103820b)
++++ templates/candidaturestage/add.html.twig	(date 1615140067255)
+@@ -22,6 +22,32 @@
+             </tr>
+         {% endfor %}
+     </table>
+-    <br>{{ form(form) }}
++    <br>
++    <table>
++
++        {{ form_start(form,{attr : {'novalidate' : 'novalidate'}}) }}
++        <tr>
++        <td>{{ form_label(form.Nom,"Nom") }}</td>
++            <td> {{ form_widget(form.Nom) }}</td>
++        </tr>
++        <tr>
++            <td> {{ form_label(form.Prenom,"Prenom") }}</td>
++            <td>{{ form_widget(form.Prenom) }}</td>
++        </tr>
++        <tr>
++            <td>{{ form_label(form.Email,"Email") }}</td>
++            <td>{{ form_widget(form.Email) }}</td>
++        </tr>
++        <tr>
++            <td>{{ form_label(form.Age,"Age") }}</td>
++            <td> {{ form_widget(form.Age) }}</td>
++        </tr>
++        <tr>
++            <td>{{ form_label(form.id_stage,"idStage") }}</td>
++            <td>{{ form_widget(form.id_stage) }}</td>
++        </tr>
++    </table>
++    {{ form_end(form) }}
++
+     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ {% endblock %}
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:PIDEV\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"49a1382b-45a9-4926-bbca-c9ff77205aaa\" name=\"Default Changelist\" comment=\"03/03/2021&#10;20:25\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\" doNotAsk=\"true\" synchronizationState=\"SYNCHRONIZE\">\r\n    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>\r\n    <execution />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"PhpWorkspaceProjectConfiguration\">\r\n    <include_path>\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/type-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/phpdocumentor/reflection-common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/monolog/monolog\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/composer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/egulias/email-validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/link\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/webmozart/assert\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/container\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/log\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/psr/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/twig\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/twig/extra-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laminas/laminas-eventmanager\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/laminas/laminas-code\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/browser-kit\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dom-crawler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/css-selector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/form\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-exporter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-guard\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/yaml\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/debug\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/options-resolver\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/framework-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/expression-language\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-foundation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-http\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mailer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/validator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-access\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dotenv\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/dependency-injection\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/process\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/doctrine-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/deprecation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/console\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-mbstring\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/phpunit-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-link\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/twig-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/mime\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php73\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/monolog-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/service-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-csrf\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/translation\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php72\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/error-handler\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/asset\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/routing\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/config\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/stopwatch\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-client\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/property-info\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-php80\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/cache-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/monolog-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/flex\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/finder\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/http-kernel\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/cache\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-profiler-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/sql-formatter\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/filesystem\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/inflector\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/security-core\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/var-dumper\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/event-manager\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/intl\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/doctrine-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/proxy-manager-bridge\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/lexer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/serializer\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/collections\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/maker-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/annotations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/polyfill-intl-icu\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/instantiator\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/debug-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/common\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/migrations\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/orm\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/dbal\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/nikic/php-parser\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/doctrine/persistence\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/sensio/framework-extra-bundle\" />\r\n      <path value=\"$PROJECT_DIR$/vendor/symfony/web-server-bundle\" />\r\n    </include_path>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1ozb4qdreJvdFaJJaULc6OFIlVy\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$USER_HOME$/Desktop/-PIDEV--master\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\wamp64\\www\\PIDEV\\templates\\offrestage\" />\r\n      <recent name=\"C:\\wamp64\\www\\PIDEV\\templates\\candidaturestage\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"49a1382b-45a9-4926-bbca-c9ff77205aaa\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1614292177911</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1614292177911</updated>\r\n      <workItem from=\"1614292179543\" duration=\"2013000\" />\r\n      <workItem from=\"1614296171908\" duration=\"3359000\" />\r\n      <workItem from=\"1614343866124\" duration=\"6134000\" />\r\n      <workItem from=\"1614431650421\" duration=\"785000\" />\r\n      <workItem from=\"1614432805580\" duration=\"3703000\" />\r\n      <workItem from=\"1614440097660\" duration=\"1285000\" />\r\n      <workItem from=\"1614441563569\" duration=\"1232000\" />\r\n      <workItem from=\"1614445486170\" duration=\"2015000\" />\r\n      <workItem from=\"1614447620755\" duration=\"2383000\" />\r\n      <workItem from=\"1614515958612\" duration=\"1426000\" />\r\n      <workItem from=\"1614523193345\" duration=\"945000\" />\r\n      <workItem from=\"1614633077380\" duration=\"1767000\" />\r\n      <workItem from=\"1614635660324\" duration=\"1082000\" />\r\n      <workItem from=\"1614636811271\" duration=\"149000\" />\r\n      <workItem from=\"1614675649529\" duration=\"244000\" />\r\n      <workItem from=\"1614676896042\" duration=\"4268000\" />\r\n      <workItem from=\"1614681212147\" duration=\"171000\" />\r\n      <workItem from=\"1614681399909\" duration=\"176000\" />\r\n      <workItem from=\"1614681588686\" duration=\"80000\" />\r\n      <workItem from=\"1614681771287\" duration=\"913000\" />\r\n      <workItem from=\"1614689114461\" duration=\"118000\" />\r\n      <workItem from=\"1614689360545\" duration=\"8950000\" />\r\n      <workItem from=\"1614707709383\" duration=\"5758000\" />\r\n      <workItem from=\"1614762621620\" duration=\"3023000\" />\r\n      <workItem from=\"1614765750435\" duration=\"693000\" />\r\n      <workItem from=\"1614766478454\" duration=\"16951000\" />\r\n      <workItem from=\"1614796422588\" duration=\"3123000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Test\">\r\n      <created>1614634438857</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614634438857</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"02/03/2021&#10;10:54\">\r\n      <created>1614678861171</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614678861171</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"02/03/2021&#10;11:12\">\r\n      <created>1614679981273</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614679981273</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"03/03/2021&#10;11:\">\r\n      <created>1614766245431</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614766245432</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"03/03/2021&#10;11:10\">\r\n      <created>1614766265004</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614766265004</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"03/03/2021&#10;11:14\">\r\n      <created>1614766662544</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614766662544</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"03/03/2021&#10;3:17\">\r\n      <created>1614781108668</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614781108668</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"03/03/2021&#10;3:17\">\r\n      <created>1614781323524</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614781323524</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"03/03/2021&#10;3:56\">\r\n      <created>1614783414327</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614783414327</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"03/03/2021&#10;20:25\">\r\n      <created>1614799564501</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1614799564501</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Test\" />\r\n    <MESSAGE value=\"02/03/2021&#10;10:54\" />\r\n    <MESSAGE value=\"02/03/2021&#10;11:12\" />\r\n    <MESSAGE value=\"03/03/2021&#10;11:10\" />\r\n    <MESSAGE value=\"03/03/2021&#10;11:11\" />\r\n    <MESSAGE value=\"03/03/2021&#10;11:14\" />\r\n    <MESSAGE value=\"03/03/2021&#10;3:17\" />\r\n    <MESSAGE value=\"03/03/2021&#10;3:56\" />\r\n    <MESSAGE value=\"03/03/2021&#10;20:25\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"03/03/2021&#10;20:25\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"646\" y=\"0\" key=\"#com.intellij.refactoring.rename.AutomaticRenamingDialog\" timestamp=\"1614766994865\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"646\" y=\"0\" key=\"#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824\" timestamp=\"1614766994865\" />\r\n    <state x=\"499\" y=\"159\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog\" timestamp=\"1614767658460\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"499\" y=\"159\" key=\"#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824\" timestamp=\"1614767658460\" />\r\n    <state x=\"499\" y=\"167\" key=\"#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog\" timestamp=\"1614447674177\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"499\" y=\"167\" key=\"#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824\" timestamp=\"1614447674177\" />\r\n    <state x=\"549\" y=\"167\" key=\"FileChooserDialogImpl\" timestamp=\"1614675846898\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"549\" y=\"167\" key=\"FileChooserDialogImpl/0.0.1536.824@0.0.1536.824\" timestamp=\"1614675846898\" />\r\n    <state width=\"498\" height=\"446\" key=\"SwitcherDM\" timestamp=\"1614765568269\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state width=\"498\" height=\"446\" key=\"SwitcherDM/0.0.1536.824@0.0.1536.824\" timestamp=\"1614765568268\" />\r\n    <state x=\"361\" y=\"145\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1614799567443\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"361\" y=\"145\" key=\"Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824\" timestamp=\"1614799567443\" />\r\n    <state x=\"425\" y=\"187\" key=\"run.anything.popup\" timestamp=\"1614344781974\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"425\" y=\"187\" key=\"run.anything.popup/0.0.1536.824@0.0.1536.824\" timestamp=\"1614344781974\" />\r\n    <state x=\"431\" y=\"145\" width=\"672\" height=\"678\" key=\"search.everywhere.popup\" timestamp=\"1614695075312\">\r\n      <screen x=\"0\" y=\"0\" width=\"1536\" height=\"824\" />\r\n    </state>\r\n    <state x=\"431\" y=\"145\" width=\"672\" height=\"678\" key=\"search.everywhere.popup/0.0.1536.824@0.0.1536.824\" timestamp=\"1614695075312\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision babaf78abbdc2700aae14cab73659ca78103820b)
++++ .idea/workspace.xml	(date 1615140067265)
+@@ -19,8 +19,15 @@
+     <select />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="03/03/2021&#10;20:25">
++    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="03/03/2021&#10;20:26">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Entity/CandidatureStage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/CandidatureStage.php" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/add.html.twig" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/list.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/list.html.twig" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/quiz.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/quiz.html.twig" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/offrestage/addoffre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offrestage/addoffre.html.twig" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -191,7 +198,17 @@
+       <workItem from="1614762621620" duration="3023000" />
+       <workItem from="1614765750435" duration="693000" />
+       <workItem from="1614766478454" duration="16951000" />
+-      <workItem from="1614796422588" duration="3123000" />
++      <workItem from="1614796422588" duration="3600000" />
++      <workItem from="1614857463453" duration="3608000" />
++      <workItem from="1614932599832" duration="4925000" />
++      <workItem from="1614952862477" duration="72000" />
++      <workItem from="1615061066170" duration="1254000" />
++      <workItem from="1615064364213" duration="706000" />
++      <workItem from="1615129842988" duration="473000" />
++      <workItem from="1615132478435" duration="53000" />
++      <workItem from="1615133424301" duration="51000" />
++      <workItem from="1615136183688" duration="955000" />
++      <workItem from="1615137877766" duration="1934000" />
+     </task>
+     <task id="LOCAL-00001" summary="Test">
+       <created>1614634438857</created>
+@@ -263,7 +280,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1614799564501</updated>
+     </task>
+-    <option name="localTasksCounter" value="11" />
++    <task id="LOCAL-00011" summary="03/03/2021&#10;20:26">
++      <created>1614799626028</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1614799626028</updated>
++    </task>
++    <option name="localTasksCounter" value="12" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -291,7 +315,8 @@
+     <MESSAGE value="03/03/2021&#10;3:17" />
+     <MESSAGE value="03/03/2021&#10;3:56" />
+     <MESSAGE value="03/03/2021&#10;20:25" />
+-    <option name="LAST_COMMIT_MESSAGE" value="03/03/2021&#10;20:25" />
++    <MESSAGE value="03/03/2021&#10;20:26" />
++    <option name="LAST_COMMIT_MESSAGE" value="03/03/2021&#10;20:26" />
+   </component>
+   <component name="WindowStateProjectService">
+     <state x="646" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614766994865">
+@@ -314,17 +339,28 @@
+       <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1614765568268" />
+-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1614799567443">
++    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1614799692410">
+       <screen x="0" y="0" width="1536" height="824" />
+     </state>
+-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614799567443" />
+-    <state x="425" y="187" key="run.anything.popup" timestamp="1614344781974">
++    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614799692410" />
++    <state x="425" y="187" key="run.anything.popup" timestamp="1614937833738">
+       <screen x="0" y="0" width="1536" height="824" />
+     </state>
+-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1614344781974" />
++    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1614937833738" />
+     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1614695075312">
+       <screen x="0" y="0" width="1536" height="824" />
+     </state>
+     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1614695075312" />
+   </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="php">
++          <url>file://$PROJECT_DIR$/templates/offrestage/addoffre.html.twig</url>
++          <line>34</line>
++          <option name="timeStamp" value="1" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++  </component>
+ </project>
+\ No newline at end of file
+Index: templates/offrestage/addoffre.html.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{% extends 'base.html.twig' %}\r\n\r\n{% block title %}Hello ProfileController!{% endblock %}\r\n\r\n{% block body %}\r\n    <style>\r\n        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }\r\n        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }\r\n    </style>\r\n    <div class=\"panel-title\">Nouveau Stage :</div>\r\n    <div class=\"form-panel\">\r\n       {{ form(form) }}\r\n    </div>\r\n    <br>\r\n\r\n    <a href=\"listoffre\" class=\"btn-theme03\">Liste des Offres de Stages</a>\r\n\r\n    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>\r\n{% endblock %}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- templates/offrestage/addoffre.html.twig	(revision babaf78abbdc2700aae14cab73659ca78103820b)
++++ templates/offrestage/addoffre.html.twig	(date 1615140067278)
+@@ -9,7 +9,25 @@
+     </style>
+     <div class="panel-title">Nouveau Stage :</div>
+     <div class="form-panel">
+-       {{ form(form) }}
++        <table>
++
++            {{ form_start(form,{'attr':{'no validate': 'novalidate'}}) }}
++            <tr>
++                <td>{{ form_label(form.NomEntreprise,"NomEntreprise") }}</td>
++                <td> {{ form_widget(form.NomEntreprise) }}</td>
++            </tr>
++            <tr>
++                <td> {{ form_label(form.Description,"Description") }}</td>
++                <td>{{ form_widget(form.Description) }}</td>
++            </tr>
++            <tr>
++                <td>{{ form_label(form.stage_id,"stage_id") }}</td>
++                <td>{{ form_widget(form.stage_id) }}</td>
++            </tr>
++
++
++        </table>
++        {{ form_end(form) }}
+     </div>
+     <br>
+ 
