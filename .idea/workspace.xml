@@ -25,12 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="11/03/2021&#10;20:27">
+    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="11/03/2021&#10;11:26">
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/OffreStageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OffreStageRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/candidaturestage/stages.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/stages.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +232,7 @@
       <workItem from="1615296254873" duration="17245000" />
       <workItem from="1615366183881" duration="8944000" />
       <workItem from="1615400156262" duration="14267000" />
-      <workItem from="1615455684732" duration="35326000" />
+      <workItem from="1615455684732" duration="36028000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1614634438857</created>
@@ -349,7 +346,21 @@
       <option name="project" value="LOCAL" />
       <updated>1615490880998</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="11/03/2021&#10;11:25">
+      <created>1615501559714</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1615501559714</updated>
+    </task>
+    <task id="LOCAL-00018" summary="11/03/2021&#10;11:26">
+      <created>1615501595338</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1615501595338</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -383,7 +394,9 @@
     <MESSAGE value="10/03/2021&#10;11:02" />
     <MESSAGE value="11/03/2021&#10;18:37" />
     <MESSAGE value="11/03/2021&#10;20:27" />
-    <option name="LAST_COMMIT_MESSAGE" value="11/03/2021&#10;20:27" />
+    <MESSAGE value="11/03/2021&#10;11:25" />
+    <MESSAGE value="11/03/2021&#10;11:26" />
+    <option name="LAST_COMMIT_MESSAGE" value="11/03/2021&#10;11:26" />
   </component>
   <component name="WindowStateProjectService">
     <state x="646" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614766994865">
