@@ -19,6 +19,8 @@ use App\Repository\OffreStageRepository;
 use App\Controller\QuizController;
 use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 
 class Blog1Controller extends AbstractController
@@ -298,6 +300,84 @@ class Blog1Controller extends AbstractController
         return new Response($retour);
 
     }
+    /**
+     * @Route("/pdf ", name="pdf")
+     */
+    public function pdf(OffreStageRepository $Repository)
+    {
+        $OffreStage = $Repository->findall();
+        // Configure Dompdf according to your needs
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+
+        // Instantiate Dompdf with our options
+        $dompdf = new Dompdf($pdfOptions);
+
+        // Retrieve the HTML generated in our twig file
+        $html = $this->renderView('offrestage/pdf.html.twig', [
+            'title' => "Welcome to our PDF Test",
+            'OffreStage' => $OffreStage
+        ]);
+
+        // Load HTML to Dompdf
+        $dompdf->loadHtml($html);
+
+        // (Optional) Setup the paper size and orientation 'portrait' or 'portrait'
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser (force download)
+        $dompdf->stream("Offres De Stages.pdf", [
+            "Attachment" => true
+        ]);
+    }
+   /**
+   * @route ("Offre/search", name="search")
+   */
+    function searchTitle(OffreStageRepository $repository,Request $request )
+    {
+        $data=$request->get('find');
+        $OffreStage=$repository->findBy(['NomEntreprise'=>$data]);
+        return $this->render('candidaturestage/stages.html.twig',
+            ['OffreStage' => $OffreStage]);
+
+    }
+
+   /**
+   * @route ("Offre/Order", name="orderD")
+   */
+    function OrderSalD(OffreStageRepository $repository,Request $request )
+    {
+
+        $repository = $this->getDoctrine()->getrepository(OffreStage::Class);//recuperer repisotory
+        $OffreStage = $repository->findBy(
+            array(),
+            array('NomEntreprise' => 'DESC')
+        );
+        return $this->render('candidaturestage/stages.html.twig',
+            ['OffreStage' => $OffreStage]);
 
 
+    }
+
+    /**
+     * @route ("Offre/Orders", name="orderA")
+     */
+    function OrderSalAS(OffreStageRepository $repository,Request $request )
+    {
+
+        $repository = $this->getDoctrine()->getrepository(OffreStage::Class);//recuperer repisotory
+        $OffreStage = $repository->findBy(
+            array(),
+            array('NomEntreprise' => 'ASC')
+        );
+        return $this->render('candidaturestage/stages.html.twig',
+            ['OffreStage' => $OffreStage]);
+
+    }
 }
+
+
+

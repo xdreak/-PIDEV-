@@ -4,7 +4,7 @@
     <br>
     <body>
     <input type="text" id="search" class="form-control" placeholder="Search">
-    <table border="1" id="t">
+    <table class="table table-striped table-advance table-hover" id="t">
         <tr>
             <th>Id</th>
             <th>Nom Entreprise</th>
@@ -31,6 +31,25 @@
         </tbody>
 
     </table>
+    <form class="form-inline" role="form" method="get" action="{{ path ('search') }}">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Title</label>
+            <input type="text" class="form-control" placeholder="Entreprise" name="find">
+            <input type="submit" class="btn btn-success btn-xs" value="Search"></input>
+        </div>
+    </form>
+    <form class="form-inline" role="form" method="get" action="{{ path ('orderA') }}">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Title</label>
+            <input type="submit" class="btn btn-primary btn-xs" value="A-Z Entreprise"></input>
+        </div>
+    </form>
+    <form class="form-inline" role="form" method="get" action="{{ path ('orderD') }}">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Title</label>
+            <input type="submit" class="btn btn-primary btn-xs" value="Z-A Entreprise"></input>
+        </div>
+    </form>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     </script>
