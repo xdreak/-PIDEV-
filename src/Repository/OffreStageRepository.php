@@ -18,10 +18,13 @@ class OffreStageRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, OffreStage::class);
     }
-    public function findStageByStageId($Stage_Id){
+    /**
+     * @return OffreStage[]
+     */
+    public function findStageByEntreprise($NomEntreprise){
         return $this->createQueryBuilder('OffreStage')
-            ->where('OffreStage.Stage_Id LIKE :Stage_Id')
-            ->setParameter('Sage_Id', '%'.$Stage_Id.'%')
+            ->andWhere('OffreStage.NomEntreprise LIKE :NomEntreprise')
+            ->setParameter('NomEntreprise', '%'.$NomEntreprise.'%')
             ->getQuery()
             ->getResult();
     }

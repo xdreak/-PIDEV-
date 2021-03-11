@@ -25,16 +25,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="11/03/2021&#10;18:37">
-      <change beforePath="$PROJECT_DIR$/.idea/PIDEV.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PIDEV.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="49a1382b-45a9-4926-bbca-c9ff77205aaa" name="Default Changelist" comment="11/03/2021&#10;20:27">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Blog1Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OffreStageRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OffreStageRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/candidaturestage/stages.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/candidaturestage/stages.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offrestage/listoffre.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +235,7 @@
       <workItem from="1615296254873" duration="17245000" />
       <workItem from="1615366183881" duration="8944000" />
       <workItem from="1615400156262" duration="14267000" />
-      <workItem from="1615455684732" duration="25512000" />
+      <workItem from="1615455684732" duration="35326000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <created>1614634438857</created>
@@ -346,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615484282555</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="11/03/2021&#10;20:27">
+      <created>1615490880998</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1615490880998</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +382,8 @@
     <MESSAGE value="07/03/2021&#10;19:02" />
     <MESSAGE value="10/03/2021&#10;11:02" />
     <MESSAGE value="11/03/2021&#10;18:37" />
-    <option name="LAST_COMMIT_MESSAGE" value="11/03/2021&#10;18:37" />
+    <MESSAGE value="11/03/2021&#10;20:27" />
+    <option name="LAST_COMMIT_MESSAGE" value="11/03/2021&#10;20:27" />
   </component>
   <component name="WindowStateProjectService">
     <state x="646" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1614766994865">
@@ -418,9 +422,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1615484815253" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1615206585278">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1615498053675">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1615206585278" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1615498053675" />
   </component>
 </project>

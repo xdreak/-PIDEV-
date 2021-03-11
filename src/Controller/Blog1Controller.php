@@ -243,13 +243,16 @@ class Blog1Controller extends AbstractController
 
     /**
      *
-     * @Route ("/mail/{test}", name="mail")
+     * @Route ("/mail/{id}", name="mail")
      * @param \Swift_Mailer $mailer
      * @return Response
      */
-    public function Mailing(\Swift_Mailer $mailer,$test)
+    public function Mailing(\Swift_Mailer $mailer,$id,CandidatureStageRepository $Repository)
     {
-
+        $repository = $this->getDoctrine()->getrepository(OffreStage::Class);
+        $offres = $repository->findBy(
+            ['id' => $id]
+        );
         $message = (new \Swift_Message('Service Stages E-Mployini'))
             ->setFrom('E-Mployini@gmail.com')
             ->setTo('imotemri@gmail.com')
@@ -257,7 +260,7 @@ class Blog1Controller extends AbstractController
         $this->renderView(
         // templates/emails/registration.html.twig
             'offrestage/mail.html.twig',
-             ['test' => $test]
+             ['offres' => $offres]
         ),
         'text/html'
 
@@ -265,41 +268,27 @@ class Blog1Controller extends AbstractController
 
         $mailer->send($message);
 
-        return $this->render('/offrestage/mail.html.twig',[
-        'test' => $test
+        return $this->redirectToRoute('add',[
+        'id' => $id
         ]);
     }
-/*
     /**
-     * @Route("/searchOffreStage ", name="ajaxsearch")
+     * @Route("/searchstage", name="searchstage")
      */
-/*
-    public function searchOffreajax(Request $request,NormalizerInterface $Normalizer,OffreStageRepository $repository)
+    public function searchStageajax(Request $request)
     {
         $repository = $this->getDoctrine()->getRepository(OffreStage::class);
         $requestString=$request->get('searchValue');
-        $offres = $repository->findOffrebyname($requestString);
 
-        return $this->render('offrestage/recherche.html.twig', [
-            "offres" => $offres
-            ]);
+        $plan = $repository->findStageByEntreprise($requestString);
 
-    }
-*/
 
-    /**
-     * @Route("/searchstagex ", name="searchstagex")
-     */
-    public function searchStagex(Request $request,NormalizerInterface $Normalizer)
-    {
-        $repository = $this->getDoctrine()->getRepository(OffreStage::class);
-        $requestString=$request->get('searchValue');
-        $offresstages = $repository->findStageByStageId($requestString);
-        $jsonContent = $Normalizer->normalize($offresstages, 'json',['groups'=>'offresstages']);
-        $retour=json_encode($jsonContent);
-        return new Response($retour);
+        return $this->render('candidaturestage/stageajax.html.twig', [
+            'OffreStage' => $plan,
+        ]);
 
     }
+
     /**
      * @Route("/pdf ", name="pdf")
      */
