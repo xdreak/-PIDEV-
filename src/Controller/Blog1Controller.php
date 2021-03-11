@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\OffreStageType2;
 use App\Repository\CandidatureStageRepository;
 use App\Repository\QuizRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -16,7 +17,8 @@ use App\Entity\OffreStage;
 use App\Form\OffreStageType;
 use App\Repository\OffreStageRepository;
 use App\Controller\QuizController;
-
+use Symfony\Component\Serializer\Normalizer\NormalizableInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 
 class Blog1Controller extends AbstractController
@@ -207,7 +209,7 @@ class Blog1Controller extends AbstractController
     public function updateoffre(OffreStageRepository $Repository,OffreStageRepository $em, $id,Request $Request)
     {
         $OffreStage = $em->find($id);
-        $form = $this->createForm(OffreStageType::class, $OffreStage);
+        $form = $this->createForm(OffreStageType2::class, $OffreStage);
         $form->add('Modifier', SubmitType::class);
         $form->handleRequest($Request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -236,5 +238,66 @@ class Blog1Controller extends AbstractController
 
 
     }
+
+    /**
+     *
+     * @Route ("/mail/{test}", name="mail")
+     * @param \Swift_Mailer $mailer
+     * @return Response
+     */
+    public function Mailing(\Swift_Mailer $mailer,$test)
+    {
+
+        $message = (new \Swift_Message('Service Stages E-Mployini'))
+            ->setFrom('E-Mployini@gmail.com')
+            ->setTo('imotemri@gmail.com')
+        ->setBody(
+        $this->renderView(
+        // templates/emails/registration.html.twig
+            'offrestage/mail.html.twig',
+             ['test' => $test]
+        ),
+        'text/html'
+
+        );
+
+        $mailer->send($message);
+
+        return $this->render('/offrestage/mail.html.twig',[
+        'test' => $test
+        ]);
+    }
+/*
+    /**
+     * @Route("/searchOffreStage ", name="ajaxsearch")
+     */
+/*
+    public function searchOffreajax(Request $request,NormalizerInterface $Normalizer,OffreStageRepository $repository)
+    {
+        $repository = $this->getDoctrine()->getRepository(OffreStage::class);
+        $requestString=$request->get('searchValue');
+        $offres = $repository->findOffrebyname($requestString);
+
+        return $this->render('offrestage/recherche.html.twig', [
+            "offres" => $offres
+            ]);
+
+    }
+*/
+
+    /**
+     * @Route("/searchstagex ", name="searchstagex")
+     */
+    public function searchStagex(Request $request,NormalizerInterface $Normalizer)
+    {
+        $repository = $this->getDoctrine()->getRepository(OffreStage::class);
+        $requestString=$request->get('searchValue');
+        $offresstages = $repository->findStageByStageId($requestString);
+        $jsonContent = $Normalizer->normalize($offresstages, 'json',['groups'=>'offresstages']);
+        $retour=json_encode($jsonContent);
+        return new Response($retour);
+
+    }
+
 
 }

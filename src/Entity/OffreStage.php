@@ -44,6 +44,16 @@ class OffreStage
      */
     private $relation;
 
+    /**
+     * @ORM\OneToOne(targetEntity=Quiz::class, cascade={"persist", "remove"})
+     */
+    private $finder;
+    /*
+    /**
+     * @ORM\OneToOne(targetEntity=Quiz::class, mappedBy="Id_stageQ")
+     */
+    //private $relation2;
+
     public function __construct()
     {
         $this->relation = new ArrayCollection();
@@ -91,7 +101,6 @@ class OffreStage
 
         return $this;
     }
-
     /**
      * @return Collection|CandidatureStage[]
      */
@@ -121,9 +130,54 @@ class OffreStage
 
         return $this;
     }
+/*
+    /**
+     * @return Collection|Quiz[]
+     */
+   /*
+    public function getRelation2(): Collection
+    {
+        return $this->relation2;
+    }
+
+    public function addRelation2(Quiz $relation2): self
+    {
+        if (!$this->relation2->contains($relation2)) {
+            $this->relation2[] = $relation2;
+            $relation2->setIdStageQ($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRelation2(Quiz $relation2): self
+    {
+        if ($this->relation2->removeElement($relation2)) {
+            // set the owning side to null (unless already changed)
+            if ($relation2->getIdStageQ() === $this) {
+                $relation2->setIdStageQ(null);
+            }
+        }
+
+        return $this;
+    }*/
     public function __toString()
     {
         return (string) $this->stage_id;
     }
+
+    public function getFinder(): ?Quiz
+    {
+        return $this->finder;
+    }
+
+    public function setFinder(?Quiz $finder): self
+    {
+        $this->finder = $finder;
+
+        return $this;
+    }
+
+
 
 }
