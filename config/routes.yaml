@@ -1,0 +1,31 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+inscription:
+    path: /Frontend/inscription
+    controller: App\Controller\InscriptionController::index
+
+adduser:
+    path: /user/adduser
+    controller: App\Controller\UserController::adduser
+
+deleteuser:
+    path: /user/{id}
+    controller: App\Controller\UserController::delete
+
+updateuser:
+    path: /user/update/{id}
+    controller: App\Controller\UserController::update
+
+deleteprofile:
+    path: /profile/delete/{id}
+    controller: App\Controller\ProfileController::delete
+
+updateprofile:
+    path: /profile/update/{id}
+    controller: App\Controller\ProfileController::update
+
+addprofile:
+    path: /profile/addprofile
+    controller: App\Controller\ProfileController::addprofile

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    <h1>Modifier Profile</h1>
+    {{ form_start(form,{'attr': {'novalidate' : 'novalidate'}}) }}
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.nom, "Nom") }}</td>
+            <td>{{ form_widget(form.nom) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.prenom, "Prenom") }}</td>
+            <td>{{ form_widget(form.prenom) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.mobile, "mobile") }}</td>
+            <td>{{ form_widget(form.mobile) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.age, "age") }}</td>
+            <td>{{ form_widget(form.age) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.ville, "ville") }}</td>
+            <td>{{ form_widget(form.ville) }}</td>
+        </tr>
+        <tr style="display:none;" >
+            <td>{{ form_label(form.user, "user") }}</td>
+            <td>{{ form_widget(form.user) }}</td>
+        </tr>
+
+    </table>
+    {{ form_end(form) }}
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
+

@@ -1,0 +1,42 @@
+{% extends 'front.html.twig' %}
+{% block href %}href="inscription"{% endblock %}
+{% block body %}
+
+
+        <div id="login-page">
+            <div class="container">
+                <form method="post" class="form-login" action="{{ path('registration') }}">
+                    <h2 class="form-login-heading">sing up</h2>
+                    <div class="login-wrap">
+                        <input type="text" class="form-control" placeholder="Username" name="username" autofocus="" required>
+                        <br>
+                        <input type="text" class="form-control" placeholder="First Name" name="prenom" required>
+                        <br>
+                        <input type="text" class="form-control" placeholder="Last Name" name="nom" required>
+                        <br>
+                        <input type="password" class="form-control" placeholder="Password" name="password" required>
+                        <br>
+                        <input type="email" class="form-control" placeholder="Email" name="email" required>
+                        <br>
+                        <input type="tel" class="form-control" placeholder="Phone" name="mobile" required>
+                        <br>
+                        <input type="number" class="form-control" placeholder="Age" name="age" required>
+                        <br>
+                        <input type="text" class="form-control" placeholder="City" name="ville" required>
+                        <br>
+
+                        <input class="btn btn-theme btn-block" type="submit" value="SIGN UP">
+                        <hr>
+                        <div class="login-social-link centered">
+                            <p><a href="{{ path('loginBack') }}">Already have an account </a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

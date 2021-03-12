@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    <h1>Ajouter Profile</h1>
+    <form name="profile" method="post" novalidate="novalidate">
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td><label for="profile_nom">Nom</label></td>
+            <td><input type="text" id="profile_nom" name="nom" maxlength="255" value="aze"></td>
+        </tr>
+        <tr>
+            <td><label for="profile_prenom">Prenom</label></td>
+            <td><input type="text" id="profile_prenom" name="prenom" maxlength="255" value="aze"></td>
+        </tr>
+        <tr>
+            <td><label for="profile_mobile">mobile</label></td>
+            <td><input type="text" id="profile_mobile" name="mobile" maxlength="255" value="aze"></td>
+        </tr>
+        <tr>
+            <td><label for="profile_age">age</label></td>
+            <td><input type="text" id="profile_age" name="age" maxlength="255" value="aze"></td>
+        </tr>
+        <tr>
+            <td><label for="profile_ville">ville</label></td>
+            <td><input type="text" id="profile_ville" name="ville" maxlength="255" value="aze"></td>
+        </tr>
+        <tr>
+            <td> <label for="profile_user" class="required">user</label> </td>
+            <td>
+                <select id="profile_user" name="user">
+                    {% for raw in lUsers %}
+                    <option value="{{ raw.id }}" >{{ raw.username }}</option>
+                    {% endfor %}
+                </select>
+            </td>
+
+        </tr>
+    </table>
+        <div><button type="submit" id="profile_Ajouter" name="Ajouter">Ajouter</button></div>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
+
