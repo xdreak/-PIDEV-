@@ -1,7 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment="" />
+    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 22mars">
+      <change afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210304191832.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210307153555.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210307154627.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210309180518.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210309190300.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210309190643.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210322104214.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210322113804.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/event.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/tunisiaHigh.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605781e4bfbd8577016440.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Document.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ArticlelikeRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DocumentRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Carriere/AffUnArticleAdmin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Carriere/AffUnArticleClient.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Carriere/AjoutArticleAdmin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Carriere/GestionCarriereAdmin.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Carriere/ModifierArticle.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Carriere/security.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/event/events.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/event/eventslist.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/event/participe.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/event/showEf.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Pi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/css/style-responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/css/table-responsive.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/css/to-do.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/css/zabuto_calendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/404.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/500.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/apple-touch-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/blog-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/checkbox-gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-07.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-08.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/friends/fr-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/instagram.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/login-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/lorde.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/ny.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/portfolio/port01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/portfolio/port02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/portfolio/port03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/portfolio/port04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/portfolio/port05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/portfolio/port06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/product.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/profile-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/profile-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/radio-gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/ui-danro.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/ui-divya.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/ui-sam.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/ui-sherman.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/ui-zac.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/weather.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/img/zoom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/DT_bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/demo_page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/demo_table.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/demo_table_jui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/jquery.dataTables.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/jquery.dataTables_themeroller.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/Sorting icons.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/back_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/back_enabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/back_enabled_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/details_close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/details_open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/forward_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/forward_enabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/forward_enabled_hover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_asc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_asc_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_both.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_desc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_desc_disabled.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/js/DT_bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/js/jquery.dataTables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/js/jquery.dataTables.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/js/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/advanced-form-components.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-datepicker/css/datepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-datepicker/js/bootstrap-datepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/date.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/daterangepicker-bs3.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/daterangepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/daterangepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/moment.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-datetimepicker/css/datetimepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-fileupload/bootstrap-fileupload.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-fileupload/bootstrap-fileupload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-inputmask/bootstrap-inputmask.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-switch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-timepicker/compiled/timepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-timepicker/js/bootstrap-timepicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap-wysihtml5/wysihtml5-0.3.0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/calendar-conf-events.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/chart-master/Chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/chartjs-conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/ckeditor/ckeditor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/common-scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/dropzone/css/dropzone.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/dropzone/dropzone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/dropzone/images/spritemap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/dropzone/images/spritemap@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/easy-pie-chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/fancybox/jquery.fancybox.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/fancybox/jquery.fancybox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/css/jquery.fileupload-noscript.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/css/jquery.fileupload-ui-noscript.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/css/jquery.fileupload-ui.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/css/jquery.fileupload.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/img/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/img/progressbar.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/cors/jquery.xdr-transport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-audio.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-process.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-ui.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-video.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.iframe-transport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/vendor/jquery.ui.widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.crosshair.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.pie.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.stack.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/flotchart-conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/font-awesome/css/font-awesome.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/font-awesome/css/font-awesome.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/form-component.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/form-validation-script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/fullcalendar/bootstrap-fullcalendar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/fullcalendar/fullcalendar.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/google-maps/data/points.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/google-maps/maplace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/gritter-conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/gritter/css/jquery.gritter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/gritter/css/jquery.gritter0.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/gritter/images/gritter-light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/gritter/images/gritter-long.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/gritter/images/gritter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/gritter/images/ie-spacer.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/gritter/js/jquery.gritter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery-easy-pie-chart/jquery.easy-pie-chart.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery-easy-pie-chart/jquery.easy-pie-chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery-ui-1.9.2.custom.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery.backstretch.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery.dcjqaccordion.2.7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery.nicescroll.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery.scrollTo.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery.sparkline.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery.tagsinput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery.ui.touch-punch.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/jquery/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/morris-conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/morris/morris.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/php-mail-form/validate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/raphael/raphael.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/sparkline-chart.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/tasks.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/xchart/d3.v3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/xchart/xcharts.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/xchart/xcharts.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Backend/lib/zabuto_calendar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Frontend/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CareerFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CareerFController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/career_f/cv.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/cv.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/career_f/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/career_f/lettremotiv.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/lettremotiv.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/career_f/lettrerec.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/lettrerec.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/user/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/index.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,12 +234,14 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/symfony/twig-bundle" />
@@ -30,8 +257,6 @@
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
@@ -117,24 +342,59 @@
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/ckeditor-bundle" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1p57aF6Aim9fy4OzNDpmhrUWbIl" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../wamp64/bin/php/php8.0.3/php.exe" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\arijs\Desktop\SS\-PIDEV-\public\assets\img" />
+      <recent name="C:\Users\arijs\Desktop\SS\-PIDEV-\public\Backend" />
+      <recent name="C:\Users\arijs\Desktop\SS\-PIDEV-\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\arijs\Desktop\SS\-PIDEV-\public" />
+      <recent name="C:\Users\arijs\Desktop\SS\-PIDEV-\public\assets" />
       <recent name="C:\Users\medali\Desktop\PIDEV\Pi\public" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -146,7 +406,17 @@
       <updated>1614461159638</updated>
       <workItem from="1614461161546" duration="7285000" />
       <workItem from="1614620713365" duration="18304000" />
-      <workItem from="1614858632842" duration="462000" />
+      <workItem from="1614858632842" duration="1245000" />
+      <workItem from="1614860387217" duration="1680000" />
+      <workItem from="1614862123678" duration="22661000" />
+      <workItem from="1615119231122" duration="26433000" />
+      <workItem from="1615315446367" duration="61422000" />
+      <workItem from="1616061877728" duration="580000" />
+      <workItem from="1616062665403" duration="34286000" />
+      <workItem from="1616333816120" duration="3060000" />
+      <workItem from="1616338192642" duration="709000" />
+      <workItem from="1616338975383" duration="2021000" />
+      <workItem from="1616341085258" duration="24521000" />
     </task>
     <task id="LOCAL-00001" summary=" update">
       <created>1614858765612</created>
@@ -155,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614858765612</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary=" update1">
+      <created>1614859232999</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614859232999</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,15 +448,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value=" update" />
-    <option name="LAST_COMMIT_MESSAGE" value=" update" />
+    <MESSAGE value=" update1" />
+    <MESSAGE value=" update 22mars" />
+    <option name="LAST_COMMIT_MESSAGE" value=" update 22mars" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1614626192199">
-      <screen x="0" y="0" width="1536" height="864" />
-    </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1614626192199" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

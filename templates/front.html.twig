@@ -9,7 +9,7 @@
 
     <!-- Favicon -->
     <link href="{{ asset("Frontend/img/favicon.ico") }}" rel="icon">
-
+    <script src="{{ asset("https://kit.fontawesome.com/5036af77b3.js") }}" crossorigin="anonymous"></script>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
@@ -31,6 +31,7 @@
     <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js') }}"></script>
     <script src="{{ asset('assets/js/theme.js') }}"></script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js') }}"></script>
 </head>
 
 <body>
@@ -415,61 +416,7 @@
     <!-- Call to Action End -->
 {% endblock %}
 
-    <!-- Footer Start -->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="footer-about">
-                        <h2>About Us</h2>
-                        <p>
-                        </p>
-                        <br>
-                        <p><i class="fa fa-map-marker-alt"></i></p>
-                        <p><i class="fa fa-phone-alt"></i></p>
-                        <p><i class="fa fa-envelope"></i></p>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="footer-link">
-                                <h2>Useful Link</h2>
-                                <a href="">About Us</a>
-                                <a href="">Our Story</a>
-                                <a href="">Our Services</a>
-                                <a href="">Our Portfolio</a>
-                                <a href="">Our Projects</a>
-                                <a href="">Contact Us</a>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="footer-link">
-                                <h2>Useful Link</h2>
-                                <a href="">Our Clients</a>
-                                <a href="">Clients Review</a>
-                                <a href="">Ongoing Customer</a>
-                                <a href="">Customer Support</a>
-                                <a href="">FAQs</a>
-                                <a href="">Site Map</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container copyright">
-            <div class="row">
-                <div class="col-md-6">
-                    <p>&copy; <a href="https://htmlcodex.com">HTML Codex</a>, All Right Reserved.</p>
-                </div>
-                <div class="col-md-6">
-                    <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+
 </div>
 
 <!-- JavaScript Libraries -->
@@ -483,4 +430,59 @@
 <script src="{{ asset("Frontend/js/main.js") }}"></script>
 
 </body>
+<!-- Footer Start -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="footer-about">
+                    <h2>About Us</h2>
+                    <p>
+                    </p>
+                    <br>
+                    <p><i class="fa fa-map-marker-alt"></i></p>
+                    <p><i class="fa fa-phone-alt"></i></p>
+                    <p><i class="fa fa-envelope"></i></p>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-link">
+                            <h2>Useful Link</h2>
+                            <a href="">About Us</a>
+                            <a href="">Our Story</a>
+                            <a href="">Our Services</a>
+                            <a href="">Our Portfolio</a>
+                            <a href="">Our Projects</a>
+                            <a href="">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-link">
+                            <h2>Useful Link</h2>
+                            <a href="">Our Clients</a>
+                            <a href="">Clients Review</a>
+                            <a href="">Ongoing Customer</a>
+                            <a href="">Customer Support</a>
+                            <a href="">FAQs</a>
+                            <a href="">Site Map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container copyright">
+        <div class="row">
+            <div class="col-md-6">
+                <p>&copy; <a href="https://htmlcodex.com">HTML Codex</a>, All Right Reserved.</p>
+            </div>
+            <div class="col-md-6">
+                <p>Template By <a href="https://htmlcodex.com">HTML Codex</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer End -->
 </html>

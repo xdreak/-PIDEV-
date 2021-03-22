@@ -1,0 +1,60 @@
+{% extends 'front.html.twig' %}
+{% block title %} Bienvenue à votre inventaire  {% endblock %}
+{% block body %}
+    <nav class="navbar navbar-light navbar-expand fixed-top" style="background-color: #eeeeee;">
+        <div class="container-fluid"><img src="{{ asset('assets/img/LOGO.png') }}" style="height: 91px;width: 82px;"><a
+                    href="#" style="color: rgb(230,160,79);font-size: 31px;font-family: 'Alfa Slab One', cursive;">E-MPLOYINI</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="/eventsF" style="color: #bb620f;font-weight: bold;">Evenements</a></li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="#" style="color: #bb620f;font-weight: bold;">Participer</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#"
+                                                                style="color: #bb620f;font-weight: bold;">Contacter Nous</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% if events %}
+        {% for event in events %}
+        <div >
+            <figure class="snip1253">
+                    <div class="image">
+                        <img src="https://timviec365.com/pictures/images/event-executive-1.jpg" alt="sample59" />
+                    </div>
+                    <figcaption>
+                        <div class="date" style="background-color: #eea236">
+                            <span class="day">{{ event.datedebut|date('d')}}</span>
+                            <span class="month">{{ event.datedebut|date('F')}}</span>
+                        </div>
+                        <h3>{{ event.nom}}</h3>
+                        <p>
+                            {{ event.plan |raw}}
+                        </p>
+                    </figcaption>
+                    <footer style="background-color: #eea236">
+                        <div class="views"><i class="ion-eye"></i>Participer</div>
+                    </footer>
+            </figure>
+       </div>
+        {% endfor %}
+    {% else %}
+        <h2>Pas d'evenement pour le moment</h2>
+    {% endif %}
+{% endblock %}
+ {# <div  class="row card-event-list" style="display: block">
+                <div class="col-md-6 col-lg-4" >
+                    {% for event in events %}
+                    <a href="{{ path('participeEvent',{'id':event.id}) }}">
+                        <div class="card-event">
+                            <div class="card-title"> <h2> Nom : {{ event.nom }}</h2></div>
+                            <div class="card-body"> <h3> Plan : {{ event.plan |raw}}</h3>
+                                                    <p> Date debut : {{ event.datedebut|date('d/m/y')}}</p>
+                                                    <p> Date fin : {{ event.datefin|date('d/m/y')}}</p>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div> #}

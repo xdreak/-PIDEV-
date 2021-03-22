@@ -1,0 +1,18 @@
+{% extends 'front.html.twig' %}
+{% block title %} Bienvenue à votre inventaire Conseil Carriere {% endblock %}
+{% block body %}
+    <section class="article">
+
+        <article>
+            <img src="{{ article.image }}">
+            {% if article.image %}
+                <img src="{{ vich_uploader_asset(article,'imageFile') }}">
+            {% endif %}
+            <h2> {{  article.Titre }}</h2>
+            <p> {{ article.Contenu |raw }}</p>
+
+        </article>
+
+    </section>
+
+{% endblock %}

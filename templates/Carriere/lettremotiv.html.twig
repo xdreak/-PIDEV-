@@ -1,0 +1,48 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Lettre de motivation{% endblock %}
+
+{% block body %}
+    <body>
+<nav class="navbar navbar-light navbar-expand fixed-top" style="background-color: #eeeeee;">
+    <div class="container-fluid"><img src="{{ asset('assets/img/LOGO.png') }}" style="height: 91px;width: 82px;"><a href="#" style="color: rgb(230,160,79);font-size: 31px;font-family: 'Alfa Slab One', cursive;">E-MPLOYINI</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/Articles" style="color: #bb620f;font-weight: bold;">Home</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/LettreM" style="color: #bb620f;font-weight: bold;">Lettres de motivation</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/CV" style="color: #bb620f;font-weight: bold;">CV</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main style="background-color: #eeeeee;height: 948px;width: 1342px;">
+    <section class="text-center" id="modeleLM" style="height: 663px;margin: 130px;width: 1193px;padding: 145px;background-image: url({{ asset('assets/img/motiv.png') }});background-repeat: no-repeat;background-size: auto;">
+        <h1 style="margin: 0px;background-color: rgb(237,128,27);color: rgb(255,255,255);">Vos trouvez ici des exemples de lettres de motivation</h1>
+        <div class="card-group" style="margin: 173px;padding: 6px;height: 208px;width: 682px;">
+            <div class="card"><img class="card-img-top w-100 d-block">
+                <div class="card-body">
+                    <h4 class="card-title">Modele 1&nbsp;</h4><button class="btn btn-primary" type="button" style="background-color: rgb(237,128,27);">Télécharger</button></div>
+            </div>
+            <div class="card"><img class="card-img-top w-100 d-block">
+                <div class="card-body">
+                    <h4 class="card-title">Modele 2</h4><button class="btn btn-primary" type="button" style="background-color: rgb(237,128,27);">Télécharger</button></div>
+            </div>
+            <div class="card"><img class="card-img-top w-100 d-block" style="background-position: center;">
+                <div class="card-body">
+                    <h4 class="card-title">Modele 3</h4><button class="btn btn-primary" type="button" style="background-color: rgb(237,128,27);">Télécharger<br></button></div>
+            </div>
+            <div class="card"><img class="card-img-top w-100 d-block">
+                <div class="card-body">
+                    <h4 class="card-title">Modele 4&nbsp;</h4><button class="btn btn-primary" type="button" style="background-color: rgb(237,128,27);">Télécharger<br></button></div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="page-footer" style="background-color: #eeeeee;width: 1324px;">
+    <div class="container">
+        <div class="links"><a href="#">About us</a><a href="#">Contact us</a></div>
+        <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
+    </div>
+</footer>
+    </body>
+{% endblock %}

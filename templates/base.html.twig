@@ -23,6 +23,8 @@
     <link href="{{ asset("Backend/css/style.css") }}" rel="stylesheet">
     <link href="{{ asset("Backend/css/style-responsive.css") }}" rel="stylesheet">
     <script src="{{ asset("Backend/lib/chart-master/Chart.js") }}"></script>
+    <script src="{{ asset("https://kit.fontawesome.com/5036af77b3.js") }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js') }}"></script>
 
     <!-- =======================================================
       Template Name: Dashio
@@ -265,7 +267,18 @@
                         <span>Gestion des Profiles</span>
                     </a>
                 </li>
-
+                <li class="mt">
+                    <a class="active" href="/GestionCarriere">
+                        <i class="fa fa-desktop"></i>
+                        <span>Gestion de Career Advice</span>
+                    </a>
+                </li>
+                <li class="mt">
+                    <a class="active" href="/event/show">
+                        <i class="fa fa-desktop"></i>
+                        <span>Gestion des Evenements </span>
+                    </a>
+                </li>
             </ul>
             <!-- sidebar menu end-->
         </div>
