@@ -1,6 +1,4 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello OffreEmploiController!{% endblock %}
  {% block css %}
      <!-- Favicons -->
      <link href="/Backend/img/favicon.png" rel="icon">
@@ -27,91 +25,91 @@
 
 
 {% block body %}
+
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
-            <h3><i class="fa fa-angle-right"></i>Gestion Offre</h3>
-            <!-- BASIC FORM ELELEMNTS -->
+            <h3><i class="fa fa-angle-right"></i> Gestion Quiz</h3>
             <div class="row mt">
                 <div class="col-lg-12">
                     <div class="form-panel">
-                        <h4 class="mb"><i class="fa fa-angle-right"></i> Form Offre</h4>
-                        <!--<form class="form-horizontal style-form" method="get">-->
-                        {{form_start(form,{'attr':{'class':'form-horizontal style-forms'}})}}
-                        <div class="form-group">
-                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Title, 'Title', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
-                            <div class="col-sm-10">
-                                <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Title, {'attr': {'class': 'form-control'}}) }}
+                        <h4 class="mb"><i class="fa fa-angle-right"></i> Research</h4>
+                        <form class="form-inline" role="form" method="get" >
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">Title</label>
+                                <input type="text" class="form-control" placeholder="Title" name="find">
+                                <input type="submit" class="btn btn-theme" value="search"></input>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Ville, 'Ville', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
-                            <div class="col-sm-10">
-                                <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Ville, {'attr': {'class': 'form-control'}}) }}
+                        </form>
+                        <form class="form-inline" role="form" method="get" >
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">Title</label>
+                                <input type="submit" class="btn btn-theme" value="order by salary ASC"></input>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Domain, 'Domain', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
-                            <div class="col-sm-10">
-                                <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Domain, {'attr': {'class': 'form-control'}}) }}
+                        </form>
+                        <form class="form-inline" role="form" method="get" >
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputEmail2">Title</label>
+                                <input type="submit" class="btn btn-theme" value="order by salary DESC"></input>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.CompanyName, 'CompanyName', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
-                            <div class="col-sm-10">
-                                <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.CompanyName, {'attr': {'class': 'form-control'}}) }}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Salaire, 'Salaire', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
-                            <div class="col-sm-10">
-                                <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Salaire, {'attr': {'class': 'form-control'}}) }}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Type, 'Type', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
-                            <div class="col-sm-10">
-                                <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Type, {'attr': {'class': 'form-control'}}) }}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Description, 'Description', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
-                            <div class="col-sm-10">
-                                <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Description, {'attr': {'class': 'form-control'}}) }}
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-lg-offset-2 col-lg-10">
-                                <button class="btn btn-theme" type="submit">Modifier</button>
-                            </div>
-                        </div>
-                        {{ form_end(form) }}
-                        <!--</form>-->
+                        </form>
+
                     </div>
+                    <!-- /form-panel -->
                 </div>
-                <!-- col-lg-12-->
+                <!-- /col-lg-12 -->
+            </div>
+            <!-- row -->
+            <div class="row mt">
+                <div class="col-md-12">
+                    <div class="content-panel">
+                        <table class="table table-striped table-advance table-hover">
+                            <h4><i class="fa fa-angle-right"></i> tables des quizs</h4>
+                            <!--<input type="text" name="find" class="form-horizontal style-forms" name="find"><input type="submit" value="search">-->
+                            <hr>
+                            <thead>
+                            <tr>
+                                <th><i class="fa fa-bullhorn"></i> Company</th>
+                                <th class="hidden-phone"><i class="fa fa-question-circle"></i> Domain</th>
+                                <th><i class="fa fa-bookmark"></i> ville</th>
+                                <th><i class=" fa fa-edit"></i> Type</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for Q in quizs %}
+                                <tr>
+                                    <td>
+                                        <a href="basic_table.html#">{{ Q.Q1 }}</a>
+                                    </td>
+                                    <td class="hidden-phone">{{ Q.Q2 }}</td>
+                                    <td> {{ Q.Q3 }}</td>
+                                    <td><span class="label label-info label-mini">{{ Q.Q4 }}</span></td>
+                                    <td>
+                                        <button class="btn btn-primary btn-xs"><a  class="fa fa-pencil" href="{{ path('s',{'id':Q.id}) }}"></a></button>
+                                        <button class="btn btn-danger btn-xs"><a class="fa fa-trash-o " href="{{ path('w',{'id':Q.id}) }}"></a></button>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="btn btn-theme" type="submit"><a href="{{ path('AjouterQ') }}">Ajouter un quiz d'emploi</a></button>
+                    <!-- /content-panel -->
+                </div>
+                <!-- /col-md-12 -->
             </div>
 
-        </section>
-        <!-- /wrapper -->
-    </section>
-    <!-- /MAIN CONTENT -->
-{% endblock %}
 
+            <!-- /row -->
+        </section>
+
+    </section>
+
+    <!-- /MAIN CONTENT -->
+    <!--main content end-->
+
+{% endblock %}
 
 {% block js %}
     <script src="/Backend/lib/jquery/jquery.min.js"></script>

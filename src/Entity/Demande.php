@@ -42,6 +42,12 @@ class Demande
      */
     private $Commentaire;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Offre::class, inversedBy="ListDemande")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $RelatedOffre;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +109,18 @@ class Demande
     public function setCommentaire(string $Commentaire): self
     {
         $this->Commentaire = $Commentaire;
+
+        return $this;
+    }
+
+    public function getRelatedOffre(): ?Offre
+    {
+        return $this->RelatedOffre;
+    }
+
+    public function setRelatedOffre(?Offre $RelatedOffre): self
+    {
+        $this->RelatedOffre = $RelatedOffre;
 
         return $this;
     }

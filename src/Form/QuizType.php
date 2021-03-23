@@ -2,7 +2,6 @@
 
 namespace App\Form;
 
-use App\Entity\Demande;
 use App\Entity\Offre;
 use App\Entity\Quiz;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -10,32 +9,33 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class OffreType extends AbstractType
+class QuizType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Title')
-            ->add('Ville')
-            ->add('Domain')
-            ->add('CompanyName')
-            ->add('Salaire')
-            ->add('Type')
-            ->add('Description')
-            ->add('Test', EntityType::class,[
-                'class'=>Quiz::class,
+            ->add('Q1')
+            ->add('R1')
+            ->add('Q2')
+            ->add('R2')
+            ->add('Q3')
+            ->add('R3')
+            ->add('Q4')
+            ->add('R4')
+            ->add('Q5')
+            ->add('R5')
+            ->add('finder', EntityType::class,[
+                'class'=>Offre::class,
                 'choice_label'=>'id',
 
             ])
-
-
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Offre::class,
+            'data_class' => Quiz::class,
         ]);
 
         $resolver->setDefaults([

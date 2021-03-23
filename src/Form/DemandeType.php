@@ -3,7 +3,10 @@
 namespace App\Form;
 
 use App\Entity\Demande;
+use App\Entity\Offre;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -15,8 +18,13 @@ class DemandeType extends AbstractType
             ->add('nom')
             ->add('prenom')
             ->add('numero')
-            ->add('CV')
+            ->add('CV', FileType::class, array('label' => 'Brochure (PDF file)'))
             ->add('Commentaire')
+            ->add('RelatedOffre', EntityType::class,[
+                'class'=>Offre::class,
+                'choice_label'=>'Title',
+                'disabled' => true,
+            ])
         ;
     }
 

@@ -1,7 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment="" />
+    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/demande/afficher.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/demande/modifD.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/quiz/AddQuiz.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/quiz/editQ.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/quiz/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/quiz/valider.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Pi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DemandeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DemandeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OffreEmploiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OffreEmploiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/OffresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/OffresController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Demande.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Demande.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Offre.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Offre.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/DemandeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/DemandeType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/OffreType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/OffreType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/OffreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/OffreRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/demande/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/demande/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/offre_emploi/Affiche.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offre_emploi/Affiche.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/offre_emploi/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offre_emploi/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/offre_emploi/modif.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offre_emploi/modif.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/offres/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/offres/index.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +59,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -46,7 +98,6 @@
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
-      <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-code" />
       <path value="$PROJECT_DIR$/vendor/psr/link" />
@@ -78,7 +129,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
-      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/cache" />
       <path value="$PROJECT_DIR$/vendor/friendsofphp/proxy-manager-lts" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -114,6 +164,14 @@
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
     </include_path>
   </component>
   <component name="ProjectId" id="1p57aF6Aim9fy4OzNDpmhrUWbIl" />
@@ -124,10 +182,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../wamp64/www/EspritClub" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config/packages" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\pidev\-PIDEV-\config\packages" />
+      <recent name="C:\pidev\-PIDEV-\src\Repository" />
+      <recent name="C:\pidev\-PIDEV-\src\Form" />
+      <recent name="C:\pidev\-PIDEV-\src\Controller" />
+      <recent name="C:\pidev\-PIDEV-\src\Entity" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\medali\Desktop\PIDEV\Pi\public" />
     </key>
@@ -142,16 +208,74 @@
       <updated>1614461159638</updated>
       <workItem from="1614461161546" duration="7285000" />
       <workItem from="1614620713365" duration="18304000" />
+      <workItem from="1614860984699" duration="289000" />
+      <workItem from="1614882307432" duration="17537000" />
+      <workItem from="1614932214559" duration="2927000" />
+      <workItem from="1615126144736" duration="16865000" />
+      <workItem from="1615235304877" duration="11599000" />
+      <workItem from="1615303096871" duration="502000" />
+      <workItem from="1615311904356" duration="7872000" />
+      <workItem from="1615400661573" duration="1716000" />
+      <workItem from="1615402664355" duration="19884000" />
+      <workItem from="1615467507934" duration="31016000" />
+      <workItem from="1615542764288" duration="1180000" />
+      <workItem from="1615667930826" duration="671000" />
+      <workItem from="1616340083154" duration="1110000" />
+      <workItem from="1616513932868" duration="1271000" />
+      <workItem from="1616515655805" duration="177000" />
+      <workItem from="1616515852570" duration="584000" />
+      <workItem from="1616516740981" duration="7893000" />
     </task>
+    <task id="LOCAL-00001" summary="NEW UPDATE">
+      <created>1614861028235</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614861028235</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="NEW UPDATE" />
+    <option name="LAST_COMMIT_MESSAGE" value="NEW UPDATE" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1614626192199">
-      <screen x="0" y="0" width="1536" height="864" />
+    <state x="540" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616530494780">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="540" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1616530494780" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615490811266">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1615490811266" />
+    <state x="549" y="178" key="FileChooserDialogImpl" timestamp="1614882354124">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="178" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1614882354124" />
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864/1920.0.1920.1080@0.0.1536.864" timestamp="1614626192199" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1614861043896">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1614861043896" />
+    <state x="0" y="0" width="1217" height="558" key="dock-window-1" timestamp="1615145567626">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="0" y="0" width="1217" height="558" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1615145567626" />
   </component>
 </project>

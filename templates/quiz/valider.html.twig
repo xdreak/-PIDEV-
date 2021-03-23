@@ -1,0 +1,130 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Hello OffresController!{% endblock %}
+
+   {% block css %}
+       <!-- CSS Libraries -->
+       <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+       <link href="/Frontend/lib/slick/slick.css" rel="stylesheet">
+       <link href="/Frontend/libs/slick/slick-theme.css" rel="stylesheet">
+       <link href="/Frontend/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+       <!-- Template Stylesheet -->
+       <link href="/Frontend/css/style.css" rel="stylesheet">
+
+       <style>
+           #myDIV {
+               width: 100%;
+               padding: 50px 0;
+               text-align: center;
+               background-color: lightblue;
+               margin-top: 20px;
+               display: none;
+           }
+       </style>
+   {% endblock %}
+
+{% block body %}
+
+        {% for Q in quizs %}
+
+            <label for="fname">Question 1:</label>
+            <label for="fname">{{ Q.Q1 }}</label><br><br>
+            <input id="answer1" type="text "><br><br>
+
+            <label for="fname">Question 2:</label>
+            <label for="fname">{{ Q.Q2 }}</label><br><br>
+            <input id="answer2" type="text" ><br><br>
+
+            <label for="fname">Question 3:</label>
+            <label for="fname">{{ Q.Q3 }}</label><br><br>
+            <input id="answer3" type="text" ><br><br>
+
+            <label for="fname">Question 4:</label>
+            <label for="fname">{{ Q.Q4 }}</label><br><br>
+            <input id="answer4" type="text" ><br><br>
+
+            <label for="fname">Question 5:</label>
+            <label for="fname">{{ Q.Q5 }}</label><br><br>
+            <input id="answer5" type="text" ><br><br>
+
+            <button onclick="myFunction()">Try it</button>
+
+            <div id="myDIV">
+                votre score n'est pas suffisant pour postuler à cet emploi
+            </div>
+
+
+
+            <script>
+                var x = document.getElementById("myDIV");
+                score = 0;
+
+                function myFunction() {
+
+                    var A1 = document.getElementById("answer1").value;
+                    var A2 = document.getElementById("answer2").value;
+                    var A3 = document.getElementById("answer3").value;
+                    var A4 = document.getElementById("answer4").value;
+                    var A5 = document.getElementById("answer5").value;
+
+                    if ("{{Q.R1}}"==A1)
+                    {
+
+                        score++;
+                    }
+                    if ("{{Q.R2}}"==A2)
+                    {
+
+                        score++;
+                    }
+                    if ("{{Q.R3}}"==A3)
+                    {
+
+                        score++;
+                    }
+                    if ("{{Q.R4}}"==A4)
+                    {
+
+                        score++;
+                    }
+                    if ("{{Q.R5}}"==A5)
+                    {
+
+                        score++;
+                    }
+
+                    if (score >= 3) {
+
+
+                        window.location.replace("{{ path('k',{'id':Q.id}) }}");
+
+                    } else {
+
+                        x.style.display = 'block';
+
+                    }
+
+                };
+
+            </script>
+
+        {% endfor %}
+
+
+
+
+
+{% endblock %}
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/Frontend/lib/slick/slick.min.js"></script>
+    <script src="/Frontend/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/Frontend/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+{% endblock %}
+

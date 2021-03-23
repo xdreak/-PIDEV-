@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello OffreEmploiController!{% endblock %}
+
  {% block css %}
      <!-- Favicons -->
      <link href="/Backend/img/favicon.png" rel="icon">
@@ -39,66 +40,106 @@
                         <!--<form class="form-horizontal style-form" method="get">-->
                         {{form_start(form,{'attr':{'class':'form-horizontal style-forms'}})}}
                         <div class="form-group">
+                            {{ form_errors(form.Q1) }}
                             <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Title, 'Title', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            {{ form_label(form.Q1, 'Q1', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
                             <div class="col-sm-10">
                                 <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Title, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.Q1, {'attr': {'class': 'form-control'}}) }}
+
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            {{ form_errors(form.R1) }}
+                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
+                            {{ form_label(form.R1, 'R1', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control">-->
+
+                                {{ form_widget(form.R1, {'attr': {'class': 'form-control'}}) }}
+
                             </div>
                         </div>
                         <div class="form-group">
+                            {{ form_errors(form.Q2) }}
                             <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Ville, 'Ville', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            {{ form_label(form.Q2, 'Q2', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
                             <div class="col-sm-10">
                                 <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Ville, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.Q2, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
                         <div class="form-group">
+                            {{ form_errors(form.R2) }}
                             <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Domain, 'Domain', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            {{ form_label(form.R2, 'R2', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
                             <div class="col-sm-10">
                                 <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Domain, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.R2, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
                         <div class="form-group">
+                            {{ form_errors(form.Q3) }}
                             <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.CompanyName, 'CompanyName', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            {{ form_label(form.Q3, 'Q3', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
                             <div class="col-sm-10">
                                 <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.CompanyName, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.Q3, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
                         <div class="form-group">
+                            {{ form_errors(form.R3) }}
                             <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Salaire, 'Salaire', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            {{ form_label(form.R3, 'R3', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
                             <div class="col-sm-10">
                                 <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Salaire, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.R3, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
                         <div class="form-group">
+                            {{ form_errors(form.Q4) }}
                             <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Type, 'Type', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            {{ form_label(form.Q4, 'Q4', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
                             <div class="col-sm-10">
                                 <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Type, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.Q4, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
                         <div class="form-group">
+                            {{ form_errors(form.R4) }}
                             <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
-                            {{ form_label(form.Description, 'Description', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            {{ form_label(form.R4, 'R4', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
                             <div class="col-sm-10">
                                 <!--<input type="text" class="form-control">-->
-                                {{ form_widget(form.Description, {'attr': {'class': 'form-control'}}) }}
+                                {{ form_widget(form.R4, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_errors(form.Q5) }}
+                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
+                            {{ form_label(form.Q5, 'Q5', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control">-->
+                                {{ form_widget(form.Q5, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_errors(form.R5) }}
+                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
+                            {{ form_label(form.R5, 'R5', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control">-->
+                                {{ form_widget(form.R5, {'attr': {'class': 'form-control'}}) }}
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
-                                <button class="btn btn-theme" type="submit">Modifier</button>
+                                <button class="btn btn-theme" type="submit">Submit</button>
                             </div>
                         </div>
+
                         {{ form_end(form) }}
                         <!--</form>-->
                     </div>
@@ -111,8 +152,6 @@
     </section>
     <!-- /MAIN CONTENT -->
 {% endblock %}
-
-
 {% block js %}
     <script src="/Backend/lib/jquery/jquery.min.js"></script>
 
@@ -191,3 +230,4 @@
         }
     </script>
 {% endblock %}
+
