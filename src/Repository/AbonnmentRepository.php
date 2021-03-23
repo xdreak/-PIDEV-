@@ -18,7 +18,7 @@ class AbonnmentRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Abonnment::class);
     }
-
+    
     // /**
     //  * @return Abonnment[] Returns an array of Abonnment objects
     //  */
@@ -47,4 +47,5 @@ class AbonnmentRepository extends ServiceEntityRepository
         ;
     }
     */
+  
 }

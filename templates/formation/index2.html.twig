@@ -2,38 +2,325 @@
    {% block form %}
 {% block title %}Formations{% endblock %}
 {% block body %}
+
+<head>
+
+<style>
+
+body
+{
+  background-color:#f2f2f2;
+  font-family: 'RobotoDraft', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+*
+{
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h5
+{
+  
+  margin:0px;
+  font-size:1.2em;
+  font-weight:700;
+}
+h2{
+  font-size:14px;
+}
+p
+{
+  font-size:12px;
+}
+
+.center
+{
+ 
+  height:80vh;
+ width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* End Non-Essential  */
+
+.property-card
+{
+  
+  height:18em;
+  width: 400px;
+  display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -ms-flex-direction:column;
+  flex-direction:column;
+  position:relative;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius:16px;
+  overflow:hidden;
+  -webkit-box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+  box-shadow:  15px 15px 27px #e1e1e3, -15px -15px 27px #ffffff;
+}
+/* ^-- The margin bottom is necessary for the drop shadow otherwise it gets clipped in certain cases. */
+
+/* Top Half of card, image. */
+
+.property-image
+{
+
+  height:6em;
+  width: 300px;
+  padding:1em 0em;
+
+  position:Absolute;
+  top:0px;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image:url('https://images.unsplash.com/photo-1530543787849-128d94430c6b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+  background-size:cover;
+  background-repeat:no-repeat;
+  
+}
+
+/* Bottom Card Section */
+
+.property-description
+{ 
+  
+  background-color: #FAFAFC;
+  height:12em;
+ width: 300px;
+  position:absolute;
+  bottom:0em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  padding: 0.5em 0em;
+  text-align:center;
+}
+
+/* Social Icons */
+
+.property-social-icons
+{
+  width:1em;
+  height:1em;
+  background-color:black;
+  position:absolute;
+  bottom:1em;
+  left:0em;
+  -webkit-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -o-transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* Property Cards Hover States */
+
+.property-card:hover .property-description
+{
+  height:0em;
+  padding:0px 1em;
+}
+.property-card:hover .property-image
+{
+  height:18em;
+}
+
+.property-card:hover .property-social-icons
+{
+  background-color:white;
+}
+
+.property-card:hover .property-social-icons:hover
+{
+  background-color:blue;
+  cursor:pointer;
+}
+
+.property-image-title
+{
+   width: 300px;
+  
+text-align:center;
+position:Relative;
+top:10%;
+opacity:0;
+transition:all 0.4s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+
+font-size:1.2em;
+}
+
+.property-card:hover .property-image-title
+{
+opacity:1;
+}
+.flex-container {
+  margin-left: 15px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.wrap  { 
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.flex-container > div {
+  
+  width: 300px;
+  margin-left: 15px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
+
+</style>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+ <h1>Formations:</h1>
+
+<div  class="flex-container wrap">
 {% if formations %}
 {% for formation in formations %}
-<h1>Formations:</h1>
-<table class="table table-hover">
-<thead>
-<tr>
-<th>Titre</th>
-<th>Description</th>
-<th>Date</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
+<div class="center">
+  <div class="property-card">
+    
+      <div class="property-image"  >
+        <div class="property-image-title">
+         <h5>{{formation.Titre}}</h5>
+         <hr>
+             <h2>{{formation.Description}}</h2>             <h5>  Prix :{{ formation.Prix }}             </h2>
+          <button  id="myBtn"class="btn btn-light">S'inscrire</button>
+         
+  
+        </div>
+      </div>
+    <div class="property-description">
+      <h5> {{formation.Titre}} </h5>
+       <hr>
+      <h2>à {{ formation.Lieu }} </h2>  <h2>de  {{formation.Date |date('Y-m-d')   }}  à {{formation.DateFin |date('Y-m-d')   }}  </h2>  
 
-<tr>
+    </div>
+ <div id="myModal" class="modal">
 
-<td>{{formation.Titre}}</td>
-<td>{{formation.Description}}</td>
-<td>{{formation.Date |date('Y-m-d')   }}</td>
-<td>
-<a href="Frontend/formation/{{ formation.id }}" class="btn btn-dark">Afficher</a>
-</tr>
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Validez votre inscription</p>
+     <a href="/formation1/{{ formation.Titre }}" class="btn btn-light">S'inscrire</a>
+     
+  </div>
 
-</tbody>
-</table>
-<a href="/Frontend/abonnement/" class="btn btn-dark">Mes formations</a>
+</div>
+  </div>
+ 
+
+</div>
+
+<br> <br>
 {% endfor %}
 {% else %}
 <p>No formations to display</p>    
 {% endif %}
+</div>
+<a href="/Frontend/abonnement/" class="btn btn-dark">Mes formations</a>
+
+
+
+
+<!-- Trigger/Open The Modal -->
+
+
+<!-- The Modal -->
+
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock %}
  
 
 {% endblock %}
+

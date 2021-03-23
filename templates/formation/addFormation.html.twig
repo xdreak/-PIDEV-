@@ -2,14 +2,22 @@
    {% block form %}
 {% block title %}Formations{% endblock %}
 {% block body %}
+   {% for message in app.flashes('fail') %}
+            <div class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
 {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
 <h1>Ajouter une formation</h1>
 {{ form_label(form.Titre,"Titre") }}
  {{ form_widget(form.Titre) }}
 {{ form_errors(form.Titre) }}
-{{ form_label(form.Date,"Date") }}
+{{ form_label(form.Date,"Date Debut") }}
  {{ form_widget(form.Date) }}
 {{ form_errors(form.Date) }}
+{{ form_label(form.DateFin,"Date Fin") }}
+ {{ form_widget(form.DateFin) }}
+{{ form_errors(form.DateFin) }}
 {{ form_label(form.Lieu,"Lieu") }}
  {{ form_widget(form.Lieu) }}
 {{ form_errors(form.Lieu) }}

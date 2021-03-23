@@ -46,6 +46,13 @@ class Formation
      */
     private $Prix;
 
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $dateFin;
+
+  
+
     public function getId(): ?int
     {
         return $this->id;
@@ -110,4 +117,17 @@ class Formation
 
         return $this;
     }
+
+    public function getDateFin(): ?\DateTimeInterface
+    {
+        return $this->dateFin;
+    }
+
+    public function setDateFin(\DateTimeInterface $dateFin): self
+    {
+        $this->dateFin = $dateFin;
+
+        return $this;
+    }
+
 }

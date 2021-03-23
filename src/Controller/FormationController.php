@@ -13,6 +13,10 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class FormationController extends AbstractController
 {
@@ -59,11 +63,17 @@ class FormationController extends AbstractController
           'attr' => array('class' => 'form-control')
         ))
          ->add('Date', DateType::class, array(
-                'label' => 'Date',
+                'label' => 'DateDebut',
                   'required' => true,
                   'attr' => array('class' => 'form-control')
 
          ))
+         ->add('DateFin', DateType::class, array(
+          'label' => 'DateFin',
+            'required' => true,
+            'attr' => array('class' => 'form-control')
+
+   ))
          ->add('Lieu', TextareaType::class, array(
             'label' => 'Lieu',
               'required' => true,
@@ -79,21 +89,28 @@ class FormationController extends AbstractController
               'required' => true,
               'attr' => array('class' => 'form-control')
         ))
+       
         ->add('save', SubmitType::class, array(
           'label' => 'Ajouter',
           'attr' => array('class' => 'btn btn-primary mt-3')
         ))
         ->getForm();
         $form->handleRequest($request);
+        $Date = $form->get('Date')->getData();
+        $DateFin = $form->get('DateFin')->getData();
 
         if($form->isSubmitted() && $form->isValid()) {
+          if($Date>$DateFin){
+            $this->addFlash('fail', 'Vérifier la date fin! ');
+ 
+          }
           $classe = $form->getData();
-  
+          
           $entityManager = $this->getDoctrine()->getManager();
           $entityManager->persist($classe);
           $entityManager->flush();
-  
-          return $this->redirectToRoute('formation');
+          $this->addFlash('success', 'Formation Ajouté! ');
+         
         }
         return $this->render('formation/addFormation.html.twig',array('form'=>$form->createView()));
 
@@ -169,7 +186,7 @@ class FormationController extends AbstractController
     }
 
 /**
-     * @Route("/formation/{id}", name="formation_show")
+     * @Route("/formation/afficher/{id}")
      */
     public function show($id) {
       $Formation = $this->getDoctrine()->getRepository(Formation::class)->find($id);
@@ -180,7 +197,7 @@ class FormationController extends AbstractController
 /**
      * @Route("/formation1/{titre}")
      */
-    public function inscrire($titre) {
+    public function inscrire($titre,MailerInterface $mailer) {
       $entityManager = $this->getDoctrine()->getManager();
 
       $abonnement = new Abonnment();
@@ -190,7 +207,18 @@ class FormationController extends AbstractController
 
      
       $entityManager->persist($abonnement);
+      $email = (new Email())
+      ->from('gabsijihen33@gmail.com')
+      ->to('gabsijihen31@gmail.com')
+      //->cc('cc@example.com')
+      //->bcc('bcc@example.com')
+      //->replyTo('fabien@example.com')
+      //->priority(Email::PRIORITY_HIGH)
+      ->subject('Bonjour!')
+      ->text("Vous ètes inscrit a la formation:{$titre}!")
+      ->html("<h1>Vous ètes inscrit a la formation:{$titre}</h1><br><p>Merci pour nous faire confiance!</p>");
 
+  $mailer->send($email);
       
       $entityManager->flush();
 
@@ -205,7 +233,20 @@ class FormationController extends AbstractController
 
       return $this->render('formation/affichFormation2.html.twig', array('formation' => $Formation));
     }
-
+    /**
+     * @Route("/stats", name="stat")
+     */
+    public function stats(): Response
+    {
+        $repository = $this->getDoctrine()->getrepository(Abonnment::class);//recuperer repisotory
+        $formations = $repository->findAll();
+        // $repository1 = $this->getDoctrine()->getrepository(Abonnment::class);//recuperer repisotory
+        // $abonnements = $repository1->();
+        //affichage
+        return $this->render('formation/statistics.html.twig', [
+            'formations' => $formations,
+        ]);//liasion twig avec le controller
+    }
 
 
 }

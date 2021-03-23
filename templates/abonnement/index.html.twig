@@ -3,7 +3,7 @@
 {% block title %}Formations{% endblock %}
 {% block body %}
 {% if abonnements %}
-{% for abonnement in abonnements %}
+
 <h1>Abonnements:</h1>
 <table class="table table-hover">
 <thead>
@@ -15,7 +15,7 @@
 </tr>
 </thead>
 <tbody>
-
+{% for abonnement in abonnements %}
 <tr>
 
 <td>{{abonnement.NomUser}}</td>
@@ -23,10 +23,10 @@
 <td>{{abonnement.Statue}}</td>
 
 </tr>
-
+{% endfor %}
 </tbody>
 </table>
-{% endfor %}
+
 {% else %}
 <p>No Abonnements to display</p>    
 {% endif %}
