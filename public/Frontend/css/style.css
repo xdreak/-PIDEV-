@@ -1886,7 +1886,7 @@ a:focus {
     }
 }
 .map__image{
-    width: 50%;
+    width: 75%;
     float: left;
 }
 .map__image path{

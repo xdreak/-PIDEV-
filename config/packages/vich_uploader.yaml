@@ -10,3 +10,7 @@ vich_uploader:
             uri_prefix: '%app.path.image%'
             namer: Vich\UploaderBundle\Naming\UniqidNamer
             upload_destination: '%kernel.project_dir%/public%app.path.image%'
+        pdf:
+            uri_prefix : '%app.path.pdf%'
+            namer : Vich\UploaderBundle\Naming\UniqidNamer
+            upload_destination : '%kernel.project_dir%/public%app.path.pdf%'

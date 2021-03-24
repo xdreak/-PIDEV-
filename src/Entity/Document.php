@@ -4,9 +4,12 @@ namespace App\Entity;
 
 use App\Repository\DocumentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=DocumentRepository::class)
+ * @Vich\Uploadable
  */
 class Document
 {
@@ -31,11 +34,21 @@ class Document
      * @ORM\Column(type="string", length=255)
      */
     private $pdf;
-
+    /**
+     * @Vich\UploadableField(mapping="pdf", fileNameProperty="pdf")
+     * @var File
+     */
+    private $pdfFile;
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $apercu;
+
+    /**
+     * @Vich\UploadableField(mapping="image", fileNameProperty="apercu")
+     * @var File
+     */
+    private $apercuFile;
 
     public function getId(): ?int
     {
@@ -66,24 +79,57 @@ class Document
         return $this;
     }
 
-    public function getPdf(): ?string
+    public function getPdf()
     {
         return $this->pdf;
     }
 
-    public function setPdf(string $pdf): self
+    public function setPdf($pdf)
     {
         $this->pdf = $pdf;
 
         return $this;
     }
 
-    public function getApercu(): ?string
+    /**
+     * @return File
+     */
+    public function getPdfFile()
+    {
+        return $this->pdfFile;
+    }
+
+    /**
+     * @param File $pdfFile
+     */
+    public function setPdfFile(File $pdfFile): void
+    {
+        $this->pdfFile = $pdfFile;
+    }
+
+
+    public function getApercu()
     {
         return $this->apercu;
     }
 
-    public function setApercu(string $apercu): self
+    /**
+     * @return File
+     */
+    public function getApercuFile()
+    {
+        return $this->apercuFile;
+    }
+
+    /**
+     * @param File $apercuFile
+     */
+    public function setApercuFile(File $apercuFile): void
+    {
+        $this->apercuFile = $apercuFile;
+    }
+
+    public function setApercu($apercu)
     {
         $this->apercu = $apercu;
 

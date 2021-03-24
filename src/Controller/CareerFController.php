@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Articlelike;
 use App\Entity\Artiles;
+use App\Entity\Document;
 use App\Form\ArticleFormType;
+use App\Form\DocumentType;
 use App\Repository\ArticlelikeRepository;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Knp\Component\Pager\PaginatorInterface;
@@ -47,16 +49,15 @@ class CareerFController extends AbstractController
      * @param PaginatorInterface
      * @return Response
      */
-    public function AfficherGestionConseilCarriere(Request $request ,PaginatorInterface $paginator): Response
+    public function AfficherGestionConseilCarriere(): Response
     {
-        $rep=$this->getDoctrine()->getRepository(Artiles::class)->findAll();
-        $articles=$paginator->paginate(
-            $rep,
-            $request->query->getInt('page',1),4
-        );
+        $articles=$this->getDoctrine()->getRepository(Artiles::class)->findAll();
+        $cvs=$this->getDoctrine()->getRepository(Document::class)->findByValue('CV');
+        $lms=$this->getDoctrine()->getRepository(Document::class)->findByValue('Lettre de Motivation');
         return $this->render('Carriere/GestionCarriereAdmin.html.twig',[
             'articles'=>$articles,
-            'paginator'=>$paginator,
+            'cvs'=>$cvs,
+            'lms'=>$lms,
         ]);
     }
 
@@ -131,7 +132,69 @@ class CareerFController extends AbstractController
         $em->flush();
         return $this->redirectToRoute('gestionCarriereAdmin');
     }
+///////////////////////////////Gestion Documents/////////////////////////////////////
+/// ////////////////////////////////////////////////////////////////////////////////
 
+
+
+    /**
+     * @Route("/Doc/{id}", name="AfficherUnDocument")
+     */
+    public function AfficherUnDocumentAdmin($id)
+    {
+        $rep=$this->getDoctrine()->getRepository(Document::class);
+        $doc=$rep->find($id);
+        return $this->render('Carriere/Docs/AfficheDocAdmin.html.twig',[
+            'doc'=>$doc
+        ]);
+    }
+    /**
+     * @Route("/AjoutDocument",name="AjoutDocument")
+     */
+    public function AjoutDocument(Document $doc=null, Request $request, EntityManagerInterface $manager)
+    {
+        if(!$doc){
+            $doc = new Document();
+        }
+        $form = $this->createForm(DocumentType::class,$doc);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()){
+            $doc=$form->getData();
+            $manager->persist($doc);
+            $manager->flush();
+            $this->addFlash("message","Document bien Ajouté");
+            return $this->redirectToRoute('AfficherUnDocument',['id'=>$doc->getId()]);
+        }
+        return $this->render('Carriere/Docs/AjoutDocAdmin.html.twig',['formDoc'=> $form->createView()]);
+    }
+    /**
+     * @Route ("/Doc/{id}/Modifier", name="ModifierDocument")
+     */
+    public function ModifierDocAdmin(Document $doc, Request $request,EntityManagerInterface $manager):Response
+    {
+        $formDoc=$this->createForm(DocumentType::class,$doc);
+        $formDoc->handleRequest($request);
+        if($formDoc->isSubmitted() && $formDoc->isValid()){
+            $doc=$formDoc->getData();
+            $manager->persist($doc);
+            $manager->flush();
+            $this->addFlash("message","Document bien Modifié");
+            return $this->redirectToRoute('AfficherUnDocument',['id'=>$doc->getId()]);
+        }
+        return $this->render('Carriere/Docs/ModifierDoc.html.twig',[
+            'formDoc'=>$formDoc->createView()
+        ]);
+    }
+    /**
+     * @Route ("/Doc/{id}/Supp", name="SupprimerDocument")
+     */
+    public function SupprimerDoc(Document $doc): RedirectResponse
+    {
+        $em=$this->getDoctrine()->getManager();
+        $em->remove($doc);
+        $em->flush();
+        return $this->redirectToRoute('gestionCarriereAdmin');
+    }
 
 
 
@@ -149,7 +212,7 @@ class CareerFController extends AbstractController
         $rep=$this->getDoctrine()->getRepository(Artiles::class)->findAll();
         $article=$paginator->paginate(
             $rep,
-            $request->query->getInt('page',1),6
+            $request->query->getInt('page',1),4
         );
         return $this->render('Carriere/ArticlesClient.html.twig', [
             'articles' => $article,
@@ -161,8 +224,9 @@ class CareerFController extends AbstractController
      */
     public function cv(): Response
     {
+        $cvs=$this->getDoctrine()->getRepository(Document::class)->findByValue('CV');
         return $this->render('Carriere/cv.html.twig', [
-            'controller_name' => 'CareerFController',
+            'cvs' => $cvs,
         ]);
     }
     /**
@@ -170,11 +234,11 @@ class CareerFController extends AbstractController
      */
     public function lettreM(): Response
     {
+        $lms=$this->getDoctrine()->getRepository(Document::class)->findByValue('Lettre de Motivation');
         return $this->render('Carriere/lettremotiv.html.twig', [
-            'controller_name' => 'CareerFController',
+            'lms' => $lms,
         ]);
     }
-
     /**
      * @Route("/ArticleN/{id}", name="AfficheUnArticleClient")
      */

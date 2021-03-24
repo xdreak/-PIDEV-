@@ -1,7 +1,7 @@
 {% extends 'front.html.twig' %}
 {% block body %}
-    <body>
-    <nav class="navbar navbar-light navbar-expand fixed-top" style="background-color: #eeeeee;">
+<body>
+  <nav class="navbar navbar-light navbar-expand fixed-top" style="background-color: #eeeeee;">
         <div class="container-fluid"><img src="{{ asset('assets/img/LOGO.png') }}" style="height: 91px;width: 82px;"><a
                     href="#" style="color: rgb(230,160,79);font-size: 31px;font-family: 'Alfa Slab One', cursive;">E-MPLOYINI</a>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -14,133 +14,81 @@
                             de motivation</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="/CV"
                                                                 style="color: #bb620f;font-weight: bold;">CV</a></li>
-
                 </ul>
             </div>
         </div>
     </nav>
-    <main class="page lanidng-page">
-        <section class="portfolio-block block-intro"
-                 style="background-image: url({{ asset('assets/img/carrierr.png') }});background-repeat: repeat;">
-            <h1 class="text-left shadow-lg"
-                style="font-size: 77px;color: rgb(230,125,3);font-family: 'Alfa Slab One', cursive;filter: grayscale(23%) hue-rotate(0deg) invert(0%) saturate(133%);opacity: 0.90;margin: 62px;">
-                Bienvenue à notre<br>&nbsp;guide professionnel&nbsp;</h1>
-            <p style="color: #f6f7f8;background-color: rgba(179,108,25,0.57);">Vous trouverez ici tous ceux que vous
-                avez besoin pour améliorer<br>&nbsp;votre carrière professionnelle.</p>
-        </section>
-        <section class="portfolio-block photography">
-            <div class="container">
-                <div>
-                    <h1 style="margin: 32px;font-size: 32px;"> ça vous intéresse peut-être !</h1>
-                    <div class="card-group">
-                        {% for articl in articles %}
-                            <div>
-                                <figure class="snip1253">
-                                    <div class="image">
-                                        <img src="{{ articl.image }}"/>
-                                        {% if articl.image %}
-                                            <img src="{{ vich_uploader_asset(articl,'imageFile') }}"/>
-                                        {% endif %}
-                                    </div>
-                                    <figcaption>
-                                        <h2>{{ articl.Titre }}</h2>
-                                        <p>
-                                            {{ articl.Resume | raw }}
-                                        </p>
-                                    </figcaption>
-
-                                    <div class="footer footer-link"
+  <main class="page lanidng-pag" >
+     <section class="portfolio-block photography" >
+      <header class="overlay" style="background-image: url('https://cdn.seeklearning.com.au/media/images/career-guide/article/career-advice/web_images/blogs/214/2416/3_common_career_progression_questions_940x485.jpg');text-align: center;width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+           <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                <h1 style="color: rgb(255,255,255);">Conseil Crrière</h1>
+                <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                <p style="color: rgb(255,255,255);">Vous trouverez ici tous les guides qui vous intéressent</p>
+                <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/Articles') }}">Home</a>
+              </div>
+          </header>
+           <div class="card-group col-md-6" style="margin-left: 370px" >
+              {% for articl in articles %}
+                <div style="margin-right: 5px">
+                  <figure class="snip1253">
+                    <div class="image">
+                      <img src="{{ articl.image }}"/>
+                        {% if articl.image %}
+                            <img src="{{ vich_uploader_asset(articl,'imageFile') }}"/>
+                        {% endif %}
+                    </div>
+                   <figcaption>
+                     <h2>{{ articl.Titre }}</h2>
+                      <p>
+                       {{ articl.Resume | raw }}
+                      </p>
+                   </figcaption>
+                  <div class="footer footer-link"
                                          style="background-color:#eea236;  padding:15px; text-align: right">
                                         <a style="color: #FFFFFF; margin-right: 20px;" class="ion-eye"
                                            href="{{ path('AfficheUnArticleClient',{'id':articl.id}) }}">see more</a>
                                         <a style="color: #FFFFFF; margin-right:120px;" class="ion-heart"
                                            href="{{ path('post_like', {'id': articl.id}) }}">j'aime</a>
                                     </div>
-                                </figure>
-                            </div>
-                            {# <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">{{ articl.Titre }}</h4>
-                                    <p class="card-text">-{{ articl.Resume | raw }}</p>
-                                    <img src="{{ articl.image }}">
-                                    <a href="{{ path('showarticleFront',{'id':articl.id}) }}" class="btn"
-                                       style="background-color: rgb(237,128,27);">Afficher plus</a>
-                                    <a href="{{ path('post_like', {'id': articl.id}) }}" class="btn btn-link js-like">
-                                        {% if app.user and articl.likedByUser(app.user) %}
-                                            <i class="fas fa-thumbs-up"></i>
-                                        {% else %}
-                                            <i class="far fa-thumbs-up"></i>
-                                        {% endif %}
-                                        <span class="js-likes"> {{articl.Nombrelike|length }}</span>
-                                        <span class="js-label">j'aime</span>
-
-                                    </a>
-                                    {% block script %}
-                                        <script>
-                                            function onClickBtnLike(event){
-                                                event.preventDefault();
-
-                                                const  url = this.href;
-                                                const spanCount = this.querySelector('span.js-likes');
-                                                const icone =this.querySelector('i');
-                                                axios.get(url).then(function (response){
-                                                    spanCount.textContent=response.data.nombrelike;
-                                                    if(icone.classList.contains('fas')){
-                                                        icone.classList.replace('fas','far');
-                                                    }else {
-                                                        icone.classList.replace('far','fas');
-                                                    }
-                                                }).catch(function (error){
-                                                    if(error.response.status == 403){window.alert("Vous ne pouvez pas liker")}
-                                                })
-                                            }
-                                        </script>
-                                    {% endblock %}
-                                </div>
-                            </div>
-                            #}
-                        {% endfor %}
-                    </div>
-                    <div class="pagination justify-content-center ">
-                        {{ knp_pagination_render(articles) }}
-                    </div>
+                  </figure>
                 </div>
-            </div>
-            </div>
-        </section>
-        <section class="portfolio-block skills">
-            <div class="container">
-                <div class="heading">
-                    <h2>CITATION DU JOUR</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0">
-                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-star-outline"
+              {% endfor %}
+           </div>
+        <div class="pagination justify-content-center ">
+          {{ knp_pagination_render(articles) }}
+        </div>
+     </section>
+     <section class="portfolio-block skills">
+       <div class="container">
+              <div class="heading">
+               <h2>CITATION DU JOUR</h2>
+              </div>
+               <div class="row">
+                 <div class="col-md-4">
+                 <div class="card special-skill-item border-0">
+                         <div class="card-header bg-transparent border-0"><i class="icon ion-ios-star-outline"
                                                                                 style="background-color: rgb(237,128,27);"></i>
-                            </div>
-                            <div class="card-body">
+                       </div>
+                         <div class="card-body">
                                 <h3 class="card-title">Soft Skills</h3>
                                 <p class="card-text" style="font-weight: bold;">A l’inverse des compétences techniques,
                                     il n’est pas possible de déléguer aux robots les compétences
                                     comportementales.<br><br>Jérôme Hoarau<br></p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0">
-                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-lightbulb-outline"
-                                                                                style="background-color: rgb(237,128,27);"></i>
-                            </div>
-                            <div class="card-body">
+                   </div> </div>
+                  <div class="col-md-4">
+                      <div class="card special-skill-item border-0">
+                        <div class="card-header bg-transparent border-0"><i class="icon ion-ios-lightbulb-outline" style="background-color: rgb(237,128,27);"></i></div>
+                        <div class="card-body">
                                 <h3 class="card-title">Innovation</h3>
                                 <p class="card-text" style="font-style: normal;font-weight: bold;">Encouragez
                                     l’innovation. Le changement est notre force vitale, la stagnation notre
                                     glas.<br><br>David M. OgilvyDe David M. Ogilvy<br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
                         <div class="card special-skill-item border-0">
                             <div class="card-header bg-transparent border-0"><i class="icon ion-ios-gear-outline"
                                                                                 style="background-color: rgb(237,128,27);"></i>
@@ -151,11 +99,10 @@
                                     celui du prochain.<br><br>Proverbe latin.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+                    </div></div>
+        </div>
+     </section>
+  </main>
     <section class="portfolio-block website gradient"
              style="background-image: url({{ asset('assets/img/imageonline-co-whitebackgroundremoved.png') }});background-color: #eeeeee;background-repeat: no-repeat;">
         <div class="container">
@@ -179,7 +126,5 @@
                             class="icon ion-social-twitter"></i></a></div>
         </div>
     </footer>
-
-    </body>
-
+</body>
 {% endblock %}
