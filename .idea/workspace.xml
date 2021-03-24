@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 22mars">
+    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 24mars">
       <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/6058a29118ed1477586105.PNG" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/6058a47b521f2077146475.PNG" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/6058a4fe7d2e5184743582.PNG" afterDir="false" />
@@ -26,6 +26,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Frontend/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CareerFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CareerFController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Document.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Document.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/DocumentRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/DocumentRepository.php" afterDir="false" />
@@ -236,7 +237,7 @@
       <workItem from="1616338192642" duration="709000" />
       <workItem from="1616338975383" duration="2021000" />
       <workItem from="1616341085258" duration="45591000" />
-      <workItem from="1616531029361" duration="19598000" />
+      <workItem from="1616531029361" duration="19926000" />
     </task>
     <task id="LOCAL-00001" summary=" update">
       <created>1614858765612</created>
@@ -282,7 +283,8 @@
     <MESSAGE value=" update" />
     <MESSAGE value=" update1" />
     <MESSAGE value=" update 22mars" />
-    <option name="LAST_COMMIT_MESSAGE" value=" update 22mars" />
+    <MESSAGE value=" update 24mars" />
+    <option name="LAST_COMMIT_MESSAGE" value=" update 24mars" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
