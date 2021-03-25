@@ -1,44 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 24mars">
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210325102521.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210325103333.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210325122322.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210325122925.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c700d9bdba189821759.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c70436d81d827660644.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c70712ba19612004838.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c70f2eb0bf169546445.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c721668f37107036684.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c7373af8fc861639671.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c743dd7a9d410013361.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c75092fc62028135137.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/pdf/featured/605c700da1d1b976212662.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/pdf/featured/605c7043722f3139712049.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/pdf/featured/605c7071300e3929827218.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/LikeArticle.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/LikeArticleRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthAuthenticator.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 25mars">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20210322113804.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210322113804.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CareerFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CareerFController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Articlelike.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Artiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Artiles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArticlelikeRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Carriere/AffUnArticleAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/AffUnArticleAdmin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Carriere/AffUnArticleClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/AffUnArticleClient.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Carriere/GestionCarriereAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/GestionCarriereAdmin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Carriere/security.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +202,7 @@
       <workItem from="1616338192642" duration="709000" />
       <workItem from="1616338975383" duration="2021000" />
       <workItem from="1616341085258" duration="45591000" />
-      <workItem from="1616531029361" duration="39527000" />
+      <workItem from="1616531029361" duration="40636000" />
     </task>
     <task id="LOCAL-00001" summary=" update">
       <created>1614858765612</created>
@@ -289,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616626876352</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary=" update 25mars">
+      <created>1616699920706</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616699920706</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +284,8 @@
     <MESSAGE value=" update1" />
     <MESSAGE value=" update 22mars" />
     <MESSAGE value=" update 24mars" />
-    <option name="LAST_COMMIT_MESSAGE" value=" update 24mars" />
+    <MESSAGE value=" update 25mars" />
+    <option name="LAST_COMMIT_MESSAGE" value=" update 25mars" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
