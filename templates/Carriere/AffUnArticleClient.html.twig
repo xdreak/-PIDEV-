@@ -4,7 +4,6 @@
     <section class="article">
 
         <article>
-            <img src="{{ article.image }}">
             {% if article.image %}
                 <img src="{{ vich_uploader_asset(article,'imageFile') }}">
             {% endif %}

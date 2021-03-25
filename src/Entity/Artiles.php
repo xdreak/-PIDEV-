@@ -75,11 +75,16 @@ class Artiles
      * @var File
      */
     private $imageFile;
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Articlelike", mappedBy="user")
-     */
-    private $nombrelike;
 
+    /**
+     * @ORM\OneToMany(targetEntity=LikeArticle::class, mappedBy="article")
+     */
+    private $likes;
+
+    public function __construct()
+    {
+        $this->likes = new ArrayCollection();
+    }
     /**
      * @param File $imageFile
      */
@@ -156,30 +161,28 @@ class Artiles
 
         return $this;
     }
-    public function setNombrelike()
-    {
-        $this->nombrelike = new ArrayCollection();
-    }
+
     /**
-     * @return Collection|Articlelike[]
+     * @return Collection|LikeArticle[]
      */
-    public function getNombrelike(): Collection
+    public function getLikes(): Collection
     {
-        return $this->nombrelike;
+        return $this->likes;
     }
-    public function addLike(Articlelike $like): self
+
+    public function addLike(LikeArticle $like): self
     {
-        if (!$this->nombrelike->contains($like)) {
-            $this->nombrelike[] = $like;
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
             $like->setArticle($this);
         }
+
         return $this;
     }
 
-    public function removeLike(Articlelike $like): self
+    public function removeLike(LikeArticle $like): self
     {
-        if ($this->nombrelike->contains($like)) {
-            $this->nombrelike->removeElement($like);
+        if ($this->likes->removeElement($like)) {
             // set the owning side to null (unless already changed)
             if ($like->getArticle() === $this) {
                 $like->setArticle(null);
@@ -189,14 +192,15 @@ class Artiles
         return $this;
     }
 
-    public function isLikedByUser(User $user): bool
-    {
-        foreach ($this->nombrelike as $like) {
-            if ($like->getUser() === $user) {
-                return true;
-            }
+    /**
+     * permet de retourner si cet article est liker par utilisateur
+     * @param \App\Entity\User $user
+     * @return bool
+     */
+    public function isLikedByUser(User $user):bool{
+        foreach ($this->likes as $like){
+            if($like->getUser()== $user) return true;
         }
-
         return false;
     }
 

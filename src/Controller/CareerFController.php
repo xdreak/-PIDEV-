@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Entity\Articlelike;
 use App\Entity\Artiles;
 use App\Entity\Document;
+use App\Entity\LikeArticle;
 use App\Form\ArticleFormType;
 use App\Form\DocumentType;
 use App\Repository\ArticlelikeRepository;
+use App\Repository\LikeArticleRepository;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Knp\Component\Pager\PaginatorInterface;
 use DateTime;
@@ -25,19 +27,7 @@ class CareerFController extends AbstractController
 {
 ////////////////////////////////////////////LOGIN////////////////////////////////////
 /// ////////////////////////////////////////////////////////////////////////////////
-    /**
-     * @Route("/login", name="login")
-     */
-    public function login()
-    {
-        return $this->render('Carriere/security.html.twig');
-    }
-    /**
-     * @Route("/logout", name="logout")
-     */
-    public function logout()
-    {
-    }
+
 
 ///////////////////////////Partie Admin///////////////////////////////////////////////
 //Gestion Article////////////////////////////////////////////////////////////////////
@@ -206,6 +196,7 @@ class CareerFController extends AbstractController
      * @param Request $request
      * @param PaginatorInterface
      * @return Response
+     * @IsGranted("ROLE_USER")
      */
     public function AfficheArticlesClient(Request $request ,PaginatorInterface $paginator): Response
     {
@@ -252,25 +243,38 @@ class CareerFController extends AbstractController
     }
 
     /**
-     * @Route("/post/{id}/like", name="post_like")
+     * permet de liker ou unliker un article
+     * @Route ("/Article/{id}/like" , name="article_like")
+     * @param Artiles $article
+     * @param EntityManagerInterface $manager
+     * @param LikeArticleRepository $likerepo
+     * @return Response
      */
-    public function like(Artiles $post, ArticlelikeRepository $likeRepo)
-    {
-        $manager=$this->getDoctrine()->getManager();
-        $user = $this->getUser();
-        if ($post->isLikedByUser($user)) {
-            $like = $likeRepo->findOneBy(['post' => $post, 'user' => $user]);
-            $manager->remove($like);
-            $manager->flush();
-            return $this->json(['code' => 200, 'likes' => $likeRepo->getCountForPost($post)], 200);
-        }
-        $like = new Articlelike();
-        $like->setArticle($post)
-            ->setUser($user);
-        $manager->persist($like);
-        $manager->flush();
-        return $this->json(['code' => 200, 'likes' => $likeRepo->getCountForPost($post)], 200);
-    }
+    public function like(Artiles $article, EntityManagerInterface $manager, LikeArticleRepository $likerepo):Response{
 
+        $user=$this->getUser();
+       if(!$user)return $this->json(['code'=>403,'message'=>"non connecté"],403);
+       if($article->isLikedByUser($user)){
+           $l=$likerepo->findOneBy([
+               'article'=> $article,
+               'user'=>$user
+           ]);
+          $manager->remove($l);
+          $manager->flush();
+          return $this->json([
+               'code'=>200,
+               'message'=>'Like bien supprimé',
+               'likes'=>$likerepo->count(['article'=>$article])
+           ],200);
+       }
+       $like = new LikeArticle();
+       $like->setArticle($article)
+            ->setUser($user);
+       $manager->persist($like);
+       $manager->flush();
+       return $this->json(['code'=>200,
+           'message'=>'like bien ajouté',
+           'likes'=>$likerepo->count(['article'=>$article])],200);
+    }
 
 }

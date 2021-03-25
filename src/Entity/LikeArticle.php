@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticlelikeRepository;
+use App\Repository\LikeArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ArticlelikeRepository::class)
+ * @ORM\Entity(repositoryClass=LikeArticleRepository::class)
  */
-class Articlelike
+class LikeArticle
 {
     /**
      * @ORM\Id
@@ -18,12 +18,12 @@ class Articlelike
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=artiles::class, inversedBy="nombrelike")
+     * @ORM\ManyToOne(targetEntity=Artiles::class, inversedBy="likes")
      */
     private $article;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="nombrelike")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="likesU")
      */
     private $user;
 
@@ -32,12 +32,12 @@ class Articlelike
         return $this->id;
     }
 
-    public function getArticle(): ?artiles
+    public function getArticle(): ?Artiles
     {
         return $this->article;
     }
 
-    public function setArticle(?artiles $article): self
+    public function setArticle(?Artiles $article): self
     {
         $this->article = $article;
 

@@ -10,7 +10,6 @@
         <h2> {{  article.Titre }}</h2>
             <article>
                 {% if article.image %}
-                    <img src="{{ article.image }}">
                     <img src="{{ vich_uploader_asset(article,'imageFile') }}" >
                 {% endif %}
                 <p> {{ article.Contenu |raw }}</p>

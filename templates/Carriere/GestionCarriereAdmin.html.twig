@@ -41,7 +41,7 @@
                                     <td>{{ articl.Publiele |date ('d/m/y')}}</td>
                                     <td>{{ articl.Resume }}</td>
                                     <td> {{ articl.image }}</td>
-                                    <td>{{ articl.Nombrelike|length }}</td>
+                                    <td>{{ articl.likes | length }}</td>
                                     <td class="text-right">
                                         <div class="item-actions">
                                             <a href="{{ path('AfficherUnArticle', {id: articl.id}) }}" class="btn btn-default btn-sm btn-block fa fa-eye" aria-hidden="true"></a>

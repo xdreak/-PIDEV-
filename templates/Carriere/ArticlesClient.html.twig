@@ -33,7 +33,6 @@
                 <div style="margin-right: 5px">
                   <figure class="snip1253">
                     <div class="image">
-                      <img src="{{ articl.image }}"/>
                         {% if articl.image %}
                             <img src="{{ vich_uploader_asset(articl,'imageFile') }}"/>
                         {% endif %}
@@ -48,8 +47,15 @@
                                          style="background-color:#eea236;  padding:15px; text-align: right">
                                         <a style="color: #FFFFFF; margin-right: 20px;" class="ion-eye"
                                            href="{{ path('AfficheUnArticleClient',{'id':articl.id}) }}">see more</a>
-                                        <a style="color: #FFFFFF; margin-right:120px;" class="ion-heart"
-                                           href="{{ path('post_like', {'id': articl.id}) }}">j'aime</a>
+                                        <a href="{{ path('article_like',{'id':articl.id}) }}" style="color: #FFFFFF; margin-right:120px;" class="btn btn-link js-like">
+                                           {% if app.user and articl.isLikedByUser(app.user) %}
+                                                <i class="fas fa-thumbs-up"></i>
+                                             {% else %}
+                                                <i class="far fa-thumbs-up"></i>
+                                           {% endif %}
+                                            <span class="js-likes">{{ articl.likes | length }}</span>
+                                            <span class="js_label">j'aime</span>
+                                        </a>
                                     </div>
                   </figure>
                 </div>
@@ -127,4 +133,21 @@
         </div>
     </footer>
 </body>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js') }}">
+        function onClickBtnLike(event){
+            event.preventDefault();
+            const  url = this.href;
+            axios.get(url).then(function (response){
+                console.log(response);
+            })
+        }
+        document.querySelectorAll('a.js-like').forEach(function (link){
+            link.addEventListener('click',onClickBtnLike);
+        })
+    </script>
+    <script>
+        
+    </script>
 {% endblock %}

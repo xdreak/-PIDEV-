@@ -2,203 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 24mars">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/fos_ckeditor.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210311123604.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210311143726.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210311144912.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/migrations/Version20210311193248.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/css/style-responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/css/table-responsive.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/css/to-do.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/css/zabuto_calendar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/404.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/500.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/blog-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/checkbox-gray.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-07.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-08.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-09.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/friends/fr-11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/instagram.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/login-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/lorde.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/mask.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/ny.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/portfolio/port01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/portfolio/port02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/portfolio/port03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/portfolio/port04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/portfolio/port05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/portfolio/port06.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/product.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/profile-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/profile-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/radio-gray.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/ui-danro.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/ui-divya.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/ui-sam.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/ui-sherman.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/ui-zac.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/weather.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/img/zoom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/DT_bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/demo_page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/demo_table.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/demo_table_jui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/jquery.dataTables.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/css/jquery.dataTables_themeroller.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/Sorting icons.psd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/back_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/back_enabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/back_enabled_hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/details_close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/details_open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/forward_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/forward_enabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/forward_enabled_hover.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_asc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_asc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_both.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_desc.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/images/sort_desc_disabled.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/js/DT_bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/js/jquery.dataTables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/js/jquery.dataTables.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-datatable/js/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/advanced-form-components.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-datepicker/css/datepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-datepicker/js/bootstrap-datepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/date.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/daterangepicker-bs3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/daterangepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/daterangepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-daterangepicker/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-datetimepicker/css/datetimepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-fileupload/bootstrap-fileupload.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-fileupload/bootstrap-fileupload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-inputmask/bootstrap-inputmask.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-switch.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-timepicker/compiled/timepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-timepicker/js/bootstrap-timepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-wysihtml5/bootstrap-wysihtml5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap-wysihtml5/wysihtml5-0.3.0.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/calendar-conf-events.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/chart-master/Chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/chartjs-conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/ckeditor/ckeditor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/common-scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/dropzone/css/dropzone.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/dropzone/dropzone.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/dropzone/images/spritemap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/dropzone/images/spritemap@2x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/easy-pie-chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/fancybox/jquery.fancybox.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/fancybox/jquery.fancybox.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/css/jquery.fileupload-noscript.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/css/jquery.fileupload-ui-noscript.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/css/jquery.fileupload-ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/css/jquery.fileupload.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/img/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/img/progressbar.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/cors/jquery.xdr-transport.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-audio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-image.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-process.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-ui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload-video.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.fileupload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/jquery.iframe-transport.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/file-uploader/js/vendor/jquery.ui.widget.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.crosshair.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.pie.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.resize.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/flot/jquery.flot.stack.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/flotchart-conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/font-awesome/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/font-awesome/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/font-awesome/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/form-component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/form-validation-script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/fullcalendar/bootstrap-fullcalendar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/fullcalendar/fullcalendar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/google-maps/data/points.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/google-maps/maplace.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/gritter-conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/gritter/css/jquery.gritter.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/gritter/css/jquery.gritter0.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/gritter/images/gritter-light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/gritter/images/gritter-long.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/gritter/images/gritter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/gritter/images/ie-spacer.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/gritter/js/jquery.gritter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery-easy-pie-chart/jquery.easy-pie-chart.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery-easy-pie-chart/jquery.easy-pie-chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery-ui-1.9.2.custom.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery.backstretch.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery.dcjqaccordion.2.7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery.nicescroll.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery.scrollTo.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery.sparkline.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery.tagsinput.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery.ui.touch-punch.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/morris-conf.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/morris/morris.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/php-mail-form/validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/raphael/raphael.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/sparkline-chart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/tasks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/xchart/d3.v3.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/xchart/xcharts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/xchart/xcharts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/Backend/lib/zabuto_calendar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/EventController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Articlelike.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Artiles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Event.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/ArticleFormType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/ArtilesRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/EventRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Carriere/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/event/index.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210325102521.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210325103333.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210325122322.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210325122925.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c700d9bdba189821759.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c70436d81d827660644.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c70712ba19612004838.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c70f2eb0bf169546445.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c721668f37107036684.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c7373af8fc861639671.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c743dd7a9d410013361.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/images/featured/605c75092fc62028135137.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pdf/featured/605c700da1d1b976212662.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pdf/featured/605c7043722f3139712049.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploads/pdf/featured/605c7071300e3929827218.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/LikeArticle.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/LikeArticleRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthAuthenticator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210322113804.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210322113804.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CareerFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CareerFController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Articlelike.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Artiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Artiles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ArticlelikeRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/AffUnArticleAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/AffUnArticleAdmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/AffUnArticleClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/AffUnArticleClient.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/GestionCarriereAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/GestionCarriereAdmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/security.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/front.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/front.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -398,7 +238,7 @@
       <workItem from="1616338192642" duration="709000" />
       <workItem from="1616338975383" duration="2021000" />
       <workItem from="1616341085258" duration="45591000" />
-      <workItem from="1616531029361" duration="20784000" />
+      <workItem from="1616531029361" duration="39527000" />
     </task>
     <task id="LOCAL-00001" summary=" update">
       <created>1614858765612</created>
@@ -435,7 +275,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616626034704</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=" update 24mars">
+      <created>1616626727888</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1616626727889</updated>
+    </task>
+    <task id="LOCAL-00007" summary=" update 24mars">
+      <created>1616626876352</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1616626876352</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,26 +1,27 @@
 <?php
 
 namespace App\Entity;
+
+use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass=UserRepository::class)
  */
 class User implements UserInterface
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\Id
+     * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180)
+     * @ORM\Column(type="string", length=180, unique=true)
      */
     private $email;
 
@@ -36,13 +37,13 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\ArticleLike", mappedBy="Users")
+     * @ORM\OneToMany(targetEntity=LikeArticle::class, mappedBy="user")
      */
-    private $likes;
+    private $likesU;
 
     public function __construct()
     {
-        $this->likes = new ArrayCollection();
+        $this->likesU = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -107,11 +108,14 @@ class User implements UserInterface
     }
 
     /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
      * @see UserInterface
      */
-    public function getSalt()
+    public function getSalt(): ?string
     {
-        // not needed when using the "bcrypt" algorithm in security.yaml
+        return null;
     }
 
     /**
@@ -124,30 +128,29 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Articlelike[]
+     * @return Collection|LikeArticle[]
      */
-    public function getLikes(): Collection
+    public function getLikesU(): Collection
     {
-        return $this->likes;
+        return $this->likesU;
     }
 
-    public function addLike(Articlelike $like): self
+    public function addLikesU(LikeArticle $likesU): self
     {
-        if (!$this->likes->contains($like)) {
-            $this->likes[] = $like;
-            $like->setUser($this);
+        if (!$this->likesU->contains($likesU)) {
+            $this->likesU[] = $likesU;
+            $likesU->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeLike(Articlelike $like): self
+    public function removeLikesU(LikeArticle $likesU): self
     {
-        if ($this->likes->contains($like)) {
-            $this->likes->removeElement($like);
+        if ($this->likesU->removeElement($likesU)) {
             // set the owning side to null (unless already changed)
-            if ($like->getUser() === $this) {
-                $like->setUser(null);
+            if ($likesU->getUser() === $this) {
+                $likesU->setUser(null);
             }
         }
 
