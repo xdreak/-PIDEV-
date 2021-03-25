@@ -1,0 +1,10 @@
+{% extends 'front.html.twig' %}
+{% block body %}
+
+<h1>Candidat: {{ session.get('username') }} ({{ session.get('nom') }}, {{ session.get('prenom') }})</h1>
+<br>
+<a href="{{ path('logout') }}">logout</a>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock %}

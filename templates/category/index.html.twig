@@ -1,0 +1,41 @@
+ {% extends 'base.html.twig' %}
+   {% block form %}
+{% block title %}Categories{% endblock %}
+{% block body %}
+{% if categories %}
+<head>
+<style>
+
+</style>
+</head>
+
+<h1>Liste des Categories</h1>
+<table class="table table-hover">
+<thead>
+<tr>
+<th>ID</th>
+<th>Titre</th>
+<th>Editer</th>
+</tr>
+</thead>
+<tbody>
+{% for categorie in categories %}
+<tr>
+<td>{{categorie.id}}</td>
+<td>{{categorie.titre}}</td>
+<td>
+<a href="/category/delete/{{ categorie.id }}" class="btn btn-danger delete-article" data-id="{{ categorie.id }}">Supprimer</a>
+  <a href="/category/modifier/{{ categorie.id }}"  class="btn btn-primary">Modifier</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p>No Categories to display</p>    
+{% endif %}
+
+ <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
+ 
+
+{% endblock %}

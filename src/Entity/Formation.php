@@ -51,6 +51,12 @@ class Formation
      */
     private $dateFin;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="formations")
+     */
+    private $category;
+
   
 
     public function getId(): ?int
@@ -126,6 +132,19 @@ class Formation
     public function setDateFin(\DateTimeInterface $dateFin): self
     {
         $this->dateFin = $dateFin;
+
+        return $this;
+    }
+
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

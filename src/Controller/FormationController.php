@@ -8,16 +8,20 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Formation;
 use App\Entity\Abonnment;
+use App\Entity\Category;
+use App\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 class FormationController extends AbstractController
 {
 
@@ -89,7 +93,9 @@ class FormationController extends AbstractController
               'required' => true,
               'attr' => array('class' => 'form-control')
         ))
-       
+        ->add('category', EntityType::class,['class'=>Category::class,
+        'choice_label'=>'titre',
+        'label'=>'Catégorie'])
         ->add('save', SubmitType::class, array(
           'label' => 'Ajouter',
           'attr' => array('class' => 'btn btn-primary mt-3')
@@ -174,16 +180,36 @@ class FormationController extends AbstractController
      * @Route("/formation/delete/{id}")
      * @Method({"DELETE"})
      */
-    public function delete(Request $request, $id) {
-      $Formation = $this->getDoctrine()->getRepository(Formation::class)->findOneById($id);
+    public function delete(Request $request, $id,MailerInterface $mailer) {
+      $Formation = $this->getDoctrine()->getRepository(Formation::class)->find($id);
       $entityManager = $this->getDoctrine()->getManager();
       $entityManager->remove($Formation);
       $entityManager->flush();
 
       $response = new Response();
       $response->send();
+      $titre=$Formation->getTitre();
+     
+      $members=$this->getDoctrine()->getRepository(User::class)->findAll();
+        foreach ($members as $member) {
+            $to = $member->getEmail();  
+       
+            $email = (new Email())
+            ->from('gabsijihen33@gmail.com')
+            ->to($to)
+            //->bcc('bcc@example.com')
+            //->replyTo('fabien@example.com')
+            //->priority(Email::PRIORITY_HIGH)
+            ->subject('Bonjour!')
+            ->text("Une nouvelle: formation {$titre} a été annulé! ")
+            ->html("<h1>Une nouvelle: formation {$titre} a été annulé! </h1><br><p>Nous somme vraiment désolé!</p>");
+      
+             $mailer->send($email);
+            }
       return $this->redirectToRoute('formation');
-    }
+    
+  }
+    
 
 /**
      * @Route("/formation/afficher/{id}")

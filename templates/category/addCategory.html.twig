@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+   {% block form %}
+{% block title %}categories{% endblock %}
+{% block body %}
+
+{{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }}
+<h1>Ajouter une categorie</h1>
+{{ form_label(form.Titre,"Titre") }}
+ {{ form_widget(form.Titre) }}
+{{ form_errors(form.Titre) }}
+ {{ form_end(form) }}
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+{% endblock %}
+
+{% endblock %}

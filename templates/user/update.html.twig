@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    <h1>Modifier Utilisateur</h1>
+    {{ form_start(form,{'attr': {'novalidate' : 'novalidate'}}) }}
+    <table>
+        <tr>
+            <td>{{ form_label(form.username, "Nom d'Utilisateur") }}</td>
+            <td>{{ form_widget(form.username) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.password, "Mot de Passe") }}</td>
+            <td>{{ form_widget(form.password) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.email, "E-mail") }}</td>
+            <td>{{ form_widget(form.email) }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.role, "Role") }}</td>
+            <td>{{ form_widget(form.role) }}</td>
+        </tr>
+    </table>
+    {{ form_end(form) }}
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
+
