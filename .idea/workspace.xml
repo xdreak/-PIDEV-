@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 25mars">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/packages/twig_extensions.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Pi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Frontend/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/Frontend/lib/lightbox/js/lightbox.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/Frontend/lib/lightbox/js/lightbox.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CareerFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CareerFController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Artiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Artiles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ArtilesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArtilesRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 27mars" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,7 +204,7 @@
       <workItem from="1616338192642" duration="709000" />
       <workItem from="1616338975383" duration="2021000" />
       <workItem from="1616341085258" duration="45591000" />
-      <workItem from="1616531029361" duration="75870000" />
+      <workItem from="1616531029361" duration="76326000" />
     </task>
     <task id="LOCAL-00001" summary=" update">
       <created>1614858765612</created>
@@ -286,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616701638647</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary=" update 27mars">
+      <created>1616883457999</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616883457999</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -311,7 +301,8 @@
     <MESSAGE value=" update 22mars" />
     <MESSAGE value=" update 24mars" />
     <MESSAGE value=" update 25mars" />
-    <option name="LAST_COMMIT_MESSAGE" value=" update 25mars" />
+    <MESSAGE value=" update 27mars" />
+    <option name="LAST_COMMIT_MESSAGE" value=" update 27mars" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
