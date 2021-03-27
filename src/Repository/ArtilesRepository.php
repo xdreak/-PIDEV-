@@ -19,11 +19,20 @@ class ArtilesRepository extends ServiceEntityRepository
         parent::__construct($registry, Artiles::class);
     }
 
-    // /**
-    //  * @return Artiles[] Returns an array of Artiles objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Artiles[] Returns an array of Artiles objects
+     */
+
+    public function findArticleBytitle($title)
+    {
+        return $this->createQueryBuilder('Article')
+            ->where('Article.titre LIKE :titre')
+            ->setParameter('titre', '%'.$title.'%')
+            ->orderBy('Article.publiele', 'DESC')
+            ->getQuery()
+            ->getResult()->paginate(5);
+    }
+    /*public function findByExampleField($value)
     {
         return $this->createQueryBuilder('a')
             ->andWhere('a.exampleField = :val')

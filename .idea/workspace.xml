@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 25mars">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/twig_extensions.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Pi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Frontend/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Frontend/lib/lightbox/js/lightbox.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/Frontend/lib/lightbox/js/lightbox.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CareerFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CareerFController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Artiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Artiles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ArtilesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArtilesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +146,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/string" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/twig/extensions" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-time-bundle" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -146,9 +163,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../wamp64/bin/php/php8.0.3/php.exe" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -202,7 +221,7 @@
       <workItem from="1616338192642" duration="709000" />
       <workItem from="1616338975383" duration="2021000" />
       <workItem from="1616341085258" duration="45591000" />
-      <workItem from="1616531029361" duration="40636000" />
+      <workItem from="1616531029361" duration="75870000" />
     </task>
     <task id="LOCAL-00001" summary=" update">
       <created>1614858765612</created>
@@ -260,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616699920706</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary=" update 25mars">
+      <created>1616701638647</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1616701638647</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

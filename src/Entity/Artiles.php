@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=ArtilesRepository::class)
@@ -21,31 +22,37 @@ class Artiles
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
+     * @Groups ("arij")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=150)
      * @Assert\Length(min="10")
+     * @Groups ("arij")
      */
     private $titre;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups ("arij")
      */
     private $resume;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups ("arij")
      */
     private $contenu;
 
     /**
      * @ORM\Column(type="date")
+     * @Groups ("arij")
      */
     private $publiele;
     /**
      * @ORM\Column(type="date")
+     * @Groups ("arij")
      */
     private $majle;
 
@@ -68,16 +75,19 @@ class Artiles
     /**
      * @ORM\Column(type="string", length=255)
      * @var string
+     * @Groups ("arij")
      */
     private $image;
     /**
      * @Vich\UploadableField(mapping="image", fileNameProperty="image")
      * @var File
+     * @Groups ("arij")
      */
     private $imageFile;
 
     /**
      * @ORM\OneToMany(targetEntity=LikeArticle::class, mappedBy="article")
+     * @Groups ("arij")
      */
     private $likes;
 

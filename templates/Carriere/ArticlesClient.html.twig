@@ -28,9 +28,18 @@
                 <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/Articles') }}">Home</a>
               </div>
           </header>
-           <div class="card-group col-md-6" style="margin-left: 370px" >
+         <form class="search-form">
+             <div class="input-group">
+                 <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-search"></i></span></div>
+                 <input type="text" id="search" class="form-control" placeholder="Search by interests..">
+                 <div class="input-group-append"><a class="js-search btn btn-light" type="button">Search </a></div>
+             </div>
+         </form>
+
+
+        <div id="all" class="card-group col-md-6" style="margin-left: 343px" >
               {% for articl in articles %}
-                <div style="margin-right: 5px">
+                <div  style="margin-right: 5px">
                   <figure class="snip1253">
                     <div class="image">
                         {% if articl.image %}
@@ -39,12 +48,12 @@
                     </div>
                    <figcaption>
                      <h2>{{ articl.Titre }}</h2>
+                       <small>{{ articl.publiele |ago}}</small>
                       <p>
                        {{ articl.Resume | raw }}
                       </p>
                    </figcaption>
-                  <div class="footer footer-link"
-                                         style="background-color:#eea236;  padding:15px; text-align: right">
+                  <div class="footer footer-link" style="background-color:#eea236;  padding:15px; text-align: right">
                                         <a style="color: #FFFFFF; margin-right: 20px;" class="ion-eye"
                                            href="{{ path('AfficheUnArticleClient',{'id':articl.id}) }}">see more</a>
                                         <a href="{{ path('article_like',{'id':articl.id}) }}" style="color: #FFFFFF; margin-right:120px;" class="btn btn-link js-like">
@@ -54,16 +63,97 @@
                                                 <i class="far fa-thumbs-up"></i>
                                            {% endif %}
                                             <span class="js-likes">{{ articl.likes | length }}</span>
-                                            <span class="js_label">j'aime</span>
+                                            <span class="js_label">{% if app.user and articl.isLikedByUser(app.user) %}
+                                                je n'aime plus
+                                                {% else %} j'aime
+                                                {% endif %}
+                                            </span>
                                         </a>
-                                    </div>
+                  </div>
                   </figure>
                 </div>
               {% endfor %}
-           </div>
-        <div class="pagination justify-content-center ">
+        </div>
+         <div id="search" class="card-group col-md-6" style="margin-left: 343px">
+         </div>
+        <div id="pg" class="pagination justify-content-center ">
           {{ knp_pagination_render(articles) }}
         </div>
+         {% block javascripts %}
+             <script src="{{ asset('https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js') }}"></script>
+             <script src="{{ asset('https://unpkg.com/axios/dist/axios.min.js') }}"></script>
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+             <script>
+                 function onClickBtnLike(event){
+                     event.preventDefault();
+                     const url = this.href;
+                     const spanCount = this.querySelector('span.js-likes');
+                     const spanText = this.querySelector('span.js_label');
+                     const icone = this.querySelector('i');
+                     axios.get(url).then(function (response){
+                         spanCount.textContent = response.data.likes;
+                         if(icone.classList.contains('fas')) {
+                             spanText.textContent = 'j\'aime ' ;
+                             icone.classList.replace('fas', 'far');
+                         }
+                         else {
+                             icone.classList.replace('far', 'fas');
+                             spanText.textContent = 'je n\'aime plus';
+                         }
+                       })
+                     .catch(function (error){
+                         if(error.response === 403){
+                             window.alert("vous n etes pas connecté");
+                         }
+                         else{
+                             window.alert("une erreur s est produite");
+                             console.log('Error', error.message);
+                         }
+                     });
+                 }
+                 document.querySelectorAll('a.js-like').forEach(function (link){
+                     link.addEventListener('click',onClickBtnLike);
+                 });
+             </script>
+             <script>
+                 $(document ).ready(function() {
+                     $("#search").keyup(function(e){
+                         /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                         var value = $(this).val();
+                         /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                         $.ajax({
+                             /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                             url : "{{ path('searchArticle') }}",
+                             /* La méthode utilisée pour transférer les données est GET */
+                             type : 'GET',
+                             /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                             data: {
+                                 'searchValue' : value
+                             },
+                             /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                             success : function(retour){
+                                 if(retour){
+                                     $('div#search').empty();
+                                     $.each(JSON.parse(retour), function(i, obj) {
+                                         $('div#all').hide();
+                                         $('div#pg').hide();
+                                         $('div#search').append('<div style="margin-right: 5px"><figure class="snip1253"><div class="image"><img src="vich_uploader_asset('+obj+','+obj.imageFile+')"/></div><figcaption><h2>'+obj.titre+'</h2><p>'+obj.resume+'</p></figcaption></figure>' +
+                                             '</div><div class="footer footer-link" style="background-color:#eea236;   text-align: right"><a style="color: #FFFFFF; margin-right: 20px;" class="ion-eye" href="/ArticleN/'+obj.id+'">see more</a></div>');
+                                     });
+                                 }
+                                 else {
+                                     $('div#all').show();
+                                     $('div#search').empty();
+                                     $('div#search').fadeIn('fast');
+                                 }
+                             },
+                         });
+                         return false;
+                     });
+                 });
+
+             </script>
+         {% endblock %}
      </section>
      <section class="portfolio-block skills">
        <div class="container">
@@ -133,21 +223,4 @@
         </div>
     </footer>
 </body>
-{% endblock %}
-{% block javascripts %}
-    <script src="{{ asset('https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js') }}">
-        function onClickBtnLike(event){
-            event.preventDefault();
-            const  url = this.href;
-            axios.get(url).then(function (response){
-                console.log(response);
-            })
-        }
-        document.querySelectorAll('a.js-like').forEach(function (link){
-            link.addEventListener('click',onClickBtnLike);
-        })
-    </script>
-    <script>
-        
-    </script>
 {% endblock %}
