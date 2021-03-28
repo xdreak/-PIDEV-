@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\FormationRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Serializer\Annotation\Groups;
 /**
  * @ORM\Entity(repositoryClass=FormationRepository::class)
  */
@@ -14,46 +15,54 @@ class Formation
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("jihen")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @ASSERT\NotBlank(message="Titre is required")
+     * @Groups("jihen")
      */
     private $Titre;
 
     /**
      * @ORM\Column(type="date")
      * @ASSERT\NotBlank(message="Date is required")
+     * @Groups("jihen")
      */
     private $Date;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @ASSERT\NotBlank(message="Lieu is required")
+     * @Groups("jihen")
      */
     private $Lieu;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups("jihen")
      */
     private $Description;
 
     /**
      * @ORM\Column(type="integer")
      * @ASSERT\NotBlank(message="Prix is required")
+     * @Groups("jihen")
      */
     private $Prix;
 
     /**
      * @ORM\Column(type="date")
+     * @Groups("jihen")
      */
     private $dateFin;
 
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="formations")
+     * @Groups("jihen")
      */
     private $category;
 

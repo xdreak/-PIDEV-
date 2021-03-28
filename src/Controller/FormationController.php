@@ -2,14 +2,16 @@
 
 namespace App\Controller;
 
+use App\Repository\CategoryRepository;
+use App\Repository\FormationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
 use App\Entity\Formation;
 use App\Entity\Abonnment;
 use App\Entity\Category;
 use App\Entity\User;
+use Doctrine\ORM\Mapping\Id;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -21,6 +23,8 @@ use Symfony\Component\Mime\Email;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use Symfony\Component\Validator\Constraints\Length;
 
 class FormationController extends AbstractController
 {
@@ -243,7 +247,7 @@ class FormationController extends AbstractController
       ->subject('Bonjour!')
       ->text("Vous ètes inscrit a la formation:{$titre}!")
       ->html("<h1>Vous ètes inscrit a la formation:{$titre}</h1><br><p>Merci pour nous faire confiance!</p>");
-
+  
   $mailer->send($email);
       
       $entityManager->flush();
@@ -262,17 +266,67 @@ class FormationController extends AbstractController
     /**
      * @Route("/stats", name="stat")
      */
-    public function stats(): Response
+    public function stats()
     {
-        $repository = $this->getDoctrine()->getrepository(Abonnment::class);//recuperer repisotory
-        $formations = $repository->findAll();
-        // $repository1 = $this->getDoctrine()->getrepository(Abonnment::class);//recuperer repisotory
+      $repository = $this->getDoctrine()->getrepository(Category::class);//recuperer repository
+      $Categorys = $repository->findAll();
+      $CategoryId = $repository->countIds();
+
+         foreach($CategoryId as $key => $value){
+          foreach($value as $key1 => $value1){
+          $repository1 = $this->getDoctrine()->getrepository(Formation::class);//recuperer repository
+          $count[] = $repository1->countFormation($value1);
+          }
+         }
+        
+       
+      
+   
+        // $repository1 = $this->getDoctrine()->getrepository(Abonnment::class);//recuperer repository
         // $abonnements = $repository1->();
         //affichage
         return $this->render('formation/statistics.html.twig', [
-            'formations' => $formations,
+            'formations' => $Categorys,'categories'=>$count
         ]);//liasion twig avec le controller
     }
+    /**
+     * @Route("/SearchFormation ", name="searchFormation")
+     */
+    public function searchFormation(Request $request,NormalizerInterface $Normalizer)
+    {
+        $repository = $this->getDoctrine()->getRepository(Formation::class);
+        $requestString=$request->get('searchValue');
+        $Formation = $repository->findFormationBytitle($requestString);
+        $jsonContent = $Normalizer->normalize($Formation, 'json',['groups'=>'jihen']);
+        $retour=json_encode($jsonContent);
+        return new Response($retour);
 
+    }
+
+
+
+
+
+  //      /**
+  //    * @Route("/Search ")
+  //    */
+  //   public function searchAction(Request $request)
+  //   {
+  //       $em = $this->getDoctrine()->getManager();
+  //       $requestString = $request->get('q');
+  //       $formations =  $em->getrepository(Formation::class)->findFormationBytitle($requestString);
+  //       if(!$formations) {
+  //           $result['formations']['error'] = "Post Not found :( ";
+  //       } else {
+  //           $result['formations'] = $this->getRealEntities($formations);
+  //       }
+  //       return new Response(json_decode($result));
+  //   }
+  //   public function getRealEntities($formations){
+  //     foreach ($formations as $formation){
+  //         $realEntities[$formation->getId()] = [$formation->getTitre()];
+  //     }
+  //     return $realEntities;
+  // }
 
 }

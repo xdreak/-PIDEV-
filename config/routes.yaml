@@ -28,3 +28,7 @@ updateprofile:
 addprofile:
     path: /profile/addprofile
     controller: App\Controller\ProfileController::addprofile
+
+ajax_search:
+    path: /search
+    controller: App\Controller\FormationController::ajax_search
