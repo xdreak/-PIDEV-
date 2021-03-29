@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 27mars">
+    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 29mars">
       <change afterPath="$PROJECT_DIR$/config/packages/dev/swiftmailer.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/config/packages/endroid_qr_code.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" afterDir="false" />
@@ -266,7 +266,7 @@
       <workItem from="1616341085258" duration="45591000" />
       <workItem from="1616531029361" duration="76586000" />
       <workItem from="1616929402889" duration="35016000" />
-      <workItem from="1617013876767" duration="33882000" />
+      <workItem from="1617013876767" duration="34211000" />
     </task>
     <task id="LOCAL-00001" summary=" update">
       <created>1614858765612</created>
@@ -345,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616883842041</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary=" update 29mars">
+      <created>1617056617400</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1617056617400</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +378,8 @@
     <MESSAGE value=" update 24mars" />
     <MESSAGE value=" update 25mars" />
     <MESSAGE value=" update 27mars" />
-    <option name="LAST_COMMIT_MESSAGE" value=" update 27mars" />
+    <MESSAGE value=" update 29mars" />
+    <option name="LAST_COMMIT_MESSAGE" value=" update 29mars" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
