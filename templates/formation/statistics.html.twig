@@ -38,7 +38,7 @@
                     <ul class="y-axis">
                  
                 
-                        <li><span>50</span></li>
+                      <li><span>50</span></li>
                         <li><span>40</span></li>
                         <li><span>30</span></li>
                         <li><span>20</span></li>
@@ -49,17 +49,14 @@
                         
                     </ul>
                    
-                         
+                                 {% for formation in formations %}
                          {% for categorie in categories %}
-                         {% for formation in formations %}
-                    <div class="bar">
-            
-                 
-                        
-                        <div class="value tooltips" data-toggle="tooltip" data-placement="top">{{categorie}}</div>
-                               <div class="title">{{ formation.Titre }}</div>
-                        
+                         <div class="bar">
+                        <div class="title">{{ formation.Titre }}</div>
+                        <div class="value tooltips" data-original-title={{ categorie }} data-toggle="tooltip" data-placement="top">{{ categorie  }}</div>
                     </div>
+               
+                   
                     {% endfor %}
                   {% endfor %}
                 
@@ -71,20 +68,20 @@
 
 
 {% block js %}
-    <script src="/lib1/jquery/jquery.min.js"></script>
+<script src="/Backend/lib/jquery/jquery.min.js"></script>
 
-    <script src="/lib1/bootstrap/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="/lib1/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="/lib1/jquery.scrollTo.min.js"></script>
-    <script src="/lib1/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="/lib1/jquery.sparkline.js"></script>
+    <script src="/Backend/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="/Backend/lib/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="/Backend/lib/jquery.scrollTo.min.js"></script>
+    <script src="/Backend/lib/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="/Backend/lib/jquery.sparkline.js"></script>
     <!--common script for all pages-->
-    <script src="/lib1/common-scripts.js"></script>
-    <script type="text/javascript" src="/lib1/gritter/js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="/lib1/gritter-conf.js"></script>
+    <script src="/Backend/lib/common-scripts.js"></script>
+    <script type="text/javascript" src="/Backend/lib/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="/Backend/lib/gritter-conf.js"></script>
     <!--script for this page-->
-    <script src="/lib1/sparkline-chart.js"></script>
-    <script src="/lib1/zabuto_calendar.js"></script>
+    <script src="/Backend/lib/sparkline-chart.js"></script>
+    <script src="/Backend/lib/zabuto_calendar.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             var unique_id = $.gritter.add({

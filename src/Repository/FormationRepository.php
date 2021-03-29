@@ -6,7 +6,7 @@ use App\Entity\Formation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\Persistence\ManagerRegistry;
-
+use Endroid\QrCode\Builder\BuilderInterface;
 /**
  * @method Formation|null find($id, $lockMode = null, $lockVersion = null)
  * @method Formation|null findOneBy(array $criteria, array $orderBy = null)
@@ -45,7 +45,13 @@ class FormationRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-    
+    public function __constructs(BuilderInterface $customQrCodeBuilder)
+    {
+        $result = $customQrCodeBuilder
+            ->size(400)
+            ->margin(20)
+            ->build();
+    }
     // public function findEntitiesByString($str){
     //     return $this->getEntityManager()
     //         ->createQuery(

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller;
-
+use Knp\Component\Pager\PaginatorInterface; 
 use App\Repository\CategoryRepository;
 use App\Repository\FormationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -49,9 +49,14 @@ class FormationController extends AbstractController
      * @Route("/formationFront",name="formationFront")
      * @Method({"GET"})
      */
-    public function index2(): Response
+    public function index2(Request $request,PaginatorInterface $paginator): Response
     {
-     $formations=$this->getDoctrine()->getRepository(Formation::class)->findAll();
+     $donnees=$this->getDoctrine()->getRepository(Formation::class)->findAll();
+     $formations = $paginator->paginate(
+      $donnees, // Requête contenant les données à paginer (ici nos articles)
+      $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
+      4// Nombre de résultats par page
+  );
      return $this->render('formation/index2.html.twig',array ('formations'=>$formations));
 
     }
@@ -120,7 +125,7 @@ class FormationController extends AbstractController
           $entityManager->persist($classe);
           $entityManager->flush();
           $this->addFlash('success', 'Formation Ajouté! ');
-         
+          return $this->redirectToRoute('formation');
         }
         return $this->render('formation/addFormation.html.twig',array('form'=>$form->createView()));
 

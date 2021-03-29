@@ -1,6 +1,12 @@
 {
+    "bacon/bacon-qr-code": {
+        "version": "2.0.3"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.1"
+    },
+    "dasprid/enum": {
+        "version": "1.0.3"
     },
     "doctrine/annotations": {
         "version": "1.0",
@@ -81,8 +87,26 @@
     "egulias/email-validator": {
         "version": "2.1.25"
     },
+    "endroid/installer": {
+        "version": "1.2.3"
+    },
+    "endroid/qr-code": {
+        "version": "3.9.6"
+    },
+    "endroid/qr-code-bundle": {
+        "version": "3.4.3"
+    },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
+    },
+    "khanamiryan/qrcode-detector-decoder": {
+        "version": "1.0.4"
+    },
+    "knplabs/knp-components": {
+        "version": "v2.5.1"
+    },
+    "knplabs/knp-paginator-bundle": {
+        "version": "v5.3.0"
     },
     "laminas/laminas-code": {
         "version": "3.4.1"
@@ -95,6 +119,9 @@
     },
     "monolog/monolog": {
         "version": "1.26.0"
+    },
+    "myclabs/php-enum": {
+        "version": "1.7.7"
     },
     "nikic/php-parser": {
         "version": "v4.10.4"
