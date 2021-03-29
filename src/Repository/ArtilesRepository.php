@@ -30,7 +30,7 @@ class ArtilesRepository extends ServiceEntityRepository
             ->setParameter('titre', '%'.$title.'%')
             ->orderBy('Article.publiele', 'DESC')
             ->getQuery()
-            ->getResult()->paginate(5);
+            ->getResult();
     }
     /*public function findByExampleField($value)
     {

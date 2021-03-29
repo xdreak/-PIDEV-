@@ -45,9 +45,8 @@
                 </div>
                 <div class="card-footer">
                     <small class="text-muted">
-                        <a href="#"><i class="fa fa-cloud-download" id="download-icon">
-                                Télècharger
-                            </i></a></small>
+                        <a class="fa fa-cloud-download" href="{{ vich_uploader_asset(cv,'pdfFile') }}"> {{ 'vich_uploader.link.download'|trans }}</a>
+                    </small>
                 </div>
             </div>
           {% endfor %}

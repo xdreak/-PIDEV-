@@ -133,11 +133,10 @@
                              /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
                              success : function(retour){
                                  if(retour){
-                                     $('div#search').empty();
                                      $.each(JSON.parse(retour), function(i, obj) {
                                          $('div#all').hide();
                                          $('div#pg').hide();
-                                         $('div#search').append('<div style="margin-right: 5px"><figure class="snip1253"><div class="image"><img src="vich_uploader_asset('+obj+','+obj.imageFile+')"/></div><figcaption><h2>'+obj.titre+'</h2><p>'+obj.resume+'</p></figcaption></figure>' +
+                                         $('div#search').append('<div style="margin-right: 5px"><figure class="snip1253"><div class="image"></div><figcaption><h2>'+obj.titre+'</h2><p>'+obj.resume+'</p></figcaption></figure>' +
                                              '</div><div class="footer footer-link" style="background-color:#eea236;   text-align: right"><a style="color: #FFFFFF; margin-right: 20px;" class="ion-eye" href="/ArticleN/'+obj.id+'">see more</a></div>');
                                      });
                                  }

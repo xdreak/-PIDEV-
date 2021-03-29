@@ -1,0 +1,32 @@
+{% extends 'front.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <nav class="navbar navbar-light navbar-expand fixed-top" style="background-color: #eeeeee;">
+        <div class="container-fluid"><img src="{{ asset('assets/img/LOGO.png') }}" style="height: 91px;width: 82px;"><a
+                    href="#" style="color: rgb(230,160,79);font-size: 31px;font-family: 'Alfa Slab One', cursive;">E-MPLOYINI</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="/Events" style="color: #bb620f;font-weight: bold;">Evenements</a></li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" href="#" style="color: #bb620f;font-weight: bold;">Participer</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#"
+                                                                style="color: #bb620f;font-weight: bold;">Contacter Nous</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="container">
+    <h3>Ajouter un Evenement</h3>
+    {{ form_start(form) }}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.plan) }}
+    {{ form_row(form.ville) }}
+    {{ form_row(form.adresse) }}
+    {{ form_row(form.datedebut) }}
+    {{ form_row(form.datefin) }}
+    <button type="submit" class="btn btn-success" > Ajouter </button>
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}

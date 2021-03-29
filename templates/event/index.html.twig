@@ -1,18 +1,15 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Hello EventController!{% endblock %}
-
+{% block title %}Gestion Evenement{% endblock %}
 {% block body %}
     <div class="container py-5">
         <div class="p-5 bg-white rounded shadow mb-5">
             <ul id="myTab" class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
                 <li class="nav-item flex-sm-fill"><a id="home-tab" data-toggle="tab" href="#event" class="nav-link border-0 text-uppercase font-weight-bold active">Events</a></li>
-                <li class="nav-item flex-sm-fill"><a id="profile-tab" data-toggle="tab" href="#" class="nav-link border-0 text-uppercase font-weight-bold">Participants</a></li>
-                <li class="nav-item flex-sm-fill"><a id="contact-tab" data-toggle="tab" href="#" class="nav-link border-0 text-uppercase font-weight-bold">EnCours</a></li>
+                <li class="nav-item flex-sm-fill"><a id="profile-tab" data-toggle="tab" href="#participant" class="nav-link border-0 text-uppercase font-weight-bold">Participants</a></li>
             </ul>
             <div id="myTabContent" class="tab-content">
                 <div id="event" class="tab-pane active">
-                    <section class="articles">
+                    <section class="event">
                         <div>
                             <div class="container">
                                 <div class="row justify-content-center align-items-center">
@@ -57,18 +54,15 @@
                                 </tr>
                             {% else %}
                                 <tr>
-                                    <td colspan="4" align="center">{{ 'event.no_posts_found'|trans }}</td>
+                                    <td colspan="4" align="center">{{ 'Pas d\'evenement pour le moment' |trans }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
                         </table>
                     </section>
                 </div>
-                <div id="cv" class="tab-pane ">
+                <div id="participant" class="tab-pane ">
                     <h1>En cours de traitement1</h1>
-                </div>
-                <div id="lm" class="tab-pane ">
-                    <h1>En cours de traitement2</h1>
                 </div>
             </div>
         </div>

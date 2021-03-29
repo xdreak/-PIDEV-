@@ -41,9 +41,16 @@ class User implements UserInterface
      */
     private $likesU;
 
+    /**
+     * @ORM\OneToMany(targetEntity=EventParticipations::class, mappedBy="user")
+     */
+    private $participation;
+
+
     public function __construct()
     {
         $this->likesU = new ArrayCollection();
+        $this->participation = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -141,7 +148,6 @@ class User implements UserInterface
             $this->likesU[] = $likesU;
             $likesU->setUser($this);
         }
-
         return $this;
     }
 
@@ -153,7 +159,38 @@ class User implements UserInterface
                 $likesU->setUser(null);
             }
         }
+        return $this;
+    }
+
+    /**
+     * @return Collection|EventParticipations[]
+     */
+    public function getParticipation(): Collection
+    {
+        return $this->participation;
+    }
+
+    public function addParticipation(EventParticipations $participation): self
+    {
+        if (!$this->participation->contains($participation)) {
+            $this->participation[] = $participation;
+            $participation->setUser($this);
+        }
 
         return $this;
     }
+
+    public function removeParticipation(EventParticipations $participation): self
+    {
+        if ($this->participation->removeElement($participation)) {
+            // set the owning side to null (unless already changed)
+            if ($participation->getUser() === $this) {
+                $participation->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }

@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Serializer\Annotation\Groups;
 
+
 /**
  * @ORM\Entity(repositoryClass=ArtilesRepository::class)
  * @Vich\Uploadable
@@ -28,7 +29,7 @@ class Artiles
 
     /**
      * @ORM\Column(type="string", length=150)
-     * @Assert\Length(min="10")
+     * @Assert\Length(min="10" , minMessage="Champs ne contient que 10 caractéres")
      * @Groups ("arij")
      */
     private $titre;

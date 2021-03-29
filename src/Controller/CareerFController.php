@@ -27,8 +27,6 @@ use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class CareerFController extends AbstractController
 {
-////////////////////////////////////////////LOGIN////////////////////////////////////
-/// ////////////////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////Partie Admin///////////////////////////////////////////////
@@ -46,7 +44,7 @@ class CareerFController extends AbstractController
         $articles = $this->getDoctrine()->getRepository(Artiles::class)->findAll();
         $cvs = $this->getDoctrine()->getRepository(Document::class)->findByValue('CV');
         $lms = $this->getDoctrine()->getRepository(Document::class)->findByValue('Lettre de Motivation');
-        return $this->render('Carriere/GestionCarriereAdmin.html.twig', [
+        return $this->render('Carriere/Articles/GestionCarriereAdmin.html.twig', [
             'articles' => $articles,
             'cvs' => $cvs,
             'lms' => $lms,
@@ -79,7 +77,7 @@ class CareerFController extends AbstractController
             $this->addFlash("message", "Article bien Ajouté");
             return $this->redirectToRoute('AfficherUnArticle', ['id' => $article->getId()]);
         }
-        return $this->render('Carriere/AjoutArticleAdmin.html.twig', ['formArticle' => $form->createView()]);
+        return $this->render('Carriere/Articles/AjoutArticleAdmin.html.twig', ['formArticle' => $form->createView()]);
     }
 
     /**
@@ -89,7 +87,7 @@ class CareerFController extends AbstractController
     {
         $rep = $this->getDoctrine()->getRepository(Artiles::class);
         $article = $rep->find($id);
-        return $this->render('Carriere/AffUnArticleAdmin.html.twig', [
+        return $this->render('Carriere/Articles/AffUnArticleAdmin.html.twig', [
             'article' => $article
         ]);
     }
@@ -111,7 +109,7 @@ class CareerFController extends AbstractController
             $this->addFlash("message", "Article bien Modifié");
             return $this->redirectToRoute('AfficherUnArticle', ['id' => $article->getId()]);
         }
-        return $this->render('Carriere/ModifierArticle.html.twig', [
+        return $this->render('Carriere/Articles/ModifierArticle.html.twig', [
             'formArticle' => $formArticle->createView()
         ]);
     }
@@ -211,7 +209,7 @@ class CareerFController extends AbstractController
             $rep,
             $request->query->getInt('page', 1), 4
         );
-        return $this->render('Carriere/ArticlesClient.html.twig', [
+        return $this->render('Carriere/Articles/ArticlesClient.html.twig', [
             'articles' => $article,
             'paginator' => $paginator,
         ]);
@@ -223,7 +221,7 @@ class CareerFController extends AbstractController
     public function cv(): Response
     {
         $cvs = $this->getDoctrine()->getRepository(Document::class)->findByValue('CV');
-        return $this->render('Carriere/cv.html.twig', [
+        return $this->render('Carriere/Articles/cv.html.twig', [
             'cvs' => $cvs,
         ]);
     }
@@ -234,7 +232,7 @@ class CareerFController extends AbstractController
     public function lettreM(): Response
     {
         $lms = $this->getDoctrine()->getRepository(Document::class)->findByValue('Lettre de Motivation');
-        return $this->render('Carriere/lettremotiv.html.twig', [
+        return $this->render('Carriere/Articles/lettremotiv.html.twig', [
             'lms' => $lms,
         ]);
     }
@@ -246,7 +244,7 @@ class CareerFController extends AbstractController
     {
         $rep = $this->getDoctrine()->getRepository(Artiles::class);
         $article = $rep->find($id);
-        return $this->render('Carriere/AffUnArticleClient.html.twig', [
+        return $this->render('Carriere/Articles/AffUnArticleClient.html.twig', [
             'article' => $article
         ]);
     }

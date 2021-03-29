@@ -1895,13 +1895,51 @@ a:focus {
     stroke-width: 1px;
     transition: fill 0.4s;
 }
-.map__image path:hover{
+.map__image path:hover {
     fill: #ff8225;
 }
+.overlay {
+    position: fixed;
+    left: 0px;
+    top:0px;
+    background-color: rgba(0,0 ,0 , 0.5);
+    width: 100%;
+    height: 100%;
+    z-index:1;
+    display:none;
+}
+.popup{
+    margin: 10% auto;
+    width : 50%;
+    background-color: rgb(243, 243, 243);
+    padding: 1em;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+.popup .icon {
+    width:50px;
+    height:50px;
+    border:2px solid #34f234;
+    text-align:center;
+    display:inline-block;
+    border-radius:50%;
+    line-height:60px;
+}
+.popup .icon i.fa {
+    font-size:30px;
+    color:#34f234;
+}
+.popup .description {
+    color:#222;
+    font-size:15px;
+    padding:5px;
+}
 
-
-
-
-
+.btnClose {
+    float: right;
+    font-size:16pt;
+    cursor: pointer;
+    color: rgb(26, 26, 26);
+}
 
 

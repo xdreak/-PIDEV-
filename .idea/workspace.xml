@@ -1,7 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 27mars" />
+    <list default="true" id="28feef8d-89d9-4ff9-b50f-2a5651191827" name="Default Changelist" comment=" update 27mars">
+      <change afterPath="$PROJECT_DIR$/config/packages/dev/swiftmailer.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/endroid_qr_code.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/swiftmailer.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/test/swiftmailer.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/routes/endroid_qr_code.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210328190655.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210329101716.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/migrations/Version20210329102212.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/EventParticipations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Form/EventFormType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/EventParticipationsRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/ParticipantEventRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/event/AfficheEventsRec.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/event/AfficheUnEA.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/event/AfficheUnEClient.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/event/AjoutEventClient.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/event/ModifierEvent.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Pi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/dev/web_profiler.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210325122322.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210325122322.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20210325122925.php" beforeDir="false" afterPath="$PROJECT_DIR$/migrations/Version20210328190135.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/Frontend/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/Frontend/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CareerFController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CareerFController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/EventController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Artiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Artiles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Document.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Document.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Event.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ArtilesRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArtilesRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EventRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/EventRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/AffUnArticleAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/Articles/AffUnArticleAdmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/AffUnArticleClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/Articles/AffUnArticleClient.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/AjoutArticleAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/Articles/AjoutArticleAdmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/ArticlesClient.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/Articles/ArticlesClient.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/GestionCarriereAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/Articles/GestionCarriereAdmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/ModifierArticle.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/Articles/ModifierArticle.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/cv.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/Articles/cv.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/lettremotiv.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/Articles/lettremotiv.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Carriere/lettrerec.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Carriere/Articles/lettrerec.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/events.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/MapEvent.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/eventslist.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/eventslist.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/event/showEf.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/event/AfficheEventsRegion.html.twig" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,6 +182,14 @@
       <path value="$PROJECT_DIR$/vendor/jms/metadata" />
       <path value="$PROJECT_DIR$/vendor/twig/extensions" />
       <path value="$PROJECT_DIR$/vendor/knplabs/knp-time-bundle" />
+      <path value="$PROJECT_DIR$/vendor/endroid/qr-code-bundle" />
+      <path value="$PROJECT_DIR$/vendor/endroid/qr-code" />
+      <path value="$PROJECT_DIR$/vendor/endroid/installer" />
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/google-mailer" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -164,6 +223,7 @@
       <recent name="C:\Users\arijs\Desktop\SS\-PIDEV-\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\arijs\Desktop\SS\-PIDEV-\templates\Carriere\Articles" />
       <recent name="C:\Users\arijs\Desktop\SS\-PIDEV-\public" />
       <recent name="C:\Users\arijs\Desktop\SS\-PIDEV-\public\assets" />
       <recent name="C:\Users\medali\Desktop\PIDEV\Pi\public" />
@@ -204,7 +264,9 @@
       <workItem from="1616338192642" duration="709000" />
       <workItem from="1616338975383" duration="2021000" />
       <workItem from="1616341085258" duration="45591000" />
-      <workItem from="1616531029361" duration="76326000" />
+      <workItem from="1616531029361" duration="76586000" />
+      <workItem from="1616929402889" duration="35016000" />
+      <workItem from="1617013876767" duration="33882000" />
     </task>
     <task id="LOCAL-00001" summary=" update">
       <created>1614858765612</created>
@@ -276,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616883457999</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary=" update 27mars">
+      <created>1616883842041</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1616883842041</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

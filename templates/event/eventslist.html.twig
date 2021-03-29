@@ -7,7 +7,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation">
-                        <a class="nav-link" href="/eventsearch" style="color: #bb620f;font-weight: bold;">Evenements</a></li>
+                        <a class="nav-link" href="/Events" style="color: #bb620f;font-weight: bold;">Evenements</a></li>
                     <li class="nav-item" role="presentation">
                         <a class="nav-link" href="#" style="color: #bb620f;font-weight: bold;">Participer</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#"
@@ -33,6 +33,10 @@
             <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/Events') }}">Retour</a>
         </div>
     </header>
+    {% if is_granted('ROLE_REC') %}
+        <a href="{{ path('Ajout_Event',{'id':app.user.id}) }}">Ajouter Un Evenement</a>
+        <a href="{{ path('AfficheMaListeEvents',{'id':app.user.id}) }}"> Afficher mes évènements ajoutés </a>
+    {% endif %}
     <section class="portfolio-block photography">
             <div class="card-group col-md-6" style="margin-left: 370px">
                     <div class="card-group ">
@@ -49,69 +53,100 @@
                                             <span class="day">{{event.datedebut|date('d')}}</span>
                                             <span class="month">{{event.datedebut|date('F')}}</span>
                                         </div>
-                                        <h3 >{{event.nom}}</h3>
+                                        <h3 class="nom">{{event.nom}}</h3>
                                         <p>
                                             {{ event.plan |raw}}
                                         </p>
                                     </figcaption>
-                                    <footer style="background-color: #eea236">
-                                        <div class="views"><i class="ion-eye"></i>Participer</div>
-                                    </footer>
+                                    <div class="footer footer-link" style="background-color:#eea236;  padding:15px; text-align: right">
+                                        <div class="views">
+
+                                            <a  class="js-participation" href="{{ path('event_participe',{'id':event.id}) }}"  style="color: #FFFFFF; margin-right:5px;">
+                                                <i class="fas fa-users"></i>
+                                                <span class="js-participations">{{ event.participant | length }} participants</span>
+                                                <span class="js-label">
+                                                {% if app.user and event.isParticipatedBy(app.user) %}
+                                                 Annuler participation
+                                                 {% else %} participer
+                                                {% endif %}
+                                             </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
                                 </figure>
+                            </div>
+                            <div id="overlay" class="overlay">
+                                <div id="popup" class="popup">
+                                    <span id="btnClose" class="btnClose">&times;</span>
+                                    <div class="icon" style="margin-right: 50px" >
+                                        <i class="fa fa-check"></i>
+                                    </div>
+                                    <h3 class="js-text" >HELLO à {{ event.nom}} </h3>
+                                    <div class="description">
+                                        <p>Vous êtes inscrit à cet event avec succé</p>
+                                    </div>
+                                    <div><img src="{{ qr_code_data_uri(event.nom, 'default') }}" /></div>
+                                </div>
                             </div>
                         {% endfor %}
                         {% endif %}
                     </div>
             </div>
+
+        {% block javascripts %}
+            <script src="{{ asset('https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js') }}"></script>
+            <script src="{{ asset('https://unpkg.com/axios/dist/axios.min.js') }}"></script>
+
+            <script>
+                var overlay = document.getElementById('overlay');
+                var btnClose = document.getElementById('btnClose');
+                btnClose.addEventListener('click',closeModal);
+                function openMoadl() {
+                        overlay.style.display='block';
+                        overlay.classList.add('active');
+                }
+                function closeModal() {
+                    overlay.style.display='none';
+                }
+                function onClickBtnParticipe(event){
+                    event.preventDefault();
+                    const url = this.href;
+                    const spanCount = this.querySelector('span.js-participations');
+                    const spanText = this.querySelector('span.js-label');
+                    const icone = this.querySelector('i');
+
+                    axios.get(url).then(function (response){
+
+                        spanCount.textContent = response.data.participations+' participants ';
+                        if(icone.classList.contains('fas')) {
+                            spanText.textContent = 'participer ' ;
+                            spanCount.textContent = response.data.participations + ' participants';
+                            icone.classList.replace('fas', 'far');
+                        }
+                        else {
+                            icone.classList.replace('far', 'fas');
+                            spanText.textContent = 'annuler participation';
+                        }
+                    })
+                        .catch(function (error){
+                            if(error.response === 403){
+                                window.alert("vous n etes pas connecté");
+                            }
+                            else{
+                                window.alert("une erreur s est produite");
+                                console.log('Error', error.message);
+                            }
+                        });
+                }
+                document.querySelectorAll('a.js-participation').forEach(function (link){
+                    link.addEventListener('click',onClickBtnParticipe);
+                    link.addEventListener('click',openMoadl);
+                });
+            </script>
+        {% endblock %}
     </section>
 
-    <section class="portfolio-block skills">
-            <div class="container">
-                <div class="heading">
-                    <h2>CITATION DU JOUR</h2>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0">
-                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-star-outline"
-                                                                                style="background-color: rgb(237,128,27);"></i>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Soft Skills</h3>
-                                <p class="card-text" style="font-weight: bold;">A l’inverse des compétences techniques,
-                                    il n’est pas possible de déléguer aux robots les compétences
-                                    comportementales.<br><br>Jérôme Hoarau<br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0">
-                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-lightbulb-outline"
-                                                                                style="background-color: rgb(237,128,27);"></i>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Innovation</h3>
-                                <p class="card-text" style="font-style: normal;font-weight: bold;">Encouragez
-                                    l’innovation. Le changement est notre force vitale, la stagnation notre
-                                    glas.<br><br>David M. OgilvyDe David M. Ogilvy<br></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card special-skill-item border-0">
-                            <div class="card-header bg-transparent border-0"><i class="icon ion-ios-gear-outline"
-                                                                                style="background-color: rgb(237,128,27);"></i>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-title">Intérêts&nbsp;</h3>
-                                <p class="card-text" style="font-weight: bold;"><br>Chacun préfère son&nbsp;<strong>intérêt</strong>&nbsp;à
-                                    celui du prochain.<br><br>Proverbe latin.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     <section class="portfolio-block website gradient"
              style="background-image: url({{ asset('assets/img/imageonline-co-whitebackgroundremoved.png') }});background-color: #eeeeee;background-repeat: no-repeat;">
         <div class="container">
@@ -126,14 +161,6 @@
                 </div>
             </div>
         </div>
-    </section>
-    <footer class="page-footer" style="background-color: #eeeeee;width: 1324px;">
-        <div class="container">
-            <div class="links"><a href="#">About us</a><a href="#">Contact us</a></div>
-            <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
-                            class="icon ion-social-instagram-outline"></i></a><a href="#"><i
-                            class="icon ion-social-twitter"></i></a></div>
-        </div>
-    </footer>
-    </body>
+     </section>
+</body>
 {% endblock %}

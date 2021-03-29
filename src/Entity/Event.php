@@ -3,7 +3,10 @@
 namespace App\Entity;
 
 use App\Repository\EventRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=EventRepository::class)
@@ -19,16 +22,24 @@ class Event
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min="10" , minMessage="Champs ne contient que 10 caractéres")
      */
     private $nom;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\Date()
+     * @Assert\GreaterThan("today")
      */
     private $datedebut;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\Date()
+     * @Assert\Expression(
+     *     "this.getDatedebut() < this.getDatefin()",
+     *     message="La date fin ne doit pas être antérieure à la date début"
+     * )
      */
     private $datefin;
 
@@ -46,6 +57,22 @@ class Event
      * @ORM\Column(type="string", length=255)
      */
     private $adresse;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $creatorId;
+
+    /**
+     * @ORM\OneToMany(targetEntity=EventParticipations::class, mappedBy="event")
+     */
+    private $participant;
+
+    public function __construct()
+    {
+        $this->participant = new ArrayCollection();
+    }
+
 
     public function getId(): ?int
     {
@@ -123,4 +150,59 @@ class Event
 
         return $this;
     }
+
+public function getCreatorId(): ?int
+{
+    return $this->creatorId;
 }
+
+public function setCreatorId(int $creatorId): self
+{
+    $this->creatorId = $creatorId;
+
+    return $this;
+}
+
+/**
+ * @return Collection|EventParticipations[]
+ */
+public function getParticipant(): Collection
+{
+    return $this->participant;
+}
+
+public function addParticipant(EventParticipations $participant): self
+{
+    if (!$this->participant->contains($participant)) {
+        $this->participant[] = $participant;
+        $participant->setEvent($this);
+    }
+
+    return $this;
+}
+
+public function removeParticipant(EventParticipations $participant): self
+{
+    if ($this->participant->removeElement($participant)) {
+        // set the owning side to null (unless already changed)
+        if ($participant->getEvent() === $this) {
+            $participant->setEvent(null);
+        }
+    }
+
+    return $this;
+}
+    /**
+     * permet de retourner si cet event est participé par utilisateur
+     * @param \App\Entity\User $user
+     * @return bool
+     */
+    public function isParticipatedBy(User $user):bool{
+        foreach ($this->participant as $participant){
+            if($participant->getUser()== $user) return true;
+        }
+        return false;
+    }
+
+}
+
