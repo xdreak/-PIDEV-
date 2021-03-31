@@ -210,17 +210,17 @@ class UserController extends AbstractController
         ]);
     }
 
-    // /**
-    //  * @Route("/da94sd5c", name="searchUser")
-    //  */
-    // public function search(Request $request) {
-    //     $em=$this->getDoctrine();
-    //     $tab=$em->getRepository(User::class)->search($request->get('input'));
-    //     return $this->render('user/index.html.twig', [
-    //         'users' => $tab,
-    //         'session' => $request->getSession(),
-    //     ]);
-    // }
+    /**
+     * @Route("/da94sd5c", name="searchUser")
+     */
+    public function search(Request $request) {
+        $em=$this->getDoctrine();
+        $tab=$em->getRepository(User::class)->search($request->get('input'));
+        return $this->render('user/index.html.twig', [
+            'users' => $tab,
+            'session' => $request->getSession(),
+        ]);
+    }
 
     /**
      * @Route("/redirect", name="redirect")

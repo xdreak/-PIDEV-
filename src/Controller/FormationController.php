@@ -20,7 +20,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
-
+use Symfony\Component\HttpFoundation\Session\Session;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
@@ -51,13 +51,17 @@ class FormationController extends AbstractController
      */
     public function index2(Request $request,PaginatorInterface $paginator): Response
     {
+      $repository = $this->getDoctrine()->getrepository(Category::class);//recuperer repository
+      $Categorys = $repository->findAll();
      $donnees=$this->getDoctrine()->getRepository(Formation::class)->findAll();
      $formations = $paginator->paginate(
       $donnees, // Requête contenant les données à paginer (ici nos articles)
       $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
       4// Nombre de résultats par page
   );
-     return $this->render('formation/index2.html.twig',array ('formations'=>$formations));
+     return $this->render('formation/index2.html.twig', [
+      'formations' => $formations,'categories'=> $Categorys
+  ]);
 
     }
     
@@ -212,7 +216,7 @@ class FormationController extends AbstractController
             ->subject('Bonjour!')
             ->text("Une nouvelle: formation {$titre} a été annulé! ")
             ->html("<h1>Une nouvelle: formation {$titre} a été annulé! </h1><br><p>Nous somme vraiment désolé!</p>");
-      
+            
              $mailer->send($email);
             }
       return $this->redirectToRoute('formation');
@@ -234,17 +238,18 @@ class FormationController extends AbstractController
      */
     public function inscrire($titre,MailerInterface $mailer) {
       $entityManager = $this->getDoctrine()->getManager();
-
+      $session = new Session();
+      $username=$session->get('username');
       $abonnement = new Abonnment();
-      $abonnement->setNomUser('Jihen');
+      $abonnement->setNomUser( $username);
       $abonnement->setTitreFormation($titre);
       $abonnement->setStatue('paiment en cour');
-
      
+     $to=$session->get('email');
       $entityManager->persist($abonnement);
       $email = (new Email())
       ->from('gabsijihen33@gmail.com')
-      ->to('gabsijihen31@gmail.com')
+      ->to($to)
       //->cc('cc@example.com')
       //->bcc('bcc@example.com')
       //->replyTo('fabien@example.com')
@@ -304,6 +309,20 @@ class FormationController extends AbstractController
         $Formation = $repository->findFormationBytitle($requestString);
         $jsonContent = $Normalizer->normalize($Formation, 'json',['groups'=>'jihen']);
         $retour=json_encode($jsonContent);
+        return new Response($retour);
+
+    }
+        /**
+     * @Route("/FiltreFormation ", name="FiltreFormation")
+     */
+    public function FiltreFormation(Request $request,NormalizerInterface $Normalizer)
+    {
+        $repository = $this->getDoctrine()->getRepository(Formation::class);
+        $requestString=$request->get('searchValue');
+        $Formation = $repository->findFormationByid($requestString);
+        $jsonContent = $Normalizer->normalize($Formation, 'json',['groups'=>'jihen']);
+        $retour=json_encode($jsonContent);
+        print_r($retour);
         return new Response($retour);
 
     }

@@ -18,6 +18,18 @@ class AbonnmentRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Abonnment::class);
     }
+    /**
+     * @return Abonnment[] Returns an array of Artiles objects
+     */
+
+    public function findAbonnmentBytitle($title)
+    {
+        return $this->createQueryBuilder('Abonnment')
+            ->where('Abonnment.NomUser LIKE :NomUser')
+            ->setParameter('NomUser', '%'.$title.'%')
+            ->getQuery()
+            ->getResult();
+    }
     
     // /**
     //  * @return Abonnment[] Returns an array of Abonnment objects

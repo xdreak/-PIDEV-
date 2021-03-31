@@ -33,6 +33,19 @@ class FormationRepository extends ServiceEntityRepository
     
     }
     /**
+     * @return Formations[]
+     */
+    public function findFormationByid($id)
+    {
+        return $this->createQueryBuilder('f')
+        ->andWhere('f.category = :id')
+        ->setParameter('id', $id)
+        ->select('f.titre as titre')
+        ->getQuery()
+        ->getResult();
+    
+    }
+    /**
      * @return Formations[] Returns an array of Artiles objects
      */
 
@@ -45,109 +58,5 @@ class FormationRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-    public function __constructs(BuilderInterface $customQrCodeBuilder)
-    {
-        $result = $customQrCodeBuilder
-            ->size(400)
-            ->margin(20)
-            ->build();
-    }
-    // public function findEntitiesByString($str){
-    //     return $this->getEntityManager()
-    //         ->createQuery(
-    //             'SELECT p
-    //             FROM formation p
-    //             WHERE p.titre LIKE :str'
-    //         )
-    //         ->setParameter('str', '%'.$str.'%')
-    //         ->getResult();
-    // }
-    //  /**
-    //  * get all posts
-    //  *
-    //  * @return array
-    //  */
-    // public function findAllFormations()
-    // {
-    //     return $this->getEntityManager()
-    //         ->createQuery(
-    //             'SELECT a
-    //      FROM Formation a
-      
-    //      ORDER BY a.date DESC'
-    //         )
-    //         ->getArrayResult();
-    // }
-
-    // /**
-    //  * get one by id
-    //  *
-    //  * @param integer $id
-    //  *
-    //  * @return array
-    //  */
-    // public function findOneById($id)
-    // {
-    //     return $this->getEntityManager()
-    //         ->createQuery(
-    //             "SELECT a, u.username
-    //    FROM AppBundle:Annonce
-    //    a JOIN a.user u
-    //     WHERE a.id = id"
-    //         )
-    //         ->setParameter('id', $id)
-    //         ->getArrayResult();
-    // }
-
-
-    // /**
-    //  * get one by id
-    //  *
-    //  * @param integer $id
-    //  *
-    //  * @return object or null
-    //  */
-    // public function findFormationByid($id)
-    // {
-    //     try {
-    //         return $this->getEntityManager()
-    //             ->createQuery(
-    //                 "SELECT p
-    //             FROM Formation
-    //             p WHERE p.id =:id"
-    //             )
-    //             ->setParameter('id', $id)
-    //             ->getOneOrNullResult();
-    //     } catch (NonUniqueResultException $e) {
-    //     }
-    // }
-    
-    // /**
-    //  * @return Formation[] Returns an array of Formation objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('f.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Formation
-    {
-        return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
+  
 }

@@ -219,9 +219,17 @@
 		</head>
 		<body>
 
-			<h1>Formations:</h1>
-			<h2>Chercher une formation</h2>
+	<h1>Formations:</h1>
+	   
+	<select id="filters" style="width:150px" class=form-control>
+	
+       		{% for categorie in categories %}
+ <option value={{categorie.id}}>{{categorie.titre}}</option>
+{% endfor %}
+</select>
 
+
+			<h2>Chercher une formation</h2>
 
 			<form class="form-inline" role="form" method="get">
 				<div class="form-group">
@@ -229,9 +237,7 @@
 				</div>
 			</form>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-				<script>
-
+	<script>
 					$(document).ready(function () {
 $("#search").keyup(function (e) { /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
 var value = $(this).val();
@@ -256,7 +262,7 @@ $('div#search').append('<div class="center"><div class="property-card"><div clas
 });
 
 } else {
-  $('div#search').hide();
+$('div#search').hide();
 $('div#all').show();
 }
 return false;
@@ -266,6 +272,7 @@ return false;
 });
 
 });
+		
 				</script>
 			<div id="all" class="flex-container wrap">
 				{% if formations %}
@@ -336,7 +343,7 @@ return false;
     <div id="pg" class="pagination justify-content-center ">
           {{ knp_pagination_render(formations) }}
         </div>
-			<a href="/Frontend/abonnement/" class="btn btn-dark">Mes formations</a>
+			<a href="/Frontend/mesAbonnements" class="btn btn-dark">Mes formations</a>
 
 
 			<!-- Trigger/Open The Modal -->
