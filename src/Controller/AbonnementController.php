@@ -17,6 +17,14 @@ class AbonnementController extends AbstractController
      */
     public function index(): Response
     {
+        
+        $session = new Session();
+        if(!$session->has('role')) {
+            return $this->redirectToRoute('loginBack');
+        }
+        if($session->get('role') != "Recruteur") {
+            return $this->redirectToRoute('redirect');
+        }
         $abonnements=$this->getDoctrine()->getRepository(Abonnment::class)->findAll();
         return $this->render('abonnement/index.html.twig',array ('abonnements'=>$abonnements));
     }
@@ -31,11 +39,12 @@ class AbonnementController extends AbstractController
         return $this->render('abonnement/mesAbonnements.html.twig',array ('abonnements'=>$abonnements));
     }
     /**
-     * @Route("/pdf ", name="pdfOffre")
+     * @Route("/pdf1 ", name="pdf1")
      */
     public function pdf(AbonnmentRepository $Repository)
-    {
-        $Abonnment = $Repository->findall();
+    { $session = new Session();
+        $name=$session->get('prenom');
+        $pre=$session->get('nom');
         // Configure Dompdf according to your needs
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
@@ -44,9 +53,9 @@ class AbonnementController extends AbstractController
         $dompdf = new Dompdf($pdfOptions);
 
         // Retrieve the HTML generated in our twig file
-        $html = $this->renderView('abonnement/pdf.html.twig', [
-            'title' => "Welcome to our PDF Test",
-            'Abonnement' => $Abonnment
+        $html = $this->renderView('formation/certif.html.twig', [
+            
+            'prenom' => $name,'nom' => $pre
         ]);
 
         // Load HTML to Dompdf

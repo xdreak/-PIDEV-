@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+{% form_theme formDoc 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <h1>Modifier un Document</h1>
+    {{ form_start(formDoc) }}
+    {{ form_row(formDoc.nom) }}
+    {{ form_row(formDoc.description) }}
+    {{ form_row(formDoc.pdfFile) }}
+    {{ form_row(formDoc.apercuFile) }}
+    <button type="submit" class="btn btn-success" > Modifier </button>
+    {{ form_end(formDoc) }}
+{% endblock %}

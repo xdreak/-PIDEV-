@@ -1,0 +1,137 @@
+{% extends 'front.html.twig' %}
+
+
+    {% block css %}
+
+<head>
+    <meta charset="utf-8">
+    <title>SOFT Team - Bootstrap Agency Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Bootstrap Agency Template" name="keywords">
+    <meta content="Bootstrap Agency Template" name="description">
+
+    <!-- Favicon -->
+    <link href="/Frontend/img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="/Frontend/lib/slick/slick.css" rel="stylesheet">
+    <link href="/Frontend/libs/slick/slick-theme.css" rel="stylesheet">
+    <link href="/Frontend/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/Frontend/css/style.css" rel="stylesheet">
+
+    {% endblock %}
+
+{% block body %}
+
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>details de l'offre</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% for O in offres %}
+    <div class="service">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item">
+                        <h3>Title d'offre</h3>
+                        <img src="/Frontend/img/icon-service-1.png" alt="Service">
+                        <p>{{ O.Title }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item">
+                        <h3>Ville</h3>
+                        <img src="/Frontend/img/icon-service-2.png" alt="Service">
+                        <p>{{ O.Ville }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item">
+                        <h3>Domain</h3>
+                        <img src="/Frontend/img/icon-service-3.png" alt="Service">
+                        <p>{{ O.Domain }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item">
+                        <h3>Salaire</h3>
+                        <img src="/Frontend/img/icon-service-4.png" alt="Service">
+                        <p>{{ O.Salaire }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item">
+                        <h3>Company Name</h3>
+                        <img src="/Frontend/img/icon-service-5.png" alt="Service">
+                        <p>{{ O.CompanyName }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item">
+                        <h3>Type</h3>
+                        <img src="/Frontend/img/icon-service-6.png" alt="Service">
+                        <p>{{ O.Type }}</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item">
+                        <h3>Description</h3>
+                        <img src="/Frontend/img/icon-service-7.png" alt="Service">
+                        <p>{{ O.Description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="service-row">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="service-row-img">
+                        <img src="/Frontend/img/service-1.png" alt="Service">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="service-row-text">
+                        <h2 class="section-title">Apply now</h2>
+                        <p>
+                            participez au quiz et postulez maintenant pour le poste
+                        </p>
+                        <a class="btn" href="{{ path('m',{'id':O.id}) }}">Start Quiz</a>
+                        <a class="btn" href="{{ path('ListeOffres') }}">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endfor %}
+
+{% endblock %}
+
+{% block js %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/Frontend/lib/slick/slick.min.js"></script>
+    <script src="/Frontend/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/Frontend/lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+{% endblock %}

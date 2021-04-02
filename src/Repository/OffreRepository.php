@@ -5,7 +5,7 @@ namespace App\Repository;
 use App\Entity\Offre;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
-
+use Endroid\QrCode\Builder\BuilderInterface;
 /**
  * @method Offre|null find($id, $lockMode = null, $lockVersion = null)
  * @method Offre|null findOneBy(array $criteria, array $orderBy = null)
@@ -19,6 +19,14 @@ class OffreRepository extends ServiceEntityRepository
         parent::__construct($registry, Offre::class);
     }
 
+
+    public function __constructs(BuilderInterface $customQrCodeBuilder)
+    {
+        $result = $customQrCodeBuilder
+            ->size(400)
+            ->margin(20)
+            ->build();
+    }
     // /**
     //  * @return Offre[] Returns an array of Offre objects
     //  */
@@ -47,4 +55,24 @@ class OffreRepository extends ServiceEntityRepository
         ;
     }
     */
+
+
+    public function findOffreByVille($Ville){
+        return $this->createQueryBuilder('Offre')
+            ->where('Offre.Ville LIKE :Ville')
+            ->setParameter('Ville', '%'.$Ville.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findOffreByTitle($Title){
+        return $this->createQueryBuilder('Offre')
+            ->where('Offre.Title LIKE :Title')
+            ->setParameter('Title', '%'.$Title.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
+
+
 }

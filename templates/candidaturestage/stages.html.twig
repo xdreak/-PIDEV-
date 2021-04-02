@@ -1,0 +1,94 @@
+{% extends 'front.html.twig' %}
+{% block href %}href="inscription"{% endblock %}
+{% block body %}
+    <br>
+    <body>
+
+    <table class="table table-striped table-advance table-hover">
+       <form><input type="text" name="recherche" id="recherche" class="form-control" placeholder="Recherer Entreprise"></form>
+        <tr>
+            <th>Id</th>
+            <th>Nom Entreprise
+                {% if order is odd %}
+                    <a href="{{ path('croissant') }}"><img src="{{ asset('images/up.png') }}" height="20" width="20"> </a>
+                {% else%}
+                    <a href="{{ path('decroissant') }}"><img src="{{ asset('images/down.png') }}" height="20" width="20"> </a>
+                {% endif %}</th>
+            <th>Description</th>
+            <th>Stage</th>
+            <th>Postuler</th>
+
+        </tr>
+        </thead>
+        <tbody id="all">
+        {{ include ('candidaturestage/stageajax.html.twig') }}
+
+        </tbody>
+        <tbody id="recherche">
+        </tbody>
+
+    </table>
+
+    {#
+    <form class="form-inline" role="form" method="get" action="{{ path ('search') }}">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Title</label>
+            <input type="text" class="form-control" placeholder="Entreprise" name="find">
+            <input type="submit" class="btn btn-success btn-xs" value="Search"></input>
+        </div>
+    </form>
+    #}
+   {# <form class="form-inline" role="form" method="get" action="{{ path ('orderA') }}">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Title</label>
+            <input type="submit" class="btn btn-primary btn-xs" value="A-Z Entreprise"></input>
+        </div>
+    </form>
+    <form class="form-inline" role="form" method="get" action="{{ path ('orderD') }}">
+        <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Title</label>
+            <input type="submit" class="btn btn-primary btn-xs" value="Z-A Entreprise"></input>
+        </div>
+    </form>
+     #}
+
+
+
+
+
+
+    </body>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $( document ).ready(function() {
+            var currentRequest = null;
+            $("#recherche").keyup(function(e){
+                /* La variable value va prendre la valeur insérer dans le champ de texte
+                afin d’effectuer la recherche */
+                var value = $(this).val();
+                if(currentRequest != null) {
+                currentRequest.abort();
+                }
+
+                /* Ajax est lancé lors du remplissage du champ texte dont l’id est
+                « search » pour faire la recherche */
+                currentRequest = $.ajax({
+
+                    url : "{{ path('searchstage') }}",
+                    type : 'GET',
+                    data: {
+                        'searchValue' : value
+                    },
+
+                    success : function(retour)
+                    {
+                        $('#all').html(retour);
+
+                    },
+                });
+                return false;
+            });
+        });
+    </script>
+{% endblock %}

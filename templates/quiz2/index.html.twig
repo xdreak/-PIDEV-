@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quiz index{% endblock %}
+
+{% block body %}
+    <h1>Quiz index</h1>
+
+    <table border="1" class="table">
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Q1</th>
+
+                <th>C1</th>
+                <th>Q2</th>
+
+                <th>C2</th>
+                <th>Q3</th>
+
+                <th>C3</th>
+                <th>Q4</th>
+
+                <th>C4</th>
+                <th>Q5</th>
+
+                <th>C5</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for quiz in quizzes %}
+            <tr>
+                <td>{{ quiz.id }}</td>
+                <td>{{ quiz.Titre }}</td>
+                <td>{{ quiz.q1 }}</td>
+
+                <td>{{ quiz.c1 }}</td>
+                <td>{{ quiz.q2 }}</td>
+
+                <td>{{ quiz.c2 }}</td>
+                <td>{{ quiz.q3 }}</td>
+
+                <td>{{ quiz.c3 }}</td>
+                <td>{{ quiz.q4 }}</td>
+
+                <td>{{ quiz.c4 }}</td>
+                <td>{{ quiz.q5 }}</td>
+
+                <td>{{ quiz.c5 }}</td>
+                <td>
+                    <a href="{{ path('quiz_show', {'id': quiz.id}) }}">show</a>
+                    <a href="{{ path('quiz_edit', {'id': quiz.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('quiz_new') }}">Create new</a>
+{% endblock %}

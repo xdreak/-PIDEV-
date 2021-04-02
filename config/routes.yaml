@@ -32,3 +32,6 @@ addprofile:
 ajax_search:
     path: /search
     controller: App\Controller\FormationController::ajax_search
+
+captcha_routing:
+        resource: "@CaptchaBundle/Resources/config/routing.yml"    

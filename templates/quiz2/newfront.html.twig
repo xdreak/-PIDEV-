@@ -1,0 +1,95 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}New Quiz{% endblock %}
+
+{% block body %}
+
+    <table>
+        {{ form_start(form,{attr : {'novalidate' : 'novalidate'}}) }}
+        <tr>
+            <td>{{ quiz.titre }}</td>
+        </tr>
+        <tr>
+            <td>{{ quiz.q1 }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.r1,"Reponse1") }}</td>
+            <td> {{ form_widget(form.r1) }}</td>
+        </tr>
+        <tr>
+            <td>{{ quiz.q2 }}</td>
+        </tr>
+        <tr>
+            <td> {{ form_label(form.r2,"Reponse2") }}</td>
+            <td>{{ form_widget(form.r2) }}</td>
+        </tr>
+        <tr>
+        <tr>
+            <td>{{ quiz.q3 }}</td>
+        </tr>
+            <td>{{ form_label(form.r3,"Reponse3") }}</td>
+            <td>{{ form_widget(form.r3) }}</td>
+        </tr>
+        <tr>
+            <td>{{ quiz.q4 }}</td>
+        </tr>
+        <tr>
+            <td>{{ form_label(form.r4,"Reponse4") }}</td>
+            <td> {{ form_widget(form.r4) }}</td>
+        </tr>
+        <tr>
+        <tr>
+            <td>{{ quiz.q5 }}</td>
+        </tr>
+            <td>{{ form_label(form.r5,"Reponse5") }}</td>
+            <td>{{ form_widget(form.r5) }}</td>
+        </tr>
+    </table>
+    <button>{{ button_label|default('Save') }}</button>
+    {{ form_end(form)}}
+    <button onclick="Button()">ENVOYER</button>
+    <script>
+        score = 0;
+        if ("{{quiz.r1}}".localeCompare("{{ quiz.c1}}") == 0)
+            {
+
+                score++;
+        }
+        if ("{{quiz.r2}}".localeCompare("{{ quiz.c2}}") == 0)
+        {
+
+            score++;
+        }
+        if ("{{quiz.r3}}".localeCompare("{{ quiz.c3}}") == 0)
+        {
+
+            score++;
+        }
+        if ("{{quiz.r4}}".localeCompare("{{ quiz.c4}}") == 0)
+        {
+
+            score++;
+        }
+        if ("{{quiz.r5}}".localeCompare("{{ quiz.c5}}") == 0)
+        {
+
+            score++;
+        }
+        console.log(score);
+        function Button() {
+
+            if (score >= 3) {
+                window.location.replace("http://127.0.0.1:8000/add/{{quiz.idStageQ}}");
+
+            } else {
+                console.log("Try again");
+
+
+            }
+        };
+    </script>
+
+
+
+    <a href="{{ path('quiz_index') }}">back to list</a>
+{% endblock %}

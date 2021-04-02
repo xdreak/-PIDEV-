@@ -1,0 +1,42 @@
+{% extends 'front.html.twig' %}
+{% block title %} Bienvenue à votre inventaire  {% endblock %}
+{% block body %}
+   
+    <section class="article">
+
+        <article>
+            <h2> Vous êtes entrain de participer à l 'evenement : </h2>
+            <h2> {{  event.nom }}</h2>
+            <form action="" METHOD="post">
+              <p>
+                  Veuillez saisir votre Nom :    <input type="text" name="nom" value="" /> <br>
+              </p>
+                <p>
+                    Veuillez saisir votre Prenom : <input  type="text" name="prenom" value="" /> <br>
+                </p>
+                <p>
+                    Veuillez saisir votre Numero : <input type="text" name="num" value="" /> <br>
+                </p>
+                <p>
+                    Veuillez saisir votre Email :    <input type="text" name="email" value="" /> <br>
+                </p>
+                <p>
+                    Vous êtes :<br />
+                    <select name="profil">
+                        <option value="parti">Un particulier</option>
+                        <option value="profe">Un professionnel</option>
+                        <option value="insti">Un institutionnel</option>
+                    </select> <br>
+                </p>
+                <input type="submit" value="Confirmer" />
+                <input type="reset" value="Annuler" />
+                <br>
+                <br>
+            </form>
+
+
+        </article>
+
+    </section>
+
+{% endblock %}

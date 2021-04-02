@@ -1,0 +1,45 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}C.V{% endblock %}
+
+{% block body %}
+    
+    <section class="text-center" id="modeleLM">
+        <header class="overlay" style="background-image: url('https://www.etudiant-voyageur.fr/wp-content/uploads/2015/12/rediger-cv-en-anglais.jpeg');
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 85% 82% / 38%;
+">
+            <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                <h1 style="color: rgb(255,255,255);">Modele de C.V</h1>
+                <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                <p style="color: rgb(255,255,255);">Vous trouverez ici tous les modeles Cv qui vous intéressent</p>
+                <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/Articles') }}">Retour</a>
+
+            </div>
+        </header>
+        <div class="card-deck">
+          {% for cv in cvs %}
+            <div class="card">
+                <div class="image" >
+                    <img  class="card-img-top" src="{{ vich_uploader_asset(cv,'apercuFile') }}" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Modele {{ cv.nom }}</h5>
+                    <p class="card-text">{{ cv.description}} </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">
+                        <a class="fa fa-cloud-download" href="{{ vich_uploader_asset(cv,'pdfFile') }}"> {{ 'vich_uploader.link.download'|trans }}</a>
+                    </small>
+                </div>
+            </div>
+          {% endfor %}
+        </div>
+    </section>
+{% endblock %}

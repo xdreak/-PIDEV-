@@ -1,0 +1,16 @@
+{# templates/emails/registration.html.twig #}
+
+{% for O in offres %}
+    <div class="col-md-6">
+        <h2>Bienvenue!</h2>
+        <h3>Vous avez postuler avec succes au Stage : <span>{{ O.StageId }}</span></h3>
+    </div>
+   {# <img src="{{ img }}" width="100" height="100"> #}
+
+
+{% endfor %}
+
+{# example, assuming you have a route named "login" #}
+
+
+

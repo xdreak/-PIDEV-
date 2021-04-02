@@ -1,0 +1,15 @@
+{% for O in offres %}
+<h1>Veuillez fournir ce Code QR dans les locaux de l'entreprise le jour de votre rendez-vous
+    pour le stage: <span style="color: lightskyblue">{{ O.StageId }}</span> </h1>
+<body>
+
+
+
+        {% set QR %}
+        Titre de Stage:{{ O.StageId }}
+
+    {% endset %}
+   <center><img src="{{ qr_code_data_uri(QR) }}"></center>
+        {% endfor %}
+
+</body>

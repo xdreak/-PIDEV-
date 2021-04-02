@@ -1,0 +1,32 @@
+{% extends 'front.html.twig' %}
+{% block title %} Affiche Event Client {% endblock%}
+{% block body %}
+
+    {% for message in app.flashes('message') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    {% if event %}
+    <div >
+        <figure class="snip1253" style="margin-right: 5px">
+            <div class="image">
+                <img src="https://timviec365.com/pictures/images/event-executive-1.jpg" alt="sample59" />
+            </div>
+            <figcaption>
+                <div class="date" style="background-color: #eea236">
+                    <span class="day">{{event.datedebut|date('d')}}</span>
+                    <span class="month">{{event.datedebut|date('F')}}</span>
+                </div>
+                <h3 >{{event.nom}}</h3>
+                <p>
+                    {{ event.plan |raw}}
+                </p>
+            </figcaption>
+            <footer style="background-color: #eea236">
+                <div class="views"><i class="ion-eye"></i>Participer</div>
+            </footer>
+        </figure>
+    </div>
+    {% endif %}
+{% endblock %}

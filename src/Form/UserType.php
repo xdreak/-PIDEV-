@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Captcha\Bundle\CaptchaBundle\Form\Type\CaptchaType;
 
 class UserType extends AbstractType
 {
@@ -23,7 +24,11 @@ class UserType extends AbstractType
                 'Admin' => 'Admin',
                 'Recruteur' => 'Recruteur',
                 'Candidat' => 'Candidat',
-            ]]);
+            ]])
+            ->add('captchaCode', CaptchaType::class, array(
+                'captchaConfig' => 'ExampleCaptcha'
+            ));
+            
 
     }
 

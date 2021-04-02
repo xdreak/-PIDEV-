@@ -1,0 +1,254 @@
+{% extends 'front.html.twig' %}
+{% block title %} Bienvenue à votre inventaire  {% endblock %}
+{% block body %}
+    
+{% set t = title %}
+    {% switch t %}
+            {% case 'Tunis' %}
+         <header class="overlay" style="background-image: url('https://observatoirevivreensemble.org/sites/observatoirevivreensemble.org/files/styles/obs-screen-lg-16-9/public/av_bourguiba.jpg?itok=g-wRGuZQ');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+             <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                 <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                 <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                 <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                 <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+             </div>
+         </header>
+          {% case 'Ariana' %}
+            <header class="overlay" style="background-image: url('https://www.tunisienumerique.com/wp-content/uploads/2019/06/ariana-1.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+                <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                    <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                    <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                    <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                    <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+                </div>
+            </header>
+          {% case 'Ben Arous' %}
+            <header class="overlay" style="background-image: url('https://lh3.googleusercontent.com/proxy/KknqTn8sUa9LES5cqpsIJ-yZTSvzrnJe8mslrCL8RuSZNobOcQCtzRm0_IW22FPFVtrNnfBUwxwIglg5QiEbl5Z_x6mSS1VCML-tnu7zPZm54cg-LwqoZKScje7WsGVsAYZvP6Bduw');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+                <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                    <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                    <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                    <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                    <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+                </div>
+            </header>
+          {% case 'Manouba' %}
+             <header class="overlay" style="background-image: url('https://www.tunisienumerique.com/wp-content/uploads/2020/04/manouba.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+                 <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                     <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                     <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                     <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                     <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+                 </div>
+             </header>
+          {% case 'Nabeul' %}
+             <header class="overlay" style="background-image: url('https://www.cap-voyage.com/wp-content/uploads/2015/03/Artisanat-poterie-de-Nabeul-voyage-Tunisie.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+                 <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                     <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                     <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                     <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                     <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+                 </div>
+             </header>
+          {% case 'Zaghouan' %}
+             <header class="overlay" style="background-image: url('https://fsa.zobj.net/crop.php?r=aOkWgUWc9xrXGiwvr3IsHc5xs5HThp53mtDpK0gYsGUg_Z-amK5obaYt11y9WfCkEG_qY_9ofp4p4GRu2E2ds6o-KoRSWATOWjfHM3b5TIdmHYG43fIeqg7pV8GcMyvdW7k-WJiyMCPsOr_6');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+                 <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                     <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                     <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                     <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                     <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+                 </div>
+             </header>
+          {% case 'Bizerte' %}
+             <header class="overlay" style="background-image: url('https://i.pinimg.com/originals/59/20/3d/59203d0bf8a914d80e453fce4ee16320.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+                 <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                     <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                     <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                     <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                     <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+                 </div>
+             </header>
+          {% case 'Beja' %}
+            <header class="overlay" style="background-image: url('https://www.tunisienumerique.com/wp-content/uploads/2020/11/beja-4.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+                <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                    <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                    <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                    <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                    <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+                </div>
+            </header>
+          {% case 'Jendouba' %}
+          <header class="overlay" style="background-image: url('https://www.entreprises-magazine.com/wp-content/uploads/2018/12/Ain-Draham.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+              <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                  <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                  <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                  <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                  <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+              </div>
+          </header>
+          {% case 'Kef' %}
+         <header class="overlay" style="background-image: url('https://thumbs.dreamstime.com/b/horizon-de-nuit-d-el-kef-une-ville-en-tunisie-du-nord-ouest-107191442.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+             <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                 <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                 <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                 <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                 <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+             </div>
+         </header>
+          {% case 'Siliana' %}
+          <header class="overlay" style="background-image: url('http://concourlieux2017.jneyne.com/img/candidats/kesra-59d4e6275b2c5.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+              <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                  <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                  <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                  <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                  <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+              </div>
+          </header>
+          {% case 'Kairouan' %}
+              <header class="overlay" style="background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.wallpaperflare.com%2Fsearch%3Fwallpaper%3Dkairouan&psig=AOvVaw3b6p5BZurUnXMpEdN8xzFy&ust=1616701681647000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLirvqHZye8CFQAAAAAdAAAAABAD');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+                  <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                      <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                      <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                      <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                      <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+                  </div>
+              </header>
+          {% case 'Kasserine' %}
+          <header class="overlay" style="background-image: url('https://photo980x880.mnstatic.com/4fd30635e1939b47c6ac081e4be37514/sbeitla-7319351.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+              <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                  <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                  <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                  <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                  <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+              </div>
+          </header>
+          {% case 'Sidi Bouzid' %}
+          <header class="overlay" style="background-image: url('https://lh3.googleusercontent.com/proxy/cs9oKHFvFVlZa1dzqVXAzuFYI-Nmor2kN1J4cOI1HG0e28GwxgkeeINH4Pbgi8CVr5qZVhqgQcKleUPxS0524urvo5WJjtPprE6YR225IxIfHoaoGkIOkhOydNDiTDdp');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+              <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                  <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                  <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                  <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                  <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+              </div>
+          </header>
+           {% case 'Sousse' %}
+           <header class="overlay" style="background-image: url('https://media.istockphoto.com/photos/great-mosque-in-sousse-picture-id155289895?k=6&m=155289895&s=612x612&w=0&h=9PpPAxQa8YQk_yUKy1KUdDfKdpJmO_whx9M5jTiSheU=');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+               <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                   <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                   <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                   <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                   <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+               </div>
+           </header>
+           {% case 'Monastir' %}
+            <header class="overlay" style="background-image: url('https://media.istockphoto.com/photos/monastir-tunisia-panoramic-view-of-the-city-and-the-coast-opens-from-picture-id1137648637?k=6&m=1137648637&s=612x612&w=0&h=biPikoHgSX6i0oKtQy3OE8BDjUTMr3XhHkCwGj_EdJY=');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+             <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                 <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                 <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                 <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                 <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+             </div>
+         </header>
+           {% case 'Mahdia' %}
+            <header class="overlay" style="background-image: url('https://photo980x880.mnstatic.com/a2a6463a01a225f286d24406a17d0acb/mahdia-413450.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+              <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                  <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                  <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                  <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                  <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+              </div>
+          </header>
+           {% case 'Sfax' %}
+           <header class="overlay" style="background-image: url('https://i.pinimg.com/originals/03/46/17/03461766cb29082103dd3a1b7dfba549.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+             <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                 <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                 <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                 <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                 <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+             </div>
+         </header>
+           {% case 'Gafsa' %}
+              <header class="overlay" style="background-image: url('http://4.bp.blogspot.com/-Pptg2E2c9dE/UyQXfEj1CBI/AAAAAAAADsc/rRZqmAgsoq4/s1600/P1060279+(Copier).JPG');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+             <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                 <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                 <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                 <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                 <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+             </div>
+         </header>
+             {% case 'Tozeur' %}
+               <header class="overlay" style="background-image: url('https://lh3.googleusercontent.com/proxy/9txf_mjQ-jwMwxgLDxPn1Eu7LmxPyz-z2pkkX_AS_G63C31CVgtwPSuEq-zrMkh17ryjaH_767YxaWxQK2bgUE2ZeyQZF561UKpbb0AB7-i54zmj');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+             <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                 <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                 <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                 <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                 <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+             </div>
+         </header>
+             {% case 'Kebili' %}
+              <header class="overlay" style="background-image: url('https://lh3.googleusercontent.com/proxy/YGBfzm9if2H402LZBblgCHaMWN1yGGJR-b7fD6rtp1uPeuNBoGsvwodNN_9D0G0hGds7vyxcUcwEMio4JmOKmCdgfeNnpTg7yTtmOp7_DtNy2_4');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+             <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                 <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                 <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                 <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                 <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+             </div>
+         </header>
+             {% case 'Gabes' %}
+               <header class="overlay" style="background-image: url('https://i.pinimg.com/originals/66/75/73/6675731cb038035b742010a244912f40.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+              <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                  <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                  <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                  <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                  <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+              </div>
+          </header>
+              {% case 'Médenine' %}
+               <header class="overlay" style="background-image: url('https://i.pinimg.com/originals/91/84/47/9184476d10cbbcd0ea0037b3e9d89c68.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+               <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                   <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                   <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                   <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                   <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+               </div>
+           </header>
+             {% case 'Tataouine' %}
+               <header class="overlay" style="background-image: url('https://i.pinimg.com/originals/39/12/b8/3912b8a0646fc5ebfa7d09852f55382a.jpg');text-align: center; width: 100%;height: 300px;background-size: cover;background-attachment: fixed;position: relative;overflow: hidden;border-radius: 0 0 85% 82% / 38%;">
+               <div class="overlay" style="text-shadow: 1px 1px 1px #333; width: 100%; height: 100%; background-color: rgba(171,89,29,0.27);padding: 50px">
+                   <h1 style="color: rgb(255,255,255);">Evènements en {{ title }}</h1>
+                   <h3 style="color: rgb(255,255,255);">Bienvenue</h3>
+                   <p style="color: rgb(255,255,255);">Vous trouverez ici tous les evenements qui vous intéressent</p>
+                   <a class="btn btn-light borderendondeado" type="button" href="{{ asset('/EventsAll') }}">Afficher tous</a>
+               </div>
+           </header>
+
+    {% endswitch %}
+  <div class="card-group col-md-6" style="margin-left: 370px" >
+    {% if events %}
+        <h2 style="margin-left: 150px">{{ events|length }} évènement(s) à {{ title }}</h2>
+        {% for event in events %}
+        <div>
+            <figure class="snip1253" style="margin-right: 5px">
+                    <div class="image">
+                        <img src="https://timviec365.com/pictures/images/event-executive-1.jpg" alt="sample59" />
+                    </div>
+                    <figcaption>
+                        <div class="date" style="background-color: #eea236">
+                            <span class="day">{{ event.datedebut|date('d')}}</span>
+                            <span class="month">{{ event.datedebut|date('F')}}</span>
+                        </div>
+                        <h3>{{ event.nom}}</h3>
+                        <p>
+                            {{ event.plan |raw}}
+                        </p>
+                    </figcaption>
+                    <footer style="background-color: #eea236">
+                        <div class="views"><i class="ion-eye"></i>Participer</div>
+                    </footer>
+            </figure>
+       </div>
+        {% endfor %}
+    {% else %}
+        <h2 style="text-align: center">Pas d'evenement pour le moment</h2>
+    {% endif %}
+  </div>
+{% endblock %}

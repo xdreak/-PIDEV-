@@ -317,8 +317,8 @@ return false;
 									<div class="modal-content">
 										<span class="close">&times;</span>
 										{% set QR %}
-										Title de offre:{{ formation.Titre }}
-
+										Title de formation:{{ formation.Titre }}
+                                        Votre code d'inscription:{{ random(1000, 25555) }}
 										{% endset %}
 										<div><img src="{{ qr_code_data_uri(QR) }}"/></div>
 										<p>Validez votre inscription</p>

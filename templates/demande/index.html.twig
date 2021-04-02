@@ -1,0 +1,123 @@
+{% extends 'front.html.twig' %}
+
+{% block title %}Hello OffreEmploiController!{% endblock %}
+
+{% block css %}
+<head>
+    <meta charset="utf-8">
+    <title>SOFT Team - Bootstrap Agency Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Bootstrap Agency Template" name="keywords">
+    <meta content="Bootstrap Agency Template" name="description">
+
+    <!-- Favicon -->
+    <link href="/Frontend/img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="/Frontend/lib/slick/slick.css" rel="stylesheet">
+    <link href="/Frontend/libs/slick/slick-theme.css" rel="stylesheet">
+    <link href="/Frontend/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/Frontend/css/style.css" rel="stylesheet">
+{% endblock %}
+
+
+{% block body %}
+    <!--main content start-->
+    <section id="main-content">
+        <section class="wrapper">
+
+
+            <div class="row mt">
+                <div class="col-lg-12">
+                    <div class="form-panel">
+                        <h4 class="mb"><i class="fa fa-angle-right"></i> Form Demande D'emploi</h4>
+                        <!--<form class="form-horizontal style-form" method="get">-->
+                        {{form_start(form,{'attr':{'class':'form-horizontal style-forms'}})}}
+
+                        <div class="form-group">
+                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
+                            {{ form_label(form.nom, 'Nom', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control">-->
+                                {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
+                            {{ form_label(form.prenom, 'Prenom', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control">-->
+
+                                {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
+                            {{ form_label(form.numero, 'Numero', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control">-->
+                                {{ form_widget(form.numero, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
+                            {{ form_label(form.CV, 'CV', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control">-->
+                                {{ form_widget(form.CV, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
+                            {{ form_label(form.Commentaire, 'Commentaire', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control">-->
+                                {{ form_widget(form.Commentaire, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!--<label class="col-sm-2 col-sm-2 control-label">Title</label>-->
+                            {{ form_label(form.RelatedOffre, 'offre', {'label_attr': {'class': 'col-sm-2 col-sm-2 control-label'}}) }}
+                            <div class="col-sm-10">
+                                <!--<input type="text" class="form-control">-->
+                                {{ form_widget(form.RelatedOffre, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                                <button class="btn btn-theme" type="submit">Submit</button>
+                            </div>
+                        </div>
+                        {{ form_end(form) }}
+                        <!--</form>-->
+                    </div>
+                </div>
+                <!-- col-lg-12-->
+            </div>
+
+        </section>
+        <!-- /wrapper -->
+    </section>
+    <!-- /MAIN CONTENT -->
+{% endblock %}
+
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="/Frontend/lib/slick/slick.min.js"></script>
+    <script src="/Frontend/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/Frontend/lib/lightbox/js/lightbox.min.js"></script>
+
+
+    <script src="js/main.js"></script>
+{% endblock %}
+

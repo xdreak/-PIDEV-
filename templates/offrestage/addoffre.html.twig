@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfileController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+    <div class="panel-title">Nouveau Stage :</div>
+    <div class="form-panel">
+        <table>
+
+            {{ form_start(form,{attr : {'novalidate' : 'novalidate'}}) }}
+            <tr>
+                <td>{{ form_label(form.NomEntreprise,"Nom Entreprise") }}</td>
+                <td> {{ form_widget(form.NomEntreprise) }}</td>
+            <tr><td> {{ form_errors(form.NomEntreprise) }}</td></tr>
+
+            </tr>
+            <tr>
+                <td> {{ form_label(form.Description,"Description") }}</td>
+                <td>{{ form_widget(form.Description) }}</td>
+            <tr><td> {{ form_errors(form.Description) }}</td></tr>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.stage_id,"Stage") }}</td>
+                <td>{{ form_widget(form.stage_id) }}</td>
+            <tr><td> {{ form_errors(form.stage_id) }}</td></tr>
+            </tr>
+
+
+        </table>
+        {{ form_end(form) }}
+    </div>
+    <br>
+
+    <a href="listoffresstages" class="btn btn-theme">Liste des Offres de Stages</a>
+        <a href="quizstage" class="btn btn-theme">Quiz</a>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

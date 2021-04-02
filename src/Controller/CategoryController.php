@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -20,6 +21,14 @@ class CategoryController extends AbstractController
      */
     public function index(): Response
     {
+      
+      $session = new Session();
+      if(!$session->has('role')) {
+          return $this->redirectToRoute('loginBack');
+      }
+      if($session->get('role') != "Recruteur") {
+          return $this->redirectToRoute('redirect');
+      }
     $categories=$this->getDoctrine()->getRepository(Category::class)->findAll();
      return $this->render('category/index.html.twig',array ('categories'=>$categories));
     }
@@ -29,6 +38,14 @@ class CategoryController extends AbstractController
      */
     public function save(Request $request)
     {
+      
+      $session = new Session();
+      if(!$session->has('role')) {
+          return $this->redirectToRoute('loginBack');
+      }
+      if($session->get('role') != "Recruteur") {
+          return $this->redirectToRoute('redirect');
+      }
         $classe=new Category();
         $form=$this->createFormBuilder($classe)
         ->add('Titre', TextareaType::class, array(

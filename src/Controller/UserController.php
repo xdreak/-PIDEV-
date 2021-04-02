@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Abonnment;
 use App\Entity\Profile;
 use App\Entity\User;
 use App\Form\UserType;
@@ -232,10 +233,10 @@ class UserController extends AbstractController
             return $this->redirectToRoute('default');
         }
         elseif($role == "Candidat") {
-            return $this->redirectToRoute('candidat');
+            return $this->redirectToRoute('home');
         }
         elseif($role == "Recruteur") {
-            return $this->redirectToRoute('recruteur');
+            return $this->redirectToRoute('home');
         }
         else {
             return $this->redirectToRoute('logout');
@@ -329,5 +330,18 @@ class UserController extends AbstractController
         }
 
     }
+    /**
+     * @Route("profile_F", name ="profile_F")
+     */
+    public function profile_F(){
+        $session = new Session();
+        $username=$session->get('username');
+        $abonnements=$this->getDoctrine()->getRepository(Abonnment::class)->findAbonnmentBytitle($username);
+        return $this->render('user/profile.html.twig',[
+            'session'=>$session,'abonnements'=>$abonnements
+        ]);
+    }
+
+    
 
 }

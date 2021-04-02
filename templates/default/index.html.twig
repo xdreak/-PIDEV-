@@ -1,4 +1,49 @@
-{% extends 'base.html.twig' %}
+{% extends 'back.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block body %}
+   <div class="border-head">
+            <h3>USER VISITS</h3>
+        </div>
+        <div class="custom-bar-chart">
+            <ul class="y-axis">
+                <li><span>30000</span></li>
+                <li><span>24000</span></li>
+                <li><span>18000</span></li>
+                <li><span>12000</span></li>
+                <li><span>6000</span></li>
+                <li><span>0</span></li>
+            </ul>
+            {% for O in offres %}
+                <div class="bar">
+                    <div class="title">{{ O.Title }}</div>
+                    <div class="value tooltips" data-original-title={{ O.Salaire }} data-toggle="tooltip" data-placement="top">{{ O.Salaire / 100 }}</div>
+                </div>
+            {% endfor %}
 
+        </div>
+          <div class="border-head">
+            <h3>Nombre des formations par categorie</h3>
+        </div>
+        <div class="custom-bar-chart">
+            <ul class="y-axis">
+                 <li><span>50</span></li>
+                        <li><span>40</span></li>
+                        <li><span>30</span></li>
+                        <li><span>20</span></li>
+                        <li><span>10</span></li>
+                              <li><span>0</span></li>
+
+            </ul>
+           {% for formation in formations %}
+                         {% for categorie in categories %}
+                         <div class="bar">
+                        <div class="title">{{ formation.Titre }}</div>
+                        <div class="value tooltips" data-original-title={{ categorie }} data-toggle="tooltip" data-placement="top">{{ categorie  }}</div>
+                    </div>
+               
+                   
+                    {% endfor %}
+                  {% endfor %}
+
+        </div>
+        {% endblock %}

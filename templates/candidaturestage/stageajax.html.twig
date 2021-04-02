@@ -1,0 +1,10 @@
+{% for c in OffreStage %}
+    <tr>
+        <td>{{ c.id }}</td>
+        <td>{{ c.NomEntreprise }}</td>
+        <td>{{ c.Description }}</td>
+        <td>{{ c.StageId }}</td>
+        <td><a href="{{ path('trouver',{'id':c.id})}}">Postuler</a></td>
+    </tr>
+
+{% endfor %}

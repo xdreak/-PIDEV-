@@ -1,0 +1,117 @@
+{% extends 'front.html.twig' %}
+
+
+
+
+{% block body %}
+    <!-- Page Header Start -->
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Offers</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form class="form-inline" role="form" method="get">
+        <div class="form-group">
+            <input type="text" id="search" class="form-control" placeholder="Search">
+        </div>
+    </form>
+    <div class="portfolio">
+
+        <div class="container">
+
+
+            <div class="row portfolio-container" id="all">
+
+                {% for O in offres %}
+                <div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-des">
+                    <div class="portfolio-wrap">
+                        <figure>
+
+                            <img src="/Frontend/img/portfolio-1.jpg" alt="Portfolio Image">
+                            <a href="{{ path('Details',{'id':O.id}) }}" class="link-preview" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a href="{{ path('Details',{'id':O.id}) }}" class="link-preview" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a href="{{ path('m',{'id':O.id}) }}" class="link-details"><i class="fa fa-link"></i></a>
+                            <a class="portfolio-title" href="#">{{ O.Title }}</a>
+                        </figure>
+
+                    </div>
+
+                </div>
+                    {% set QR %}
+                        Title de offre:{{ O.Title }}
+                        ville de offre:{{ O.Ville }}
+                        domain de offre:{{ O.Domain }}
+                        Salaire de offre:{{ O.Salaire }}
+                        nom de socitie de offre:{{ O.CompanyName }}
+                        type de offre:{{ O.Type }}
+                        description de offre:{{ O.Description }}
+                    {% endset %}
+                    <div ><img src="{{ qr_code_data_uri(QR) }}"></div>
+
+                {% endfor %}
+            </div>
+            <div id="search"></div>
+
+
+            <div id="pg" class="pagination justify-content-center ">
+                {{ knp_pagination_render(offres) }}
+            </div>
+
+        </div>
+    </div>
+    <!-- Portfolio Start -->
+
+{% endblock %}
+
+{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+        $( document ).ready(function() {
+            $("#search").keyup(function(e){
+                /* La variable value va prendre la valeur insérer dans le champ de texte afin d’effectuer la recherche */
+                var value = $(this).val();
+                /* Ajax est lancé lors du remplissage du champ texte dont l’id est « search » pour faire la recherche */
+                $.ajax({
+                    /* l’url est une chaine de caractères contenant l’adresse où la requête est envoyée */
+                    url : "{{ path('SearchOffreFrontx') }}",
+                    /* La méthode utilisée pour transférer les données est GET */
+                    type : 'GET',
+                    /*Ici search value va prendre la chaine entrée par un utilisateur dans la zone de recherche et sera placée après l’url */
+                    data: {
+                        'searchValue' : value
+                    },
+                    /*Cette fonction permet de vider le contenu du tableau pour recevoir le nouveau contenu*/
+                    success : function(retour){
+                        if(retour){
+                            $('div#search').empty();
+                            $.each(JSON.parse(retour), function(i, obj) {
+                                $('div#all').hide();
+                                $('div#search').append('<div class="col-lg-3 col-md-6 col-sm-6 portfolio-item web-des"><div class="portfolio-wrap"><figure><img src="/Frontend/img/portfolio-1.jpg" alt="Portfolio Image"><a class="portfolio-title" href="#">'+obj.Title+'  </a><a href="/offre/details/'+obj.id+'" class="link-preview" data-lightbox="portfolio"><i class="fa fa-eye"></i></a><a href="/offre/details/'+obj.id+'" class="link-preview" data-lightbox="portfolio"><i class="fa fa-eye"></i></a><a href="Quizs/trouver/'+obj.id+'" class="link-details"><i class="fa fa-link"></i></a>' +
+                                    '</figure>' +
+                                    '</div>' +
+                                    '</div>'
+                                );
+                            });
+                        }
+                        else
+                        {
+                            $('div#all').show();
+                            $('div#search').empty();
+                            $('div#search').fadeIn('fast');
+                        }
+                    },
+                });
+                return false;
+            });
+        });
+
+    </script>
+
+
+{% endblock %}
+

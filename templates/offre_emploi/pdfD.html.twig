@@ -1,0 +1,26 @@
+<table>
+    <h4>les demandes demploi</h4>
+    <!--<input type="text" name="find" class="form-horizontal style-forms" name="find"><input type="submit" value="search">-->
+    <hr>
+    <thead>
+    <tr>
+        <th>nom</th>
+        <th>prenom</th>
+        <th>numero</th>
+        <th>commentaire</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for D in Demande %}
+        <tr>
+            <td>
+                {{ D.nom }}
+            </td>
+            <td>{{ D.prenom }}</td>
+            <td> {{ D.numero }}</td>
+            <td>{{ D.commentaire }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

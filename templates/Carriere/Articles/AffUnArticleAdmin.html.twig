@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block title %} Afficher un Article Admin {% endblock %}
+{% block body %}
+    {% for message in app.flashes('message') %}
+        <div class="alert alert-success" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <section class="article">
+        <h2> {{  article.Titre }}</h2>
+            <article>
+                {% if article.image %}
+                    <img src="{{ vich_uploader_asset(article,'imageFile') }}" >
+                {% endif %}
+                <p> {{ article.Contenu |raw }}</p>
+            </article>
+            <a class="btn btn-sm btn-default fa fa-edit" href="{{ path('ModifierArticle',{id: article.id}) }}">Modifier</a>
+            <a class="btn btn-sm btn-default fa fa-arrow-circle-o-left" href="{{ asset('/GestionCarriere') }}">Retour à l'inventaire</a>
+    </section>
+
+{% endblock %}

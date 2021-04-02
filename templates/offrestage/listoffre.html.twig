@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfileController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="example-wrapper">
+        <!doctype html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport"
+                  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>Document</title>
+        </head>
+        <body>
+        <div class=h2>Offres de Stages :</div>
+        <br>
+        <div class="form-panel">
+        <table class="table-condensed" border="1">
+            <tr>
+                <th>Id</th>
+                <th>Nom Entreprise</th>
+                <th>Description</th>
+                <th>ID</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+            {% for c in OffreStage %}
+                <tr>
+                    <td>{{ c.id }}</td>
+                    <td>{{ c.NomEntreprise }}</td>
+                    <td>{{ c.Description }}</td>
+                    <td>{{ c.StageId }}</td>
+                    <td><a href="{{ path('updateoffresstages',{'id':c.id}) }}">Modifier</a></td>
+                    <td><a href="{{ path('deleteoffresstages',{'id':c.id}) }}">Supprimer</a></td>
+
+
+                </tr>
+            {% endfor %}
+        </table>
+            <button class="btn bts" type="submit"><a href="{{ path('pdfstage') }}">Imprimer Cette Table</a></button>
+        </div>
+        </body>
+
+    <br>
+   <button class="btn btn-theme02" type="submit"><a href="addoffresstages" ><i></i>Retour</a></button>
+    <br>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

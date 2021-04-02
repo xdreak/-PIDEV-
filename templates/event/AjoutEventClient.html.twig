@@ -1,0 +1,18 @@
+{% extends 'front.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+   
+<div class="container">
+    <h3>Ajouter un Evenement</h3>
+    {{ form_start(form) }}
+    {{ form_row(form.nom) }}
+    {{ form_row(form.plan) }}
+    {{ form_row(form.ville) }}
+    {{ form_row(form.adresse) }}
+    {{ form_row(form.datedebut) }}
+    {{ form_row(form.datefin) }}
+    <button type="submit" class="btn btn-success" > Ajouter </button>
+    {{ form_end(form) }}
+</div>
+
+{% endblock %}

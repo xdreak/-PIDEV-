@@ -41,6 +41,14 @@ class FormationController extends AbstractController
      */
     public function index1(): Response
     {
+      
+      $session = new Session();
+      if(!$session->has('role')) {
+          return $this->redirectToRoute('loginBack');
+      }
+      if($session->get('role') != "Recruteur") {
+          return $this->redirectToRoute('redirect');
+      }
      $formations=$this->getDoctrine()->getRepository(Formation::class)->findAll();
      return $this->render('formation/index.html.twig',array ('formations'=>$formations));
 
@@ -72,6 +80,13 @@ class FormationController extends AbstractController
      */
     public function save(Request $request)
     {
+      $session = new Session();
+      if(!$session->has('role')) {
+          return $this->redirectToRoute('loginBack');
+      }
+      if($session->get('role') != "Recruteur") {
+          return $this->redirectToRoute('redirect');
+      }
         $classe=new Formation();
         $form=$this->createFormBuilder($classe)
         ->add('Titre', TextareaType::class, array(
@@ -278,6 +293,13 @@ class FormationController extends AbstractController
      */
     public function stats()
     {
+      $session = new Session();
+      if(!$session->has('role')) {
+          return $this->redirectToRoute('loginBack');
+      }
+      if($session->get('role') != "Recruteur") {
+          return $this->redirectToRoute('redirect');
+      }
       $repository = $this->getDoctrine()->getrepository(Category::class);//recuperer repository
       $Categorys = $repository->findAll();
       $CategoryId = $repository->countIds();

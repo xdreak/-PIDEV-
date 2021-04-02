@@ -253,25 +253,64 @@
                 <p class="centered"><a href="profile.html"><img src="{{ asset("Backend/img/ui-sam.jpg") }}" class="img-circle" width="80"></a></p>
                 {# <h5 class="centered">{{ session.get('prenom') }} {{ session.get('nom') }}</h5> #}
                 <li class="mt">
-                    <a class="active" href="default">
+                    <a class="active" href="/dashboard">
                         <i class="fa fa-dashboard"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="mt">
-                    <a class="active" href="{{ path("user") }}">
-                        <i class="fa fa-desktop"></i>
-                        <span>Gestion des Utilisateurs</span>
-                    </a>
-                </li>
-                <li class="mt">
-                    <a class="active" href="{{ path("profile") }}">
-                        <i class="fa fa-desktop"></i>
-                        <span>Gestion des Profiles</span>
-                    </a>
-                </li>
+                 <li class="sub-menu">
+            <a href="/listoffresstages" >
+              <i class="fa fa-tasks"></i>
+              <span>Stages</span>
+              </a>
+            <ul class="sub">
+           
+              <li><a href="/listoffresstages">Les Offres de stages</a></li>
+             <li><a href="/addoffresstages">Ajouter une offre de stages</a></li>
+                  <li><a href="/quizstage">Les Quizs d'offre de stage</a></li>
+                      <li><a href="/list">Les Candidatures Stage</a></li>
+                 
+         
+            </ul>
+          </li>
+           <li class="sub-menu">
+            <a href="/listoffresstages" >
+              <i class="fa fa-tasks"></i>
+              <span>Articles</span>
+              </a>
+            <ul class="sub">
+           
+              <li><a href="/listoffresstages">Les Articles</a></li>
+             <li><a href="/addoffresstages">Ajouter un Article</a></li>                   
+            </ul>
+          </li> 
+          <li class="sub-menu">
+            <a href="/listoffresstages" >
+              <i class="fa fa-tasks"></i>
+              <span>Event</span>
+              </a>
+            <ul class="sub">
+           
+              <li><a href="/listoffresstages">Les Events</a></li>
+             <li><a href="/addoffresstages">Ajouter un event</a></li>                   
+            </ul>
+          </li> 
                   <li class="sub-menu">
-            <a href="formation">
+            <a href="#" >
+              <i class="fa fa-tasks"></i>
+              <span>Offres</span>
+              </a>
+            <ul class="sub">
+           
+              <li><a href="/AfficherOffres">Les Offres</a></li>
+             <li><a href="/AjoutOffre">Ajouter une offre</a></li>
+                  <li><a href="/AfficherQuiz">Les Quizs</a></li>
+                   <li><a href="/AjoutQuiz">Ajouter un quiz</a></li>
+         
+            </ul>
+          </li>
+                  <li class="sub-menu">
+            <a href="#">
               <i class="fa fa-tasks"></i>
               <span>Formations</span>
               </a>
@@ -285,7 +324,21 @@
          
             </ul>
           </li>
-
+  <li class="sub-menu">
+            <a href="#">
+              <i class="fa fa-tasks"></i>
+              <span>Formations</span>
+              </a>
+            <ul class="sub">
+           
+              <li><a href="formation">Les formations</a></li>
+             <li><a href="addFormation">Ajouter une formation</a></li>
+                  <li><a href="category">Les categories</a></li>
+                   <li><a href="addCategory">Ajouter une categorie</a></li>
+              <li><a href="abonnement">Les abonnements</a></li>
+         
+            </ul>
+          </li>
             </ul>
             <!-- sidebar menu end-->
         </div>
